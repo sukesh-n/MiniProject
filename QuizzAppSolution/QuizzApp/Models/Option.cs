@@ -3,18 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuizzApp.Models
 {
-    public class Solution
+    public class Option
     {
         [Key]
-        public int SolutionId { get; set; }
+        public int Id { get; set; }
 
         [ForeignKey("Question")]
         public int QuestionId { get; set; }
-        [ForeignKey("Option")]
-        public int OptionId { get; set; }
-        public string CorrectAnswer { get; set;} = string.Empty;
-        
-        
 
+        public int Optionid { get; set; }
+        public string Optionname { get; set; } = string.Empty;
     }
 }
