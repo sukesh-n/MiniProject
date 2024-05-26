@@ -1,6 +1,6 @@
 ﻿namespace QuizzApp.Interfaces
 {
-    public interface IUser
+    public interface CandidateInterface
     {
     }
 }

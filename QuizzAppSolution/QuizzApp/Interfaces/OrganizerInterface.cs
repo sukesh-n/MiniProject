@@ -1,7 +1,6 @@
 ﻿namespace QuizzApp.Interfaces
 {
-    public interface IQuestion
+    public interface OrganizerInterface
     {
-
     }
 }

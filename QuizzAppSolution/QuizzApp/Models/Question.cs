@@ -7,9 +7,10 @@ namespace QuizzApp.Models
         [Key]
         public int QuestionId { get; set; }
         public string QuestionDescription { get; set; } = string.Empty;
-        public string QuestionType { get; set; }= string.Empty;
-        public int QuestionCategoryId {  get; set; }
-        public string Difficultylevel { get; set; } = string.Empty;
+        public string QuestionType { get; set; } = string.Empty;
+        public int CategoryId {  get; set; }
+        public int Difficultylevel { get; set; }
+        public Category Category { get; set; }
 
     }
 }
