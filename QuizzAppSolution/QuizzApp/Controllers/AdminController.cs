@@ -6,6 +6,6 @@ namespace QuizzApp.Controllers
     [ApiController]
     public class AdminController : ControllerBase
     {
-
+        
     }
 }

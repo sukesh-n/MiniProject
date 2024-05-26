@@ -10,9 +10,13 @@ namespace QuizzApp.Models
         public DateTime TestEndDate { get; set; }
         public int UserId { get; set; }
         public int QuestionsCount { get; set; }
-        public ICollection<Category> categories { get; set; }
-        public ICollection<Question> questions { get; set; }
+        public ICollection<Category> Categories { get; set; }
+        public ICollection<Question> Questions { get; set; }
 
-
+        public Test(ICollection<Category> categories, ICollection<Question> questions)
+        {
+            Categories = new List<Category>();
+            Questions = new List<Question>();
+        }
     }
 }
