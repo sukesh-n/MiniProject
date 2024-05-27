@@ -9,7 +9,7 @@ namespace QuizzApp.Models
         public string QuestionDescription { get; set; } = string.Empty;
         public string QuestionType { get; set; } = string.Empty;
         public int CategoryId {  get; set; }
-        public int Difficultylevel { get; set; }
+        public int DifficultyLevel { get; set; }
         public Category Category { get; set; }
 
     }

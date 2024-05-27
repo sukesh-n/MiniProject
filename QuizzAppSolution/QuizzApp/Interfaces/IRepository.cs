@@ -1,4 +1,6 @@
-﻿namespace QuizzApp.Interfaces
+﻿using QuizzApp.Models.DTO;
+
+namespace QuizzApp.Interfaces
 {
     public interface IRepository<K,T>where T : class
     {
@@ -7,6 +9,6 @@
         Task<T> DeleteAsync(K Key);
         Task<T> GetAsync(K Key);
         Task<IEnumerable<T>> GetAllAsync();
-
+        Task AddAsync(Option option);
     }
 }

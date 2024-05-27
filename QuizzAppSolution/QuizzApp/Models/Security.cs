@@ -12,6 +12,6 @@ namespace QuizzApp.Models
         public byte[]? Password { get; set; }
         public byte[]? PasswordHashKey { get; set; }
         public DateTime LastLogin { get; set; } = DateTime.Now;
-
+        public User User { get; set; }
     }
 }

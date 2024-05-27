@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuizzApp.Models
 {
@@ -8,6 +9,7 @@ namespace QuizzApp.Models
         public int TestId { get; set; }
         public DateTime TestStartDate { get; set; }
         public DateTime TestEndDate { get; set; }
+        [ForeignKey("User")]
         public int UserId { get; set; }
         public int QuestionsCount { get; set; }
         public ICollection<Category> Categories { get; set; }

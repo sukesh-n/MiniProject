@@ -1,0 +1,39 @@
+ADMIN:
+    CRUD operation in Questions
+    Conduct Common Quizz for all
+    Analyse All Test
+ORGANIZER:
+    Create Quizz for specific set of people
+        based on Email
+            ** Even if user dont have account,the mail will be sent and upon registration they can attend the test
+    Create own Questions
+        Visibility is only to oragnizer and candidate can only see questions while test
+        if organizer approve to make questions public, upon admin approval it can be.
+    Also Organizer can pick Questions from repository and use it for test
+    Analyse their test
+
+CANDIDATE:
+    Attend Common quizzes
+    Attend custom quizz
+    Contribute a question(but it is upon admin approval)
+    Can view score
+    Can view Answers and their reponses based on settings by organizer
+
+QUESTION FORMAT:
+    MCQ/TrueOrFalse/Numerical
+    Difficulty Level for questions 
+
+QUESTION ANALYSIS:
+    No of people attended and Accuracy level
+    Most chosen Category
+
+
+TEST:
+    All the three UserType can attend quizz
+    Catch:
+        if admin/Organizer attends a quizz,they only can attend test,they cannot be logged as admin/organizer
+        No criteria to update individual score 
+            unless there is error in solution
+
+CHALLENGING ANSWERS:
+    Organizer/Candidate can challenge answer for questios they conducted/attended

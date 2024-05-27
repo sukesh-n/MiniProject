@@ -7,6 +7,7 @@ namespace QuizzApp.Models
     {
         [Key]
         public int Id { get; set; }
+        [ForeignKey("Question")]
         public int QuestionId { get; set; }
         public int Optionid { get; set; }
         public OptionDescriptionType OptionDescription { get; set; }

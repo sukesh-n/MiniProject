@@ -1,0 +1,8 @@
+C:\Users\vc\Desktop\Git\git_push\MiniProject\QuizzAppSolution\QuizzApp\obj\Debug\net6.0\QuizzApp.csproj.AssemblyReference.cache
+C:\Users\vc\Desktop\Git\git_push\MiniProject\QuizzAppSolution\QuizzApp\obj\Debug\net6.0\QuizzApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vc\Desktop\Git\git_push\MiniProject\QuizzAppSolution\QuizzApp\obj\Debug\net6.0\QuizzApp.AssemblyInfoInputs.cache
+C:\Users\vc\Desktop\Git\git_push\MiniProject\QuizzAppSolution\QuizzApp\obj\Debug\net6.0\QuizzApp.AssemblyInfo.cs
+C:\Users\vc\Desktop\Git\git_push\MiniProject\QuizzAppSolution\QuizzApp\obj\Debug\net6.0\QuizzApp.csproj.CoreCompileInputs.cache
+C:\Users\vc\Desktop\Git\git_push\MiniProject\QuizzAppSolution\QuizzApp\obj\Debug\net6.0\QuizzApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vc\Desktop\Git\git_push\MiniProject\QuizzAppSolution\QuizzApp\obj\Debug\net6.0\QuizzApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vc\Desktop\Git\git_push\MiniProject\QuizzAppSolution\QuizzApp\obj\Debug\net6.0\QuizzApp.sourcelink.json

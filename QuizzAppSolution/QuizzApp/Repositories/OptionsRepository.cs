@@ -10,6 +10,11 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
+        public Task<Option> AddAsync(Models.DTO.Option option)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<Option> DeleteAsync(int Key)
         {
             throw new NotImplementedException();

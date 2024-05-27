@@ -1,7 +1,7 @@
 ﻿namespace QuizzApp.Models.DTO
 {
-    public class ResultDTO : Result
+    public class ResultDTO
     {
-        public
+       
     }
 }
