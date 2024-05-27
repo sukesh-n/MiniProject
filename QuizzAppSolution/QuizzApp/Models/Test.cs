@@ -14,11 +14,18 @@ namespace QuizzApp.Models
         public int QuestionsCount { get; set; }
         public ICollection<Category> Categories { get; set; }
         public ICollection<Question> Questions { get; set; }
-
-        public Test(ICollection<Category> categories, ICollection<Question> questions)
+        public User User { get; set; }
+        public Test()
         {
             Categories = new List<Category>();
             Questions = new List<Question>();
+        }
+
+        // Constructor with parameters
+        public Test(ICollection<Category> categories, ICollection<Question> questions)
+        {
+            Categories = categories ?? new List<Category>();
+            Questions = questions ?? new List<Question>();
         }
     }
 }

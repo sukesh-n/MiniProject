@@ -48,6 +48,7 @@ namespace QuizzApp.Services
             };
             var QuestionResult = await _questionRepository.AddAsync(question);
             Solution solution = null;
+            
             if (questionSolutionDTO.NumericalAnswer != null || questionSolutionDTO.TrueFalseAnswer != null)
             {
                 solution = new Solution()
@@ -56,14 +57,12 @@ namespace QuizzApp.Services
                     NumericalAnswer = questionSolutionDTO.NumericalAnswer,
                     TrueFalseAnswer = questionSolutionDTO.TrueFalseAnswer
                 };
+                var SolutionResult = await _solutionRepository.AddAsync(solution);
             }
             else if (questionSolutionDTO.Option != null)
             {
-                solution = new Solution()
-                {
-                    QuestionId = QuestionResult.QuestionId,
-                    OptionId = await AddOptionAsync(questionSolutionDTO.Option)
-                };
+                
+                var SolutionResult = await _solutionRepository.AddAsync(solution);
             }
 
             if (solution == null)
@@ -72,11 +71,6 @@ namespace QuizzApp.Services
             await _solutionRepository.AddAsync(solution);
 
             return true;
-        }
-        private async Task<int> AddOptionAsync(Models.DTO.Option option)
-        {
-            var optionResult = await _optionRepository.AddAsync(option);
-            return optionResult.OptionId;
         }
         public async Task<TestDTO> ConductCommonQuizAsync(List<User> candidates, Test quiz)
         {

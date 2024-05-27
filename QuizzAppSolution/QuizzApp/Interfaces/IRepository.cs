@@ -9,6 +9,5 @@ namespace QuizzApp.Interfaces
         Task<T> DeleteAsync(K Key);
         Task<T> GetAsync(K Key);
         Task<IEnumerable<T>> GetAllAsync();
-        Task AddAsync(Option option);
     }
 }

@@ -10,7 +10,7 @@ namespace QuizzApp.Models
         [ForeignKey("Test")]
         public int TestId { get; set; }
         public double? score { get; set; }
-
+        public Test Test { get; set; }
         public Result(double? score)
         {
             this.score = score;
