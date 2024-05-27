@@ -1,13 +1,32 @@
-﻿using QuizzApp.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using QuizzApp.Context;
+using QuizzApp.Exceptions;
+using QuizzApp.Interfaces;
 using QuizzApp.Models;
 
 namespace QuizzApp.Repositories
 {
     public class SecurityRepository : IRepository<int, Security>
     {
-        public Task<Security> AddAsync(Security entity)
+        private readonly QuizzAppContext _context;
+
+        public SecurityRepository(QuizzAppContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+
+        public async Task<Security> AddAsync(Security entity)
+        {            
+            try
+            {
+                var result = await _context.AddAsync(entity);
+                await _context.SaveChangesAsync();
+                return result.Entity;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Unable to add security", ex);
+            }
         }
 
         public Task<Security> DeleteAsync(int Key)
@@ -20,9 +39,18 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<Security> GetAsync(int Key)
+        public async Task<Security> GetAsync(int Key)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _context.security.FirstOrDefaultAsync(x => x.UserId == Key);
+                await _context.SaveChangesAsync();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Unable to add security", ex);
+            }
         }
 
         public Task<Security> UpdateAsync(Security entity)
