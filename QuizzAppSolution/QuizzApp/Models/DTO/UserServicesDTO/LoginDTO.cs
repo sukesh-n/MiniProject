@@ -1,4 +1,4 @@
-﻿namespace QuizzApp.Models.DTO
+﻿namespace QuizzApp.Models.DTO.UserServicesDTO
 {
     public class LoginDTO
     {

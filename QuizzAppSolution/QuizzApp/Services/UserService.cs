@@ -8,6 +8,7 @@ using QuizzApp.Interfaces;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO;
 using QuizzApp.Repositories;
+using QuizzApp.Models.DTO.UserServicesDTO;
 
 namespace QuizzApp.Services
 {
@@ -24,6 +25,11 @@ namespace QuizzApp.Services
         }
 
         public Task<User> OrganizerLogin(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<UserDTO> RegisterUser(UserDTO userDTO)
         {
             throw new NotImplementedException();
         }
