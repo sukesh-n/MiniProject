@@ -5,9 +5,9 @@ namespace QuizzApp.Interfaces
 {
     public interface ILoginInterface
     {
-        public Task<User> CandidateLogin(string email, string password);
-        public Task<User> OrganizerLogin(string email, string password);
-        public Task<User> AdminLogin(string email, string password);
-        public Task<UserDTO> RegisterUser(UserDTO userDTO);
+        public Task<LoginReturnDTO> CandidateLogin(string email, string password);
+        public Task<LoginReturnDTO> OrganizerLogin(string email, string password);
+        public Task<LoginReturnDTO> AdminLogin(string email, string password);
+        public Task<User> RegisterUser(UserDTO userDTO);
     }
 }

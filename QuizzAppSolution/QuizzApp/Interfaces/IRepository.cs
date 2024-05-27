@@ -6,7 +6,7 @@ namespace QuizzApp.Interfaces
     {
         Task<T> AddAsync(T entity);
         Task<T> UpdateAsync(T entity);
-        Task<T> DeleteAsync(K Key);
+        Task<T> DeleteAsync(int Key);
         Task<T> GetAsync(K Key);
         Task<IEnumerable<T>> GetAllAsync();
     }
