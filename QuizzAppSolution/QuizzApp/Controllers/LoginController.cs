@@ -18,13 +18,13 @@ namespace QuizzApp.Controllers
             _loginInterface = loginInterface;
         }
 
-        [HttpGet("AdminLogin")]
+        [HttpPost("AdminLogin")]
         public async Task<IActionResult> AdminLogin(LoginDTO loginDTO)
         {
             try
             {
                 var adminLogin = await _loginInterface.AdminLogin(loginDTO.Email, loginDTO.Password);
-                adminLogin.Role = "admin";
+                //adminLogin.Role = "admin";
                 return Ok(adminLogin);
             }
             catch
@@ -34,13 +34,13 @@ namespace QuizzApp.Controllers
             
         }
 
-        [HttpGet("OrganizerLogin")]
+        [HttpPost("OrganizerLogin")]
         public async Task<IActionResult> OrganizerLogin(LoginDTO loginDTO)
         {
             try
             {
                 var organizerLogin = await _loginInterface.AdminLogin(loginDTO.Email, loginDTO.Password);
-                organizerLogin.Role = "organizer";
+                //organizerLogin.Role = "organizer";
                 return Ok(organizerLogin);
             }
             catch
@@ -50,13 +50,13 @@ namespace QuizzApp.Controllers
 
         }
 
-        [HttpGet("CandidateLogin")]
+        [HttpPost("CandidateLogin")]
         public async Task<IActionResult> CandidateLogin(LoginDTO loginDTO)
         {
             try
             {
                 var candidateLogin = await _loginInterface.CandidateLogin(loginDTO.Email, loginDTO.Password);
-                candidateLogin.Role = "candidate";
+                //candidateLogin.Role = "candidate";
                 return Ok(candidateLogin);
             }
             catch
