@@ -2,7 +2,7 @@
 
 namespace QuizzApp.Interfaces
 {
-    public interface ICandidateInterface
+    public interface ICandidateService
     {
         public Task<QuestionDTO> AttendTest(QuestionDTO questionDTO);
     }

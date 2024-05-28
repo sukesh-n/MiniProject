@@ -3,7 +3,7 @@ using QuizzApp.Models.DTO.UserServicesDTO;
 
 namespace QuizzApp.Interfaces
 {
-    public interface ILoginInterface
+    public interface ILoginService
     {
         public Task<LoginReturnDTO> CandidateLogin(string email, string password);
         public Task<LoginReturnDTO> OrganizerLogin(string email, string password);
