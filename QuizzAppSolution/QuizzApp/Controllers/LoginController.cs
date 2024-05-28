@@ -11,9 +11,9 @@ namespace QuizzApp.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly ILoginInterface _loginInterface;
+        private readonly ILoginService _loginInterface;
 
-        public LoginController(ILoginInterface loginInterface)
+        public LoginController(ILoginService loginInterface)
         {
             _loginInterface = loginInterface;
         }
