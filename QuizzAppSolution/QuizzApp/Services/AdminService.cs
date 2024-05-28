@@ -10,7 +10,7 @@ using static QuizzApp.Models.Option;
 
 namespace QuizzApp.Services
 {
-    public class AdminService : IAdminInterface
+    public class AdminService : IAdminService
     {
         private readonly IRepository<int,Question> _questionRepository;
         private readonly IRepository<int,Category> _categoryRepository;
@@ -33,45 +33,7 @@ namespace QuizzApp.Services
             _userRepository = userRepository;
         }
 
-        public async Task<bool> AddQuestionWithAnswerAsync(QuestionSolutionDTO questionSolutionDTO)
-        {
-
-            var category = new Category()
-            {
-                MainCategory = questionSolutionDTO.MainCategory,
-                SubCategory = questionSolutionDTO.SubCategory
-            };
-            var CategoryResult = await _categoryRepository.AddAsync(category);
-
-            var question = new Question()
-            {
-                CategoryId = CategoryResult.CategoryId,
-                QuestionDescription = questionSolutionDTO.QuestionDescription,
-                QuestionType=questionSolutionDTO.QuestionType,
-                DifficultyLevel = questionSolutionDTO.QuestionDifficultyLevel
-            };
-            var QuestionResult = await _questionRepository.AddAsync(question);
-            Solution solution = null;
-            
-            if (questionSolutionDTO.NumericalAnswer != null || questionSolutionDTO.TrueFalseAnswer != null)
-            {
-                solution = new Solution()
-                {
-                    QuestionId = QuestionResult.QuestionId,
-                    NumericalAnswer = questionSolutionDTO.NumericalAnswer,
-                    TrueFalseAnswer = questionSolutionDTO.TrueFalseAnswer
-                };
-                var SolutionResult = await _solutionRepository.AddAsync(solution);
-            }
-            
-
-            if (solution == null)
-                return false;
-
-            await _solutionRepository.AddAsync(solution);
-
-            return true;
-        }
+        
         public async Task<TestDTO> ConductCommonQuizAsync(List<User> candidates, QuestionSelectionDTO questionSelectionDTO)
         {
             TestDTO testDTO = new TestDTO()
@@ -87,10 +49,6 @@ namespace QuizzApp.Services
             throw new NotImplementedException();
         }
 
-        public Task<QuestionSolutionDTO> UpdateQuestionsWithSolution(QuestionSolutionDTO questionSolutionDTO)
-        {
-            throw new NotImplementedException();
-        }
 
         public Task<ResultDTO> ViewResultAnalysis()
         {
