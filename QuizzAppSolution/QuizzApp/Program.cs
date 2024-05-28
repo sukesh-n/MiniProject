@@ -82,10 +82,11 @@ namespace QuizzApp
             #endregion
 
             #region Service
-            builder.Services.AddScoped<IAdminInterface, AdminService>();
-            builder.Services.AddScoped<ICandidateInterface, CandidateService>();
-            builder.Services.AddScoped<ILoginInterface, UserService>();
+            builder.Services.AddScoped<IAdminService, AdminService>();
+            builder.Services.AddScoped<ICandidateService, CandidateService>();
+            builder.Services.AddScoped<ILoginService, UserService>();
             builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<IQuestionService, QuestionServices>();
             #endregion
 
 
