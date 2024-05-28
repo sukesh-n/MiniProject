@@ -1,6 +1,7 @@
 ﻿using QuizzApp.Interfaces;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO;
+using QuizzApp.Models.DTO.AnalyseServiceDTO;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -44,6 +45,7 @@ namespace QuizzApp.Services
             {
                 CategoryId = CategoryResult.CategoryId,
                 QuestionDescription = questionSolutionDTO.QuestionDescription,
+                QuestionType=questionSolutionDTO.QuestionType,
                 DifficultyLevel = questionSolutionDTO.QuestionDifficultyLevel
             };
             var QuestionResult = await _questionRepository.AddAsync(question);
@@ -61,7 +63,22 @@ namespace QuizzApp.Services
             }
             else if (questionSolutionDTO.Option != null)
             {
-                
+                foreach (var option in questionSolutionDTO.Option)
+                {
+                    var optionEntity = new OptionDTO()
+                    {
+                        QuestionId = QuestionResult.QuestionId,
+                        OptionDescription = option
+                        
+                    };
+
+                    var OptionResult = await _optionRepository.AddAsync(optionEntity);
+                }
+                solution = new Solution()
+                {
+                    QuestionId = QuestionResult.QuestionId,
+                   
+                };
                 var SolutionResult = await _solutionRepository.AddAsync(solution);
             }
 
@@ -82,6 +99,21 @@ namespace QuizzApp.Services
             };
 
             return testDTO;
+        }
+
+        public Task<QuestionWithCategoryDTO> GetQuestionWithCategory(QuestionWithCategoryDTO questionWithCategoryDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<QuestionSolutionDTO> UpdateQuestionsWithSolution(QuestionSolutionDTO questionSolutionDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ResultDTO> ViewResultAnalysis()
+        {
+            throw new NotImplementedException();
         }
     }
 }
