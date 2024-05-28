@@ -12,7 +12,7 @@ using QuizzApp.Token;
 
 namespace QuizzApp.Services
 {
-    public class UserService : ILoginInterface
+    public class UserService : ILoginService
     {
         private readonly IUserRepository _userRepository;
         private readonly IRepository<int, Security> _securityRepository;
