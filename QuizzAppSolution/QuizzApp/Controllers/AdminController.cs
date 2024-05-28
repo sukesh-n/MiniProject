@@ -11,11 +11,13 @@ namespace QuizzApp.Controllers
    // [Authorize(Roles = "admin")]
     public class AdminController : ControllerBase
     {
-        private readonly IAdminInterface _adminInterface;
+        private readonly IAdminService _adminInterface;
+        private readonly IQuestionService _questionService;
 
-        public AdminController(IAdminInterface adminInterface)
+        public AdminController(IAdminService adminInterface, IQuestionService questionService)
         {
             _adminInterface = adminInterface;
+            _questionService = questionService;
         }
 
         [HttpPut("AddQuestionWithSolution")]
@@ -23,7 +25,7 @@ namespace QuizzApp.Controllers
         {
             try
             {
-                var result = await _adminInterface.AddQuestionWithAnswerAsync(questionSolutionDTO);
+                var result = await _questionService.AddQuestionWithAnswerAsync(questionSolutionDTO);
                 return Ok(result);
             }
             catch
@@ -37,7 +39,7 @@ namespace QuizzApp.Controllers
         {
             try
             {
-                var UpdateResult = await _adminInterface.UpdateQuestionsWithSolution(questionSolutionDTO);
+                var UpdateResult = await _questionService.UpdateQuestionsWithSolution(questionSolutionDTO);
                 return Ok(UpdateResult);
             }
             catch
@@ -51,7 +53,7 @@ namespace QuizzApp.Controllers
         {
             try
             {
-                var GetQuestion = await _adminInterface.GetQuestionWithCategory(questionWithCategoryDTO);
+                var GetQuestion = await _questionService.GetQuestionWithCategory(questionWithCategoryDTO);
                 return Ok(GetQuestion);
             }
             catch
