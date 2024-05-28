@@ -3,7 +3,7 @@ using QuizzApp.Models.DTO;
 
 namespace QuizzApp.Services
 {
-    public class CandidateService : ICandidateInterface
+    public class CandidateService : ICandidateService
     {
         public Task<QuestionDTO> AttendTest(QuestionDTO questionDTO)
         {
