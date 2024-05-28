@@ -4,6 +4,6 @@ namespace QuizzApp.Models.DTO
 {
     public class OptionDTO
     {
-        public List<Enum> Options { get; set; } = new List<Enum>();
+        public List<string> OptionList { get; set; } = new List<string>();
     }
 }
