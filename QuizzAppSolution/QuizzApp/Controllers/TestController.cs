@@ -30,5 +30,6 @@ namespace QuizzApp.Controllers
                 throw new UnableToFetchException("Unable to get Questions");
             }
         }
+
     }
 }
