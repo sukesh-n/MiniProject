@@ -17,7 +17,7 @@ namespace QuizzApp.Repositories
         {
             try
             {
-                var duplicate = _context.options.FirstOrDefault(o => o.QuestionId == entity.QuestionId && o.OptionDescription == entity.OptionDescription);
+                var duplicate = _context.options.FirstOrDefault(o => o.QuestionId == entity.QuestionId && o.Value == entity.Value);
 
                 if (duplicate == null)
                 {
