@@ -2,9 +2,11 @@
 using QuizzApp.Models;
 using QuizzApp.Models.DTO;
 using QuizzApp.Models.DTO.AnalyseServiceDTO;
+using QuizzApp.Models.DTO.Test;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using static QuizzApp.Models.Option;
 
 namespace QuizzApp.Services
 {
@@ -61,26 +63,7 @@ namespace QuizzApp.Services
                 };
                 var SolutionResult = await _solutionRepository.AddAsync(solution);
             }
-            else if (questionSolutionDTO.Option != null)
-            {
-                foreach (var option in questionSolutionDTO.Option)
-                {
-                    var optionEntity = new OptionDTO()
-                    {
-                        QuestionId = QuestionResult.QuestionId,
-                        OptionDescription = option
-                        
-                    };
-
-                    var OptionResult = await _optionRepository.AddAsync(optionEntity);
-                }
-                solution = new Solution()
-                {
-                    QuestionId = QuestionResult.QuestionId,
-                   
-                };
-                var SolutionResult = await _solutionRepository.AddAsync(solution);
-            }
+            
 
             if (solution == null)
                 return false;
@@ -89,13 +72,11 @@ namespace QuizzApp.Services
 
             return true;
         }
-        public async Task<TestDTO> ConductCommonQuizAsync(List<User> candidates, Test quiz)
+        public async Task<TestDTO> ConductCommonQuizAsync(List<User> candidates, QuestionSelectionDTO questionSelectionDTO)
         {
-            await Task.Delay(1000); 
-
-            var testDTO = new TestDTO
+            TestDTO testDTO = new TestDTO()
             {
-                
+
             };
 
             return testDTO;
