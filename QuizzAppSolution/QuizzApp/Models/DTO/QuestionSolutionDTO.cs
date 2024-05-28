@@ -6,10 +6,16 @@
         public string MainCategory { get; set; } = string.Empty;
         public string SubCategory { get; set; } = string.Empty;
         public string QuestionType { get; set; } = string.Empty;
-        public double? NumericalAnswer { get; set; }
-        public bool? TrueFalseAnswer { get; set; }
+        public double? NumericalAnswer { get; set; } = null;
+        public bool? TrueFalseAnswer { get; set; } = null;
         public int QuestionDifficultyLevel { get; set; }
-        public OptionDTO? Option { get; set; }
-        public string CorrectAnswer { get; set; } = string.Empty;
+        public List<string> Options { get; set; } = new List<string>();
+
+        public string CorrectOptionAnswer { get; set; } = string.Empty;
+
     }
+    //public class OptionDTO
+    //{
+    //    public List<string> Options { get; set; }
+    //}
 }
