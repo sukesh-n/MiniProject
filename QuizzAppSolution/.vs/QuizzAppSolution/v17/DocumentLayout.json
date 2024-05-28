@@ -3,24 +3,119 @@
   "WorkspaceRootPath": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\repositories\\resultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\repositories\\resultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\repositories\\questionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\repositories\\questionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\repositories\\optionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\repositories\\optionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\questionsolutiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\questionsolutiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\solution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\solution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\solutiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\solutiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\optiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\optiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\option.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\option.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\userservicesdto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\userservicesdto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\repositories\\solutionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\repositories\\solutionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\userservicesdto\\loginreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\userservicesdto\\loginreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\repositories\\securityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\repositories\\securityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\token\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\token\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\interfaces\\iadmininterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\interfaces\\iadmininterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\interfaces\\icommonquestioninterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\interfaces\\icommonquestioninterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\controllers\\candidatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\controllers\\candidatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\questionwithcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\questionwithcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Controllers\\AdminController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\repositories\\securityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\repositories\\securityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\security.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,23 +126,8 @@
       "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\interfaces\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\interfaces\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\token\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\token\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\services\\organizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,15 +153,7 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\userservicesdto\\loginreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\userservicesdto\\loginreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Models\\DTO\\LoginReturnDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\PizzaStoreSolution\\PizzaStore\\Controllers\\AdminController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -91,40 +163,12 @@
       "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\userservicesdto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\userservicesdto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\userservicesdto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\controllers\\candidatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\controllers\\candidatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\interfaces\\iadmininterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\interfaces\\iadmininterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\solution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\solution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Migrations\\20240527084822_RelationUpdateDataSet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QuizzApp\\Migrations\\20240527084822_RelationUpdateDataSet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\option.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\option.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -139,28 +183,8 @@
       "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\context\\quizzappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\solutiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\solutiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\analyseservicedto\\resultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\analyseservicedto\\resultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\questionwithcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\questionwithcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\questionsolutiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\questionsolutiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\models\\dto\\optiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|solutionrelative:quizzapp\\models\\dto\\optiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2669F95D-02E2-4D85-A880-D1F48E7EAD9B}|QuizzApp\\QuizzApp.csproj|c:\\users\\vc\\desktop\\git\\git_push\\miniproject\\quizzappsolution\\quizzapp\\migrations\\20240527085249_relationupdatedataset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -182,7 +206,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -190,306 +214,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\UserService.cs",
-              "RelativeToolTip": "QuizzApp\\Services\\UserService.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAnwCIAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T09:15:55.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\User.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\User.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:54:39.631Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "QuizzApp\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAmwBkAAAAVAAAA",
+              "Title": "ResultRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\ResultRepository.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\ResultRepository.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\ResultRepository.cs",
+              "RelativeToolTip": "QuizzApp\\Repositories\\ResultRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T10:57:30.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Program.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Program.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Program.cs",
-              "RelativeToolTip": "QuizzApp\\Program.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAQwFcAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T10:36:10.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "QuizzApp\\Controllers\\LoginController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvyIAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:56:48.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Security.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Security.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\Security.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Security.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\Security.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:46:41.111Z",
+              "WhenOpened": "2024-05-28T07:44:43.207Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SecurityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\SecurityRepository.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\SecurityRepository.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\SecurityRepository.cs",
-              "RelativeToolTip": "QuizzApp\\Repositories\\SecurityRepository.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAvwC8AAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:35:22.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "QuizzApp\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:56:26.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "LoginReturnDTO.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Models\\DTO\\LoginReturnDTO.cs",
-              "RelativeDocumentMoniker": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Models\\DTO\\LoginReturnDTO.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Models\\DTO\\LoginReturnDTO.cs",
-              "RelativeToolTip": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Models\\DTO\\LoginReturnDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T16:42:15.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Token\\TokenService.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Token\\TokenService.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Token\\TokenService.cs",
-              "RelativeToolTip": "QuizzApp\\Token\\TokenService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T17:11:04.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Program.cs",
-              "RelativeDocumentMoniker": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Program.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Program.cs",
-              "RelativeToolTip": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Program.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAEwAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T17:12:08.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ITokenService.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ITokenService.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\ITokenService.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ITokenService.cs",
-              "RelativeToolTip": "QuizzApp\\Interfaces\\ITokenService.cs",
+              "Title": "OptionsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\OptionsRepository.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\OptionsRepository.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\OptionsRepository.cs",
+              "RelativeToolTip": "QuizzApp\\Repositories\\OptionsRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T17:13:41.322Z",
+              "WhenOpened": "2024-05-28T07:44:40.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "AdminService.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\AdminService.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Services\\AdminService.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\AdminService.cs",
-              "RelativeToolTip": "QuizzApp\\Services\\AdminService.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAABoAAAAxAAAA",
+              "Title": "Option.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Option.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\Option.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Option.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\Option.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:34:49.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-27T08:46:01.069Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CandidateService.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\CandidateService.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Services\\CandidateService.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\CandidateService.cs",
-              "RelativeToolTip": "QuizzApp\\Services\\CandidateService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T17:10:37.327Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "OrganizerService.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\OrganizerService.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Services\\OrganizerService.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\OrganizerService.cs",
-              "RelativeToolTip": "QuizzApp\\Services\\OrganizerService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T17:10:44.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "LoginReturnDTO.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginReturnDTO.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginReturnDTO.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginReturnDTO.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginReturnDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T16:43:11.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Services\\UserService.cs",
-              "RelativeToolTip": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Services\\UserService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAswBMAAABwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T10:49:07.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IRepository.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\IRepository.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IRepository.cs",
-              "RelativeToolTip": "QuizzApp\\Interfaces\\IRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:34:12.85Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IUserRepository.cs",
-              "RelativeToolTip": "QuizzApp\\Interfaces\\IUserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T16:54:40.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ILoginInterface.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ILoginInterface.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\ILoginInterface.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ILoginInterface.cs",
-              "RelativeToolTip": "QuizzApp\\Interfaces\\ILoginInterface.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T09:04:09.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\CategoryRepository.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\CategoryRepository.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\CategoryRepository.cs",
-              "RelativeToolTip": "QuizzApp\\Repositories\\CategoryRepository.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:33:51.51Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginDTO.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginDTO.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:36:11.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\PizzaStoreSolution\\PizzaStore\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "..\\..\\Genspark_Training\\Day27\\PizzaStoreSolution\\PizzaStore\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\PizzaStoreSolution\\PizzaStore\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "..\\..\\Genspark_Training\\Day27\\PizzaStoreSolution\\PizzaStore\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:57:48.85Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 11,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\UserServicesDTO\\UserDTO.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\UserServicesDTO\\UserDTO.cs",
@@ -497,8 +260,190 @@
               "RelativeToolTip": "QuizzApp\\Models\\DTO\\UserServicesDTO\\UserDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T09:37:02.053Z",
+              "WhenOpened": "2024-05-27T09:37:02.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QuestionSolutionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionSolutionDTO.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\QuestionSolutionDTO.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionSolutionDTO.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\DTO\\QuestionSolutionDTO.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAADwvw8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:36:14.235Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SolutionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\SolutionDTO.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\SolutionDTO.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\SolutionDTO.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\DTO\\SolutionDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:36:17.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Solution.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Solution.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\Solution.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Solution.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\Solution.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:45:19.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QuestionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionDTO.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\QuestionDTO.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionDTO.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\DTO\\QuestionDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:36:13.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QuestionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\QuestionRepository.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\QuestionRepository.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\QuestionRepository.cs",
+              "RelativeToolTip": "QuizzApp\\Repositories\\QuestionRepository.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAIA3wCEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T06:10:39.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OptionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\OptionDTO.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\OptionDTO.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\OptionDTO.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\DTO\\OptionDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:36:12.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "QuizzApp\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAtwCkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:33:51.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Services\\AdminService.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\AdminService.cs",
+              "RelativeToolTip": "QuizzApp\\Services\\AdminService.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAowEEAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:34:49.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SolutionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\SolutionRepository.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\SolutionRepository.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\SolutionRepository.cs",
+              "RelativeToolTip": "QuizzApp\\Repositories\\SolutionRepository.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAhwCEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T06:25:32.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\Question.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Question.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\Question.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:46:21.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Category.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:36:07.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "QuizzApp\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAkwBkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:56:26.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LoginReturnDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginReturnDTO.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginReturnDTO.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginReturnDTO.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginReturnDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T16:43:11.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\UserService.cs",
+              "RelativeToolTip": "QuizzApp\\Services\\UserService.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAApwCwAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T09:15:55.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "QuizzApp\\Repositories\\UserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T10:57:30.955Z"
             },
             {
               "$type": "Document",
@@ -508,25 +453,265 @@
               "RelativeDocumentMoniker": "QuizzApp\\Controllers\\CandidateController.cs",
               "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\CandidateController.cs",
               "RelativeToolTip": "QuizzApp\\Controllers\\CandidateController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T09:32:07.907Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Program.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Program.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Program.cs",
+              "RelativeToolTip": "QuizzApp\\Program.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAgwGYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T10:36:10.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Token\\TokenService.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Token\\TokenService.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Token\\TokenService.cs",
+              "RelativeToolTip": "QuizzApp\\Token\\TokenService.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAQwBUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T17:11:04.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "QuizzApp\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAhwCIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:56:48.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "IAdminInterface.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IAdminInterface.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\IAdminInterface.cs",
               "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IAdminInterface.cs",
               "RelativeToolTip": "QuizzApp\\Interfaces\\IAdminInterface.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T09:16:08.296Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 25,
+              "Title": "QuestionWithCategoryDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionWithCategoryDTO.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\QuestionWithCategoryDTO.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionWithCategoryDTO.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\DTO\\QuestionWithCategoryDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:36:15.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ICommonQuestionInterface.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ICommonQuestionInterface.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\ICommonQuestionInterface.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ICommonQuestionInterface.cs",
+              "RelativeToolTip": "QuizzApp\\Interfaces\\ICommonQuestionInterface.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T04:24:35.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "OrganizerController.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\OrganizerController.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Controllers\\OrganizerController.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Controllers\\OrganizerController.cs",
+              "RelativeToolTip": "QuizzApp\\Controllers\\OrganizerController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T04:06:13.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T03:53:58.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SecurityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\SecurityRepository.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Repositories\\SecurityRepository.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Repositories\\SecurityRepository.cs",
+              "RelativeToolTip": "QuizzApp\\Repositories\\SecurityRepository.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAvwC8AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:35:22.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Security.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Security.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\Security.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Security.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\Security.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:46:41.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\User.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\User.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:54:39.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "LoginReturnDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Models\\DTO\\LoginReturnDTO.cs",
+              "RelativeDocumentMoniker": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Models\\DTO\\LoginReturnDTO.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Models\\DTO\\LoginReturnDTO.cs",
+              "RelativeToolTip": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Models\\DTO\\LoginReturnDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T16:42:15.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ITokenService.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\ITokenService.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ITokenService.cs",
+              "RelativeToolTip": "QuizzApp\\Interfaces\\ITokenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T17:13:41.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "CandidateService.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\CandidateService.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Services\\CandidateService.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\CandidateService.cs",
+              "RelativeToolTip": "QuizzApp\\Services\\CandidateService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T17:10:37.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "OrganizerService.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\OrganizerService.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Services\\OrganizerService.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Services\\OrganizerService.cs",
+              "RelativeToolTip": "QuizzApp\\Services\\OrganizerService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T17:10:44.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Services\\UserService.cs",
+              "RelativeToolTip": "..\\..\\Genspark_Training\\Day27\\UserLoginTraining1705Solution\\UserLoginTraining1705\\Services\\UserService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAswBMAAABwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T10:49:07.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\IRepository.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "QuizzApp\\Interfaces\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:34:12.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "QuizzApp\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T16:54:40.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ILoginInterface.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ILoginInterface.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Interfaces\\ILoginInterface.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Interfaces\\ILoginInterface.cs",
+              "RelativeToolTip": "QuizzApp\\Interfaces\\ILoginInterface.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T09:04:09.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginDTO.cs",
+              "RelativeToolTip": "QuizzApp\\Models\\DTO\\UserServicesDTO\\LoginDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:36:11.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\PizzaStoreSolution\\PizzaStore\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "..\\..\\Genspark_Training\\Day27\\PizzaStoreSolution\\PizzaStore\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\Genspark_Training\\Day27\\PizzaStoreSolution\\PizzaStore\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "..\\..\\Genspark_Training\\Day27\\PizzaStoreSolution\\PizzaStore\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:57:48.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
               "Title": "20240527085249_RelationUpdateDataSet.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Migrations\\20240527085249_RelationUpdateDataSet.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Migrations\\20240527085249_RelationUpdateDataSet.cs",
@@ -538,7 +723,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 41,
               "Title": "20240527084822_RelationUpdateDataSet.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Migrations\\20240527084822_RelationUpdateDataSet.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Migrations\\20240527084822_RelationUpdateDataSet.cs",
@@ -550,7 +735,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 42,
               "Title": "Result.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Result.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Models\\Result.cs",
@@ -562,43 +747,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Question.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Question.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\Question.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Question.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\Question.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:46:21.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Solution.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Solution.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\Solution.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Solution.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\Solution.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:45:19.611Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Option.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Option.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\Option.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Option.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\Option.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA4AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:46:01.069Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 48,
               "Title": "20240527084309_InitialDataSet.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Migrations\\20240527084309_InitialDataSet.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Migrations\\20240527084309_InitialDataSet.cs",
@@ -610,7 +759,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 44,
               "Title": "TestDTO.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\TestDTO.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\TestDTO.cs",
@@ -622,7 +771,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 43,
               "Title": "Test.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Test.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Models\\Test.cs",
@@ -634,7 +783,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 49,
               "Title": "20240527083759_Usertable.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Migrations\\20240527083759_Usertable.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Migrations\\20240527083759_Usertable.cs",
@@ -646,67 +795,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "QuestionSolutionDTO.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionSolutionDTO.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\QuestionSolutionDTO.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionSolutionDTO.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\DTO\\QuestionSolutionDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:36:14.235Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\Category.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\Category.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:36:07.913Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "QuestionWithCategoryDTO.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionWithCategoryDTO.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\QuestionWithCategoryDTO.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionWithCategoryDTO.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\DTO\\QuestionWithCategoryDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:36:15.458Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "QuestionDTO.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionDTO.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\QuestionDTO.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\QuestionDTO.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\DTO\\QuestionDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:36:13.25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "OptionDTO.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\OptionDTO.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\OptionDTO.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\OptionDTO.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\DTO\\OptionDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:36:12.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 45,
               "Title": "QuizzAppContext.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Context\\QuizzAppContext.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Context\\QuizzAppContext.cs",
@@ -718,7 +807,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 46,
               "Title": "ResultDTO.cs",
               "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\AnalyseServiceDTO\\ResultDTO.cs",
               "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\AnalyseServiceDTO\\ResultDTO.cs",
@@ -727,18 +816,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T08:36:16.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "SolutionDTO.cs",
-              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\SolutionDTO.cs",
-              "RelativeDocumentMoniker": "QuizzApp\\Models\\DTO\\SolutionDTO.cs",
-              "ToolTip": "C:\\Users\\vc\\Desktop\\Git\\git_push\\MiniProject\\QuizzAppSolution\\QuizzApp\\Models\\DTO\\SolutionDTO.cs",
-              "RelativeToolTip": "QuizzApp\\Models\\DTO\\SolutionDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:36:17.476Z"
             }
           ]
         }
