@@ -9,11 +9,10 @@ namespace QuizzApp.Models
         public int SolutionId { get; set; }
         [ForeignKey("Question")]
         public int QuestionId { get; set; }
-        public int? OptionId { get; set; }
-        public double? NumericalAnswer { get; set; } 
-        public bool? TrueFalseAnswer { get; set; }
-
-        public Option Option { get; set; }
+        public string CorrectOptionAnswer { get; set; } = string.Empty;
+        public double? NumericalAnswer { get; set; } = null;
+        public bool? TrueFalseAnswer { get; set; } = null;
+        public Option? Option { get; set; }
         public Question Question { get; set; }
 
 
