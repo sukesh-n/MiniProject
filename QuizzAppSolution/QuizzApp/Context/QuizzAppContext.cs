@@ -16,5 +16,10 @@ namespace QuizzApp.Context
         public DbSet<Option> options { get; set; }
         public DbSet<Test> tests { get; set; }
         public DbSet<Result> results { get; set; }
+        public DbSet<AssignedQuestions> assignedQuestions { get; set; }
+        public DbSet<AssignedTest> assignedTests { get; set; }
+        public DbSet<AssignedTestEmail> assignedTestEmails { get; set; }
+
+
     }
 }

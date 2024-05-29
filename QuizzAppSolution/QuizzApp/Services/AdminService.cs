@@ -1,4 +1,5 @@
 ﻿using QuizzApp.Interfaces;
+using QuizzApp.Interfaces.Solutions;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO;
 using QuizzApp.Models.DTO.AnalyseServiceDTO;
@@ -12,16 +13,16 @@ namespace QuizzApp.Services
 {
     public class AdminService : IAdminService
     {
-        private readonly IRepository<int,Question> _questionRepository;
-        private readonly IRepository<int,Category> _categoryRepository;
-        private readonly IRepository<int,Solution> _solutionRepository;
+        private readonly IQuestionRepository _questionRepository;
+        private readonly ICategoryRepository _categoryRepository;
+        private readonly ISolutionRepository _solutionRepository;
         private readonly IRepository<int,Test> _testRepository;
         private readonly IRepository<int,Result> _resultrepository;
         private readonly IRepository<int,Models.Option> _optionRepository;
         private readonly IRepository<int,Security> _securityRepository;
         private readonly IUserRepository _userRepository;
 
-        public AdminService(IRepository<int, Question> questionRepository, IRepository<int, Category> categoryRepository, IRepository<int, Solution> solutionRepository, IRepository<int, Test> testRepository, IRepository<int, Result> resultrepository, IRepository<int, Models.Option> optionRepository, IRepository<int, Security> securityRepository, IUserRepository userRepository)
+        public AdminService(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, ISolutionRepository solutionRepository, IRepository<int, Test> testRepository, IRepository<int, Result> resultrepository, IRepository<int, Models.Option> optionRepository, IRepository<int, Security> securityRepository, IUserRepository userRepository)
         {
             _questionRepository = questionRepository;
             _categoryRepository = categoryRepository;
@@ -34,9 +35,9 @@ namespace QuizzApp.Services
         }
 
         
-        public async Task<TestDTO> ConductCommonQuizAsync(List<User> candidates, QuestionSelectionDTO questionSelectionDTO)
+        public async Task<TestAssignDTO> ConductCommonQuizAsync(List<User> candidates, QuestionSelectionDTO questionSelectionDTO)
         {
-            TestDTO testDTO = new TestDTO()
+            TestAssignDTO testDTO = new TestAssignDTO()
             {
 
             };
@@ -54,5 +55,7 @@ namespace QuizzApp.Services
         {
             throw new NotImplementedException();
         }
+
+
     }
 }

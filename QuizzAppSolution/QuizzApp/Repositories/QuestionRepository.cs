@@ -3,9 +3,10 @@ using QuizzApp.Interfaces;
 using QuizzApp.Models;
 using Microsoft.EntityFrameworkCore;
 using QuizzApp.Exceptions;
+using QuizzApp.Models.DTO.Test;
 namespace QuizzApp.Repositories
 {
-    public class QuestionRepository : IRepository<int, Question>
+    public class QuestionRepository : IQuestionRepository
     {
         private readonly QuizzAppContext _context;
 
@@ -44,6 +45,74 @@ namespace QuizzApp.Repositories
         }
 
         public Task<Question> GetAsync(int Key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<Question>> GetFilteredQuestions(QuestionSelectionDTO questionSelectionDTO, List<int> categoryIds)
+        {
+            try
+            {
+                IQueryable<Question> query = _context.questions;
+
+                if (questionSelectionDTO != null)
+                {
+                    if (questionSelectionDTO.DifficultyLevel != 0)
+                    {
+                        query = query.Where(q => q.DifficultyLevel == questionSelectionDTO.DifficultyLevel);
+                    }
+                    if (!string.IsNullOrEmpty(questionSelectionDTO.Type))
+                    {
+                        query = query.Where(q => q.QuestionType == questionSelectionDTO.Type);
+                    }
+                }
+
+                if (categoryIds != null && categoryIds.Any())
+                {
+                    query = query.Where(q => categoryIds.Contains(q.CategoryId));
+                }
+
+                if (questionSelectionDTO?.NoOfQuestions > 0)
+                {
+                    query = query.Take(questionSelectionDTO.NoOfQuestions);
+                }
+
+                return await query.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Unable to retrieve filtered questions", ex);
+            }
+        }
+
+
+        public async Task<List<QuestionTypeCount>> GetTypesAndTheirCount()
+        {
+            try
+            {
+                var typeCounts = await _context.questions
+                    .GroupBy(q => q.QuestionType)
+                    .Select(g => new QuestionTypeCount
+                    {
+                        Type = g.Key,
+                        Count = g.Count()
+                    })
+                    .ToListAsync();
+
+                return typeCounts;
+            }
+            catch (Exception ex)
+            {
+                throw new UnableToFetchException("Unable to retrieve question types and their counts", ex);
+            }
+        }
+
+        public Task<List<QuestionTypeCount>> GetTypesAndTheirCount(int DifficultyLevel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<QuestionTypeCountBasedOnCategory>> GetTypesAndTheirCountByCategory(string MainCategory, string SubCategory)
         {
             throw new NotImplementedException();
         }

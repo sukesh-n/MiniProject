@@ -22,6 +22,74 @@ namespace QuizzApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("QuizzApp.Models.AssignedQuestions", b =>
+                {
+                    b.Property<int>("TestId")
+                        .HasColumnType("int");
+
+                    b.ToTable("assignedQuestions");
+                });
+
+            modelBuilder.Entity("QuizzApp.Models.AssignedTest", b =>
+                {
+                    b.Property<int>("AssignmentNo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AssignmentNo"), 1L, 1);
+
+                    b.Property<int>("AssignedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndTimeWindow")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartTimeWindow")
+                        .HasColumnType("datetime2");
+
+                    b.Property<TimeSpan>("TestDurationInMinutes")
+                        .HasColumnType("time");
+
+                    b.Property<string>("TestName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AssignmentNo");
+
+                    b.ToTable("assignedTests");
+                });
+
+            modelBuilder.Entity("QuizzApp.Models.AssignedTestEmail", b =>
+                {
+                    b.Property<int>("AssignmentNumber")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AssignmentNumber"), 1L, 1);
+
+                    b.Property<int?>("AssignedTestAssignmentNo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsCandidate")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsOrganizer")
+                        .HasColumnType("bit");
+
+                    b.HasKey("AssignmentNumber");
+
+                    b.HasIndex("AssignedTestAssignmentNo");
+
+                    b.ToTable("assignedTestEmails");
+                });
+
             modelBuilder.Entity("QuizzApp.Models.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -38,12 +106,7 @@ namespace QuizzApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TestId")
-                        .HasColumnType("int");
-
                     b.HasKey("CategoryId");
-
-                    b.HasIndex("TestId");
 
                     b.ToTable("categories");
                 });
@@ -98,12 +161,7 @@ namespace QuizzApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TestId")
-                        .HasColumnType("int");
-
                     b.HasKey("QuestionId");
-
-                    b.HasIndex("TestId");
 
                     b.ToTable("questions");
                 });
@@ -197,14 +255,25 @@ namespace QuizzApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TestId"), 1L, 1);
 
+                    b.Property<int?>("AssignmentNo")
+                        .HasColumnType("int");
+
                     b.Property<int>("QuestionsCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("StatusOfTest")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("TestEndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("TestStartDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("TestType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -244,11 +313,11 @@ namespace QuizzApp.Migrations
                     b.ToTable("users");
                 });
 
-            modelBuilder.Entity("QuizzApp.Models.Category", b =>
+            modelBuilder.Entity("QuizzApp.Models.AssignedTestEmail", b =>
                 {
-                    b.HasOne("QuizzApp.Models.Test", null)
-                        .WithMany("Categories")
-                        .HasForeignKey("TestId");
+                    b.HasOne("QuizzApp.Models.AssignedTest", null)
+                        .WithMany("AssignedTo")
+                        .HasForeignKey("AssignedTestAssignmentNo");
                 });
 
             modelBuilder.Entity("QuizzApp.Models.Option", b =>
@@ -260,13 +329,6 @@ namespace QuizzApp.Migrations
                         .IsRequired();
 
                     b.Navigation("Question");
-                });
-
-            modelBuilder.Entity("QuizzApp.Models.Question", b =>
-                {
-                    b.HasOne("QuizzApp.Models.Test", null)
-                        .WithMany("Questions")
-                        .HasForeignKey("TestId");
                 });
 
             modelBuilder.Entity("QuizzApp.Models.Result", b =>
@@ -319,11 +381,9 @@ namespace QuizzApp.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("QuizzApp.Models.Test", b =>
+            modelBuilder.Entity("QuizzApp.Models.AssignedTest", b =>
                 {
-                    b.Navigation("Categories");
-
-                    b.Navigation("Questions");
+                    b.Navigation("AssignedTo");
                 });
 #pragma warning restore 612, 618
         }

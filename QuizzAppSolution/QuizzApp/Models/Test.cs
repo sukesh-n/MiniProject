@@ -11,21 +11,11 @@ namespace QuizzApp.Models
         public DateTime TestEndDate { get; set; }
         [ForeignKey("User")]
         public int UserId { get; set; }
+        public string TestType { get; set; } = "custom";
+        [ForeignKey("AssignedTest")]
+        public int? AssignmentNo {  get; set; } 
+        public string StatusOfTest { get; set; } = "Not Attended";
         public int QuestionsCount { get; set; }
-        public ICollection<Category> Categories { get; set; }
-        public ICollection<Question> Questions { get; set; }
         public User User { get; set; }
-        public Test()
-        {
-            Categories = new List<Category>();
-            Questions = new List<Question>();
-        }
-
-        // Constructor with parameters
-        public Test(ICollection<Category> categories, ICollection<Question> questions)
-        {
-            Categories = categories ?? new List<Category>();
-            Questions = questions ?? new List<Question>();
-        }
     }
 }

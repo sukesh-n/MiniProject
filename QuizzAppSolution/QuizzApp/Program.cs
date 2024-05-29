@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using QuizzApp.Context;
 using QuizzApp.Interfaces;
+using QuizzApp.Interfaces.Solutions;
 using QuizzApp.Models;
 using QuizzApp.Repositories;
 using QuizzApp.Services;
@@ -72,9 +73,9 @@ namespace QuizzApp
             #endregion
             #region Method
             builder.Services.AddScoped<IUserRepository, UserRepository>();
-            builder.Services.AddScoped<IRepository<int, Question>, QuestionRepository>();
-            builder.Services.AddScoped<IRepository<int, Category>, CategoryRepository>();
-            builder.Services.AddScoped<IRepository<int, Solution>, SolutionRepository>();
+            builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<ISolutionRepository, SolutionRepository>();
             builder.Services.AddScoped<IRepository<int, Test>, TestRepository>();
             builder.Services.AddScoped<IRepository<int, Result>, ResultRepository>();
             builder.Services.AddScoped<IRepository<int, Option>, OptionsRepository>();
@@ -87,6 +88,8 @@ namespace QuizzApp
             builder.Services.AddScoped<ILoginService, UserService>();
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<IQuestionService, QuestionServices>();
+            builder.Services.AddScoped<ISolutionService, SolutionService>();
+            builder.Services.AddScoped<IOrganizerService, OrganizerService>();
             #endregion
 
 

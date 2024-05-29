@@ -1,6 +1,7 @@
 ﻿namespace QuizzApp.Services
 {
-    public class ResultService
+    public class ResultService 
     {
+
     }
 }

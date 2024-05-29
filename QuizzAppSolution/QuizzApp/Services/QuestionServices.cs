@@ -1,6 +1,9 @@
-﻿using QuizzApp.Interfaces;
+﻿using QuizzApp.Exceptions;
+using QuizzApp.Interfaces;
+using QuizzApp.Interfaces.Solutions;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO;
+using QuizzApp.Models.DTO.Test;
 using QuizzApp.Repositories;
 using static QuizzApp.Models.Option;
 
@@ -8,18 +11,19 @@ namespace QuizzApp.Services
 {
     public class QuestionServices : IQuestionService
     {
-        private readonly IRepository<int, Question> _questionRepository;
-        private readonly IRepository<int, Solution> _solutionRepository;
+        private readonly IQuestionRepository _questionRepository;
+        private readonly ISolutionRepository _solutionRepository;
         private readonly IRepository<int, Option> _optionRepository;
-        private readonly IRepository<int, Category> _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public QuestionServices(IRepository<int, Question> questionRepository, IRepository<int, Solution> solutionRepository, IRepository<int, Option> optionRepository, IRepository<int, Category> categoryRepository)
+        public QuestionServices(IQuestionRepository questionRepository, ISolutionRepository solutionRepository, IRepository<int, Option> optionRepository, ICategoryRepository categoryRepository)
         {
             _questionRepository = questionRepository;
             _solutionRepository = solutionRepository;
             _optionRepository = optionRepository;
             _categoryRepository = categoryRepository;
         }
+
         public async Task<bool> AddQuestionWithAnswerAsync(QuestionSolutionDTO questionSolutionDTO)
         {
 
@@ -79,14 +83,77 @@ namespace QuizzApp.Services
 
             return true;
         }
-        public Task<QuestionWithCategoryDTO> GetQuestionWithCategory(QuestionWithCategoryDTO questionWithCategoryDTO)
+
+        public async Task<List<Category>> GetAllCategoriesAsync()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var categories = await _categoryRepository.GetAllAsync();
+                if (categories == null || !categories.Any())
+                {
+                    throw new EmptyDatabaseException("No categories");
+                }
+                return categories.ToList();
+            }
+            catch (EmptyDatabaseException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new UnableToFetchException("Unable to get categories", ex);
+            }
+        }
+
+        public async Task<List<Question>> GetQuestionWithCategory(QuestionSelectionDTO questionSelectionDTO)
+        {
+            try
+            {
+                var CategoryIds = new List<int>();
+                var questionSelectionDTONullRemoval = new QuestionSelectionDTO();
+
+                if (questionSelectionDTO.NoOfQuestions != 0)
+                    questionSelectionDTONullRemoval.NoOfQuestions = questionSelectionDTO.NoOfQuestions;
+                else
+                    questionSelectionDTONullRemoval.NoOfQuestions = 5;
+
+
+
+                if (questionSelectionDTO.SubCategory != null)
+                    if (questionSelectionDTO.MainCategory == null)
+                        throw new InvalidFormatException("sub category cannot be found without main category");
+                if (questionSelectionDTO.MainCategory != null)
+                {
+                    CategoryIds = await _categoryRepository.GetCategoryId(questionSelectionDTO.MainCategory, questionSelectionDTO.SubCategory);
+                    if (CategoryIds == null)
+                        throw new EmptyRepositoryException("No category found");
+                }
+
+
+                if (questionSelectionDTO.DifficultyLevel != 0)
+                    questionSelectionDTONullRemoval.DifficultyLevel = questionSelectionDTO.DifficultyLevel;
+
+                if (questionSelectionDTO.Type != null)
+                    questionSelectionDTONullRemoval.Type = questionSelectionDTO.Type;
+
+                
+                var questionList = await _questionRepository.GetFilteredQuestions(questionSelectionDTONullRemoval, CategoryIds);
+                if (questionList == null)
+                {
+                    throw new EmptyRepositoryException("No questions found");
+                }
+                return questionList;
+            }
+            catch
+            {
+                throw new UnableToFetchException("Unable to get Questions");
+            }
         }
 
         public Task<QuestionSolutionDTO> UpdateQuestionsWithSolution(QuestionSolutionDTO questionSolutionDTO)
         {
             throw new NotImplementedException();
         }
+
     }
 }

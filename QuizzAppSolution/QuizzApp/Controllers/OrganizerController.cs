@@ -9,8 +9,8 @@ namespace QuizzApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles ="admin")]
-    [Authorize(Roles = "organizer")]
+    //[Authorize(Roles ="admin")]
+    //[Authorize(Roles = "organizer")]
     public class OrganizerController : ControllerBase
     {
         private readonly IOrganizerService _organizerService;
@@ -21,16 +21,29 @@ namespace QuizzApp.Controllers
         }
 
         [HttpPut("AssignTest")]
-        public async Task<IActionResult> AssignTest(QuestionSelectionDTO questionSelectionDTO,TestAssignDTO testAssignDTO)
+        public async Task<IActionResult> AssignTestForUsers([FromBody] AssignTestRequestDTO requestDTO)
         {
             try
             {
-                var assign = await _organizerService.AssignTest(testAssignDTO, questionSelectionDTO);
+                var assign = await _organizerService.AssignTest(requestDTO.TestAssignDTO, requestDTO.QuestionSelectionDTO);
                 return Ok(assign);
             }
             catch
             {
                 throw new UnableToAddException("Unable to assign Question");
+            }
+        }
+        [HttpPut("GetQuestions")]
+        public async Task<IActionResult> GetQuestions(QuestionSelectionDTO questionSelectionDTO)
+        {
+            try
+            {
+                var getQuestion = await _organizerService.GenerateQuizzApiWithSolution(questionSelectionDTO);
+                return Ok(getQuestion);
+            }
+            catch
+            {
+                throw new UnableToFetchException("Unable to fetch");
             }
         }
     }

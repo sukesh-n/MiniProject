@@ -1,6 +1,9 @@
-﻿namespace QuizzApp.Services
+﻿using QuizzApp.Interfaces.Test;
+
+namespace QuizzApp.Services
 {
-    public class TestService
+    public class TestService 
     {
+
     }
 }

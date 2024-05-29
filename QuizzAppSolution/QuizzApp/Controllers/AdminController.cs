@@ -13,6 +13,7 @@ namespace QuizzApp.Controllers
     {
         private readonly IAdminService _adminInterface;
         private readonly IQuestionService _questionService;
+        
 
         public AdminController(IAdminService adminInterface, IQuestionService questionService)
         {
@@ -48,12 +49,12 @@ namespace QuizzApp.Controllers
             }
         }
 
-        [HttpGet("GetQuestionByCategory")]
-        public async Task<IActionResult> GetQuestionBasedOnCategory(QuestionWithCategoryDTO questionWithCategoryDTO)
+        [HttpGet("GetCategories")]
+        public async Task<IActionResult> GetQuestionBasedOnCategory()
         {
             try
             {
-                var GetQuestion = await _questionService.GetQuestionWithCategory(questionWithCategoryDTO);
+                var GetQuestion = await _questionService.GetAllCategoriesAsync();
                 return Ok(GetQuestion);
             }
             catch

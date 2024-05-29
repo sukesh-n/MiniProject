@@ -1,11 +1,16 @@
-﻿using QuizzApp.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using QuizzApp.Context;
 using QuizzApp.Exceptions;
-using QuizzApp.Interfaces;
+using QuizzApp.Interfaces.Solutions;
 using QuizzApp.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace QuizzApp.Repositories
 {
-    public class SolutionRepository : IRepository<int, Solution>
+    public class SolutionRepository : ISolutionRepository
     {
         private readonly QuizzAppContext _context;
 
@@ -46,6 +51,20 @@ namespace QuizzApp.Repositories
         public Task<Solution> GetAsync(int Key)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<Solution>> GetSolutions(List<int> questionIds)
+        {
+            try
+            {
+                return await _context.solutions
+                    .Where(solution => questionIds.Contains(solution.QuestionId))
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error occurred while fetching solutions", ex);
+            }
         }
 
         public Task<Solution> UpdateAsync(Solution entity)
