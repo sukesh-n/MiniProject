@@ -11,9 +11,9 @@ namespace QuizzApp.Controllers
     
     public class TestController : ControllerBase
     {
-        private readonly ITestInterface _testInterface;
+        private readonly ITestService _testInterface;
 
-        public TestController(ITestInterface testInterface)
+        public TestController(ITestService testInterface)
         {
             _testInterface = testInterface;
         }
