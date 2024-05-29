@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using QuizzApp.Exceptions;
+using QuizzApp.Interfaces;
+using QuizzApp.Models.DTO;
+using QuizzApp.Models.DTO.Test;
 
 namespace QuizzApp.Controllers
 {
@@ -7,8 +11,27 @@ namespace QuizzApp.Controllers
     [ApiController]
     [Authorize(Roles ="admin")]
     [Authorize(Roles = "organizer")]
-    public class OrganizerController
+    public class OrganizerController : ControllerBase
     {
+        private readonly IOrganizerService _organizerService;
 
+        public OrganizerController(IOrganizerService organizerService)
+        {
+            _organizerService = organizerService;
+        }
+
+        [HttpPut("AssignTest")]
+        public async Task<IActionResult> AssignTest(QuestionSelectionDTO questionSelectionDTO,TestAssignDTO testAssignDTO)
+        {
+            try
+            {
+                var assign = await _organizerService.AssignTest(testAssignDTO, questionSelectionDTO);
+                return Ok(assign);
+            }
+            catch
+            {
+                throw new UnableToAddException("Unable to assign Question");
+            }
+        }
     }
 }
