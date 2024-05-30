@@ -19,26 +19,32 @@ namespace QuizzApp.Repositories
         {
             try
             {
-                var VerifyDuplicate = await _context.users.FirstOrDefaultAsync(u=>u.UserEmail==entity.UserEmail);
-                if (VerifyDuplicate != null)
+                var existingUser = await _context.users.FirstOrDefaultAsync(u => u.UserEmail == entity.UserEmail && u.Role == entity.Role);
+
+                if (existingUser != null)
                 {
                     if (entity.Role.ToLower() == "admin")
                     {
                         throw new UnauthorizedException("You are not allowed this role");
                     }
-                    if (VerifyDuplicate.Role==entity.Role)
-                    {
-                        throw new UserAlreadyExistException($"User {entity.UserEmail} already with role {entity.Role}");
-                    }
-                    
+                    throw new UserAlreadyExistException($"User {entity.UserEmail} already exists with role {entity.Role}");
                 }
+
                 var result = await _context.AddAsync(entity);
                 await _context.SaveChangesAsync();
                 return result.Entity;
             }
-            catch
+            catch (UnauthorizedException)
             {
-                throw new ErrorInConnectingRepository("User cannot be added to Database");
+                throw;
+            }
+            catch (UserAlreadyExistException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("User cannot be added to Database", ex);
             }
         }
 
@@ -61,10 +67,62 @@ namespace QuizzApp.Repositories
             }
         }
 
+        public async Task<User> DeleteUserAsync(string? email, int? userId, string? role)
+        {
+            try
+            {
+                User userToDelete = null;
+
+                if (email != null && role != null)
+                {
+                    userToDelete = await _context.users.FirstOrDefaultAsync(u => u.UserEmail == email && u.Role == role);
+                }
+                else if (userId != null)
+                {
+                    userToDelete = await _context.users.FirstOrDefaultAsync(u => u.UserId == userId);
+                }
+                if (userToDelete != null)
+                {
+                    _context.users.Remove(userToDelete);
+                    await _context.SaveChangesAsync();
+                }
+
+                return userToDelete;
+            }
+            catch(Exception ex)
+            {
+                throw new ErrorInConnectingRepository();
+            }
+
+        }
+
         public Task<IEnumerable<User>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
+
+        public async Task<List<User>> GetAllDetailsByEmailsAsync(List<string> emails)
+        {
+            try
+            {
+                List<User> UserData = new List<User>();
+
+                foreach (var email in emails)
+                {
+                    var user = await _context.users.FirstOrDefaultAsync(u => u.UserEmail == email);
+                    if (user != null)
+                    {
+                        UserData.Add(user);
+                    }
+                }
+                return UserData;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository();
+            }
+        }
+
 
         public async Task<User> GetAsync(int Key)
         {
