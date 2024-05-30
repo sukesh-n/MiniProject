@@ -67,31 +67,29 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<List<int>> GetCategoryId(string MainCategory, string SubCategory)
+        public async Task<List<int>> GetCategoryId(string mainCategory, string subCategory)
         {
             try
             {
-                IQueryable<Category> query = _context.categories.Where(c => c.MainCategory == MainCategory);
-
-                if (!string.IsNullOrEmpty(SubCategory))
+                IQueryable<Category> query = _context.categories.Where(c => c.MainCategory == mainCategory);
+                if (!string.IsNullOrEmpty(subCategory))
                 {
-                    query = query.Where(c => c.SubCategory == SubCategory);
+                    query = query.Where(c => c.SubCategory == subCategory);
                 }
                 else
                 {
                     query = query.Where(c => c.SubCategory == null);
                 }
-
                 var categoryIds = await query.Select(c => c.CategoryId).ToListAsync();
-                if (categoryIds.Count <= 0)
-                {
-                    throw new NullReferenceException("Category not found");
-                }
                 return categoryIds;
+            }
+            catch (NullReferenceException ex)
+            {
+                return new List<int>();
             }
             catch (Exception ex)
             {
-                throw new ErrorInConnectingRepository("unable to reach server");
+                throw new ErrorInConnectingRepository("Error while retrieving category IDs.", ex);
             }
         }
 

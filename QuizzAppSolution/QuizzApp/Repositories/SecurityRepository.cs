@@ -29,9 +29,24 @@ namespace QuizzApp.Repositories
             }
         }
 
-        public Task<Security> DeleteAsync(int Key)
+        public async Task<Security> DeleteAsync(int Key)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var securityToDelete = await _context.security.FindAsync(Key);
+
+                if (securityToDelete != null)
+                {
+                    _context.security.Remove(securityToDelete);
+                    await _context.SaveChangesAsync();
+                }
+
+                return securityToDelete;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository(ex.Message, ex);
+            }
         }
 
         public Task<IEnumerable<Security>> GetAllAsync()
