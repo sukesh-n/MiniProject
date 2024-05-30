@@ -80,7 +80,7 @@ namespace QuizzApp.Services
                         var IspasswordSame = ComparePassword(Password, getSecurity.Password, getSecurity.PasswordHashKey);
                         if (IspasswordSame)
                         {
-                            if (getUser.Role.ToLower() != "Candidate")
+                            if (getUser.Role.ToLower() != "Candidate".ToLower())
                             {
                                 throw new UnauthorizedAccessException("Youre not admin");
                             }
@@ -193,6 +193,47 @@ namespace QuizzApp.Services
                 }
             }
             return true;
+        }
+
+        public async Task<bool> DeleteUser(string? email, int? userId, string? role)
+        {
+            try
+            {
+                if (role.ToLower() == "admin")
+                {
+                    throw new UnauthorizedException("Admin cannot be removed");
+                }
+                if (email == null)
+                {
+                    if (userId == null && role != null)
+                    {
+                        throw new InvalidFormatException("Only role cannot be defined");
+                    }
+                    if (role != null)
+                    {
+                        throw new InvalidFormatException("Only role cannot be defined");
+                    }
+                }
+                if (email != null && role == null)
+                {
+                    throw new InvalidFormatException("Role is mandatory in case of email method deletion");
+                }
+                var DeleteUser = await _userRepository.DeleteUserAsync(email, userId, role);
+                if (DeleteUser == null)
+                {
+                    throw new UnableToDeleteException("No user exists");
+                }
+                var DeleteSecurity = await _securityRepository.DeleteAsync(DeleteUser.UserId);
+                if (DeleteUser != null)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new UnableToDeleteException();
+            }
         }
     }
 }
