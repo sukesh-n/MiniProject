@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QuizzApp.Exceptions;
 using QuizzApp.Interfaces;
 using QuizzApp.Models;
@@ -78,6 +79,24 @@ namespace QuizzApp.Controllers
             catch
             {
                 throw new UnableToAddUserException("Error in adding User");
+            }
+        }
+
+        [HttpDelete("DeleteUser")]
+        public async Task<bool> DeleteUser(string? email,int? userId,string? role)
+        {
+            try
+            {
+                var DeleteResult = await _loginInterface.DeleteUser(email, userId, role);
+                return DeleteResult;
+            }
+            catch (Exception ex) 
+            {
+                throw;
+            }
+            catch
+            {
+                    throw new UnableToDeleteException();
             }
         }
     }
