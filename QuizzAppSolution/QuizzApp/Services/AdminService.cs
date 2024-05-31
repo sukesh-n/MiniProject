@@ -1,5 +1,6 @@
 ﻿using QuizzApp.Interfaces;
 using QuizzApp.Interfaces.Solutions;
+using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO;
 using QuizzApp.Models.DTO.AnalyseServiceDTO;
@@ -16,13 +17,13 @@ namespace QuizzApp.Services
         private readonly IQuestionRepository _questionRepository;
         private readonly ICategoryRepository _categoryRepository;
         private readonly ISolutionRepository _solutionRepository;
-        private readonly IRepository<int,Test> _testRepository;
+        private readonly ITestRepository _testRepository;
         private readonly IRepository<int,Result> _resultrepository;
         private readonly IRepository<int,Models.Option> _optionRepository;
         private readonly IRepository<int,Security> _securityRepository;
         private readonly IUserRepository _userRepository;
 
-        public AdminService(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, ISolutionRepository solutionRepository, IRepository<int, Test> testRepository, IRepository<int, Result> resultrepository, IRepository<int, Models.Option> optionRepository, IRepository<int, Security> securityRepository, IUserRepository userRepository)
+        public AdminService(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, ISolutionRepository solutionRepository, ITestRepository testRepository, IRepository<int, Result> resultrepository, IRepository<int, Models.Option> optionRepository, IRepository<int, Security> securityRepository, IUserRepository userRepository)
         {
             _questionRepository = questionRepository;
             _categoryRepository = categoryRepository;

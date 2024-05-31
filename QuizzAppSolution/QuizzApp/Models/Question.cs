@@ -12,6 +12,7 @@ namespace QuizzApp.Models
         [ForeignKey("Category")]
         public int CategoryId {  get; set; }
         public int DifficultyLevel { get; set; }
+        
 
 
     }

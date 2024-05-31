@@ -3,13 +3,13 @@ using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO.Test;
 
-namespace QuizzApp.Services
+namespace QuizzApp.Services.AddOnServices
 {
     public class NotificationService : INotificationService
     {
 
         private readonly IAssignedTestRepository _assignedTestRepository;
-        private readonly IRepository<int,Test> _testRepository;
+        private readonly IRepository<int, Test> _testRepository;
 
         public NotificationService(IAssignedTestRepository assignedTestRepository, IRepository<int, Test> testRepository)
         {

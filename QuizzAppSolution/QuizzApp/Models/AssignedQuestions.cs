@@ -11,6 +11,7 @@ namespace QuizzApp.Models
         public int TestId { get; set; }
 
         [ForeignKey("Question")]
-        public List<int> QuestionId { get; set; } = new List<int>();
+        public int QuestionId { get; set; }
+        public Question Question { get; set; }
     }
 }

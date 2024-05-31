@@ -2,27 +2,28 @@
 using QuizzApp.Interfaces;
 using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
+using QuizzApp.Models.DTO;
 
 namespace QuizzApp.Repositories
 {
     public class AssigningTestRepository : IAssignedTestRepository
     {
-        public Task<AssignedTest> AddAsync(AssignedTest entity)
+        public Task<TestAssignDTO> AddAsync(TestAssignDTO entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<AssignedTest> DeleteAsync(int Key)
+        public Task<TestAssignDTO> DeleteAsync(int Key)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<AssignedTest>> GetAllAsync()
+        public Task<IEnumerable<TestAssignDTO>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<AssignedTest> GetAsync(int Key)
+        public Task<TestAssignDTO> GetAsync(int Key)
         {
             throw new NotImplementedException();
         }
@@ -32,7 +33,7 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<AssignedTest> UpdateAsync(AssignedTest entity)
+        public Task<TestAssignDTO> UpdateAsync(TestAssignDTO entity)
         {
             throw new NotImplementedException();
         }

@@ -14,33 +14,44 @@ namespace QuizzApp.Services
         private readonly IQuestionRepository _questionRepository;
         private readonly ICategoryRepository _categoryRepository;
         private readonly ISolutionRepository _solutionRepository;
-        private readonly IRepository<int, Test> _testRepository;
+        private readonly ITestRepository _testRepository;
         private readonly IRepository<int, Result> _resultrepository;
         private readonly IRepository<int, Models.Option> _optionRepository;
         private readonly IQuestionService _questionService;
         private readonly ISolutionService _solutionService;
+        private readonly ITestService _testService;
         private readonly IAssignedTestRepository _assignedTestRepository;
         private readonly IAssignedTestEmailRepository _assignedTestEmailRepository;
         private readonly IAssignedQuestionRepository _assignedQuestionRepository;
         private readonly IUserRepository _userRepository;
-        public OrganizerService(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, ISolutionRepository solutionRepository, IRepository<int, Test> testRepository, IRepository<int, Result> resultrepository, IRepository<int, Option> optionRepository, IQuestionService questionService, ISolutionService solutionService, IUserRepository userRepository)
+        public OrganizerService(
+            IQuestionRepository questionRepository,
+            ICategoryRepository categoryRepository,
+            ISolutionRepository solutionRepository,
+            ITestRepository testRepository,
+            IRepository<int, Result> resultrepository,
+            IRepository<int, Option> optionRepository,
+            IQuestionService questionService,
+            ISolutionService solutionService,
+            IUserRepository userRepository,
+            IAssignedTestRepository assignedTestRepository,
+            IAssignedTestEmailRepository assignedTestEmailRepository,
+            IAssignedQuestionRepository assignedQuestionRepository,
+            ITestService testService)
         {
-            _questionRepository = questionRepository;
-            _categoryRepository = categoryRepository;
-            _solutionRepository = solutionRepository;
-            _testRepository = testRepository;
-            _resultrepository = resultrepository;
-            _optionRepository = optionRepository;
-            _questionService = questionService;
-            _solutionService = solutionService;
-            _userRepository = userRepository;
-        }
-
-        public OrganizerService(IAssignedTestRepository assignedTestRepository, IAssignedTestEmailRepository assignedTestEmailRepository, IAssignedQuestionRepository assignedQuestionRepository)
-        {
-            _assignedTestRepository = assignedTestRepository;
-            _assignedTestEmailRepository = assignedTestEmailRepository;
-            _assignedQuestionRepository = assignedQuestionRepository;
+            _questionRepository = questionRepository ?? throw new ArgumentNullException(nameof(questionRepository));
+            _categoryRepository = categoryRepository ?? throw new ArgumentNullException(nameof(categoryRepository));
+            _solutionRepository = solutionRepository ?? throw new ArgumentNullException(nameof(solutionRepository));
+            _testRepository = testRepository ?? throw new ArgumentNullException(nameof(testRepository));
+            _resultrepository = resultrepository ?? throw new ArgumentNullException(nameof(resultrepository));
+            _optionRepository = optionRepository ?? throw new ArgumentNullException(nameof(optionRepository));
+            _questionService = questionService ?? throw new ArgumentNullException(nameof(questionService));
+            _solutionService = solutionService ?? throw new ArgumentNullException(nameof(solutionService));
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+            _assignedTestRepository = assignedTestRepository ?? throw new ArgumentNullException(nameof(assignedTestRepository));
+            _assignedTestEmailRepository = assignedTestEmailRepository ?? throw new ArgumentNullException(nameof(assignedTestEmailRepository));
+            _assignedQuestionRepository = assignedQuestionRepository ?? throw new ArgumentNullException(nameof(assignedQuestionRepository));
+            _testService = testService ?? throw new ArgumentNullException(nameof(testService));
         }
 
         public async Task<List<QuestionSolutionDTO>> GenerateQuizzApiWithSolution(QuestionSelectionDTO questionSelectionDTO)
@@ -64,6 +75,7 @@ namespace QuizzApp.Services
                 {
                     var questionDTO = new QuestionSolutionDTO
                     {
+                        QuestionId = question.QuestionId,
                         QuestionDescription = question.QuestionDescription,
                         QuestionType = question.QuestionType
                     };
@@ -86,13 +98,14 @@ namespace QuizzApp.Services
                 throw new Exception(ex.Message);
             }
         }
-        public async Task<List<TestAssignDTO>> AssignTest(TestAssignDTO testAssignDTO, QuestionSelectionDTO questionSelectionDTO)
+        public async Task<TestAssignDTO> AssignTest(TestAssignDTO testAssignDTO, QuestionSelectionDTO questionSelectionDTO)
         {
             try
             {
+                // 1. Move to Question Service
                 var GetQuestionsWithSolution = await GenerateQuizzApiWithSolution(questionSelectionDTO);
                 var TestAssigner = await _assignedTestRepository.AddAsync(testAssignDTO);
-
+                // 2. Move to User Service
                 var EmailDetails = await _userRepository.GetAllDetailsByEmailsAsync(testAssignDTO.CandidateEmails);
                 List<AssignedTestEmailDTO> assignedTestEmails = new List<AssignedTestEmailDTO>();
                 foreach (var email in testAssignDTO.CandidateEmails)
@@ -125,8 +138,37 @@ namespace QuizzApp.Services
                 if (EmailUpload == false)
                 {
                     throw new UnableToAddException();
+                }                
+
+                var AddQuestion = await _assignedQuestionRepository.AddQuestionsForTest(TestAssigner.AssignmentNo, GetQuestionsWithSolution);
+
+                if (AddQuestion !=null )
+                {
+                    List<TestDTO> testDTOs = new List<TestDTO>();
+                    foreach (var emailDetail in EmailDetails)
+                    {
+                        TestDTO testDTO = new TestDTO();
+                        testDTO.UserId = emailDetail.UserId;
+                        testDTO.AssignmentNo = TestAssigner.AssignmentNo;
+                        testDTO.TestType = "Assignment";
+                        testDTO.QuestionsCount = GetQuestionsWithSolution.Count;
+                        
+
+                        testDTOs.Add(testDTO);
+                    }
+                    var PublishTestToCandidate = await _testService.PublishTest(testDTOs);
                 }
+                else
+                {
+                    throw new UnableToAddException();
+                }
+
                 return TestAssigner;
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 

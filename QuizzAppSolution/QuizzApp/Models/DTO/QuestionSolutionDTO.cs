@@ -2,6 +2,7 @@
 {
     public class QuestionSolutionDTO
     {
+        public int QuestionId { get; set; }
         public string QuestionDescription { get; set; } = string.Empty;
         public string MainCategory { get; set; } = string.Empty;
         public string SubCategory { get; set; } = string.Empty;

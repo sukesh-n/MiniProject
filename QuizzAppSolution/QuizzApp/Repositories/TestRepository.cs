@@ -1,30 +1,37 @@
 ﻿using QuizzApp.Interfaces;
+using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
 
 namespace QuizzApp.Repositories
 {
-    public class TestRepository : IRepository<int, Test>
+    public class TestRepository : ITestRepository
     {
-        public Task<Test> AddAsync(Test entity)
-        {
-            throw new NotImplementedException();
-        }
-        public Task<Test> DeleteAsync(int Key)
+        public Task<TestDTO> AddAsync(TestDTO entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Test>> GetAllAsync()
+        public Task<List<TestDTO>> AddTestListAsync(List<TestDTO> testDTOs)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Test> GetAsync(int Key)
+        public Task<TestDTO> DeleteAsync(int Key)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Test> UpdateAsync(Test entity)
+        public Task<IEnumerable<TestDTO>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TestDTO> GetAsync(int Key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TestDTO> UpdateAsync(TestDTO entity)
         {
             throw new NotImplementedException();
         }

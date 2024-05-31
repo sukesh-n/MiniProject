@@ -5,6 +5,7 @@ using Microsoft.OpenApi.Models;
 using QuizzApp.Context;
 using QuizzApp.Interfaces;
 using QuizzApp.Interfaces.Solutions;
+using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
 using QuizzApp.Repositories;
 using QuizzApp.Services;
@@ -76,10 +77,13 @@ namespace QuizzApp
             builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<ISolutionRepository, SolutionRepository>();
-            builder.Services.AddScoped<IRepository<int, Test>, TestRepository>();
+            builder.Services.AddScoped<ITestRepository, TestRepository>();
             builder.Services.AddScoped<IRepository<int, Result>, ResultRepository>();
             builder.Services.AddScoped<IRepository<int, Option>, OptionsRepository>();
             builder.Services.AddScoped<IRepository<int, Security>, SecurityRepository>();
+            builder.Services.AddScoped<IAssignedQuestionRepository, AssignedQuestionsRepository>();
+            builder.Services.AddScoped<IAssignedTestRepository, AssigningTestRepository>();
+            builder.Services.AddScoped<IAssignedTestEmailRepository, AssignedTestEmailRepository>();
             #endregion
 
             #region Service
@@ -90,6 +94,7 @@ namespace QuizzApp
             builder.Services.AddScoped<IQuestionService, QuestionServices>();
             builder.Services.AddScoped<ISolutionService, SolutionService>();
             builder.Services.AddScoped<IOrganizerService, OrganizerService>();
+            builder.Services.AddScoped<ITestService, TestService>();
             #endregion
 
 
