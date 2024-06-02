@@ -109,11 +109,11 @@ namespace QuizzApp.Repositories
 
                 foreach (var email in emails)
                 {
-                    var user = await _context.users.FirstOrDefaultAsync(u => u.UserEmail == email);
-                    if (user != null)
-                    {
-                        UserData.Add(user);
-                    }
+                    var users = await _context.users
+                        .Where(u => u.UserEmail == email)
+                        .ToListAsync();
+
+                    UserData.AddRange(users);
                 }
                 return UserData;
             }

@@ -27,8 +27,9 @@ namespace QuizzApp.Repositories
                 var status = false;
                 foreach (var email in assignedTestEmailDTO)
                 {
-                    var CheckDuplicate = _context.assignedTestEmails.FirstOrDefault(e=>e.Email==email.Email && e.AssignmentNumber==email.AssignmentNumber);
-                    if (CheckDuplicate != null) {
+                    var CheckDuplicate = _context.assignedTestEmails.FirstOrDefault(e => e.Email == email.Email && e.AssignmentNumber == email.AssignmentNumber);
+                    if (CheckDuplicate == null)
+                    {
 
                         var addDetail = await _context.assignedTestEmails.AddAsync(email);
                         await _context.SaveChangesAsync();

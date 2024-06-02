@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuizzApp.Context;
 
@@ -11,9 +12,10 @@ using QuizzApp.Context;
 namespace QuizzApp.Migrations
 {
     [DbContext(typeof(QuizzAppContext))]
-    partial class QuizzAppContextModelSnapshot : ModelSnapshot
+    [Migration("20240602181015_UpdatedAssignedQuestionsTable")]
+    partial class UpdatedAssignedQuestionsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,10 +29,13 @@ namespace QuizzApp.Migrations
                     b.Property<int>("AssignmentNumber")
                         .HasColumnType("int");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<int>("QuestionId")
                         .HasColumnType("int");
 
-                    b.HasKey("AssignmentNumber");
+                    b.HasIndex("AssignmentNumber");
 
                     b.HasIndex("QuestionId");
 

@@ -6,7 +6,7 @@ namespace QuizzApp.Interfaces
 {
     public interface IOrganizerService
     {
-        public Task<TestAssignDTO> AssignTest(TestAssignDTO testAssignDTO, QuestionSelectionDTO questionSelectionDTO);
+        public Task<TestAssign> AssignTest(TestAssign testAssignDTO, QuestionSelectionDTO questionSelectionDTO);
         public Task<List<QuestionSolutionDTO>> GenerateQuizzApiWithSolution(QuestionSelectionDTO questionSelectionDTO);
         
     }

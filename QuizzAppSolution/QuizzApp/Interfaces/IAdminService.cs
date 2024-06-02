@@ -8,7 +8,7 @@ namespace QuizzApp.Interfaces
     public interface IAdminService
     {
         
-        Task<TestAssignDTO> ConductCommonQuizAsync(List<User> candidates, QuestionSelectionDTO questionSelectionDTO);       
+        Task<TestAssign> ConductCommonQuizAsync(List<User> candidates, QuestionSelectionDTO questionSelectionDTO);       
         Task<ResultDTO> ViewResultAnalysis();
     }
 }

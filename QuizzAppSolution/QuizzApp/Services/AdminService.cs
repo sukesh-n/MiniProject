@@ -36,9 +36,9 @@ namespace QuizzApp.Services
         }
 
         
-        public async Task<TestAssignDTO> ConductCommonQuizAsync(List<User> candidates, QuestionSelectionDTO questionSelectionDTO)
+        public async Task<TestAssign> ConductCommonQuizAsync(List<User> candidates, QuestionSelectionDTO questionSelectionDTO)
         {
-            TestAssignDTO testDTO = new TestAssignDTO()
+            TestAssign testDTO = new TestAssign()
             {
 
             };

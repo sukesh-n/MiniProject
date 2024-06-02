@@ -6,8 +6,8 @@ namespace QuizzApp.Interfaces.Test
 {
     public interface ITestService
     {
-        public Task<TestAssignDTO> ChooseQuestion(QuestionSelectionDTO questionSelectionDTO); 
-        public Task<NotificationDTO> AssignTest(TestAssignDTO testDTO);
+        public Task<TestAssign> ChooseQuestion(QuestionSelectionDTO questionSelectionDTO); 
+        public Task<NotificationDTO> AssignTest(TestAssign testDTO);
         public Task<List<TestDTO>> PublishTest(List<TestDTO> testDTO);
     }
 }

@@ -19,7 +19,27 @@ namespace QuizzApp.Repositories
 
         public async Task<List<AssignedQuestions>> AddQuestionsForTest(int AssignmentNo, List<QuestionSolutionDTO> GetQuestionsWithSolution)
         {
-            throw new NotImplementedException(); new NotImplementedException();
+            try
+            {
+                List<AssignedQuestions> assignedQuestions = new List<AssignedQuestions>();
+                foreach (var item in GetQuestionsWithSolution)
+                {
+                    AssignedQuestions assignedQuestion = new AssignedQuestions
+                    {
+                        AssignmentNumber = AssignmentNo,
+                        QuestionId = item.QuestionId,
+
+                    };
+                    assignedQuestions.Add(assignedQuestion);
+                }
+                await _context.assignedQuestions.AddRangeAsync(assignedQuestions);
+                await _context.SaveChangesAsync();
+                return assignedQuestions;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Task<AssignedQuestions> DeleteAsync(int Key)

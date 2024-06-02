@@ -15,12 +15,12 @@ namespace QuizzApp.Services
             _testRepository = testRepository;
         }
 
-        public Task<NotificationDTO> AssignTest(TestAssignDTO testDTO)
+        public Task<NotificationDTO> AssignTest(TestAssign testDTO)
         {
             throw new NotImplementedException();
         }
 
-        public Task<TestAssignDTO> ChooseQuestion(QuestionSelectionDTO questionSelectionDTO)
+        public Task<TestAssign> ChooseQuestion(QuestionSelectionDTO questionSelectionDTO)
         {
             throw new NotImplementedException();
         }

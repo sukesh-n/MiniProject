@@ -11,10 +11,10 @@ namespace QuizzApp.Models
         [ForeignKey("Users")]
         public int AssignedBy { get; set; }
         public string TestName { get; set; } = string.Empty;
-        public IList<AssignedTestEmail> AssignedTo { get; set; } = new List<AssignedTestEmail>();
+
         public DateTime StartTimeWindow { get; set; } 
         public DateTime EndTimeWindow { get; set; } 
-        public TimeSpan TestDurationInMinutes { get; set; } 
+        public int TestDuration { get; set; }
 
 
 

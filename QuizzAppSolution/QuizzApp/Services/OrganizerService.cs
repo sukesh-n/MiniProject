@@ -98,7 +98,7 @@ namespace QuizzApp.Services
                 throw new Exception(ex.Message);
             }
         }
-        public async Task<TestAssignDTO> AssignTest(TestAssignDTO testAssignDTO, QuestionSelectionDTO questionSelectionDTO)
+        public async Task<TestAssign> AssignTest(TestAssign testAssignDTO, QuestionSelectionDTO questionSelectionDTO)
         {
             try
             {
@@ -106,34 +106,35 @@ namespace QuizzApp.Services
                 var GetQuestionsWithSolution = await GenerateQuizzApiWithSolution(questionSelectionDTO);
                 var TestAssigner = await _assignedTestRepository.AddAsync(testAssignDTO);
                 // 2. Move to User Service
+
                 var EmailDetails = await _userRepository.GetAllDetailsByEmailsAsync(testAssignDTO.CandidateEmails);
+                Dictionary<string, List<string>> userDetailsDict = EmailDetails
+                    .GroupBy(u => u.UserEmail)
+                    .ToDictionary(g => g.Key, g => g.Select(u => u.Role.ToLower()).ToList());
+
                 List<AssignedTestEmailDTO> assignedTestEmails = new List<AssignedTestEmailDTO>();
                 foreach (var email in testAssignDTO.CandidateEmails)
                 {
                     AssignedTestEmailDTO assignedTestEmailDTO = new AssignedTestEmailDTO();
-                    var userDetails = EmailDetails.FirstOrDefault(u => u.UserEmail == email);
-                    if (userDetails != null)
+                    assignedTestEmailDTO.AssignmentNumber = TestAssigner.AssignmentNo;
+                    assignedTestEmailDTO.Email = email;
+
+                    if (userDetailsDict.TryGetValue(email, out List<string> roles))
                     {
-                        assignedTestEmailDTO.AssignmentNumber = TestAssigner.AssignmentNo;
-                        assignedTestEmailDTO.Email = email;                        
-                        if(userDetails.Role.ToLower()=="organizer")
-                            assignedTestEmailDTO.IsOrganizer = true;
-                        if (userDetails.Role.ToLower() == "candidate")
-                            assignedTestEmailDTO.IsCandidate = true;
-                        if (userDetails.Role.ToLower() == "admin")
-                            assignedTestEmailDTO.IsAdmin = true;
+                        assignedTestEmailDTO.IsOrganizer = roles.Contains("organizer");
+                        assignedTestEmailDTO.IsCandidate = roles.Contains("candidate");
+                        assignedTestEmailDTO.IsAdmin = roles.Contains("admin");
                     }
                     else
                     {
-                        assignedTestEmailDTO.AssignmentNumber=TestAssigner.AssignmentNo;
-                        assignedTestEmailDTO.Email = email;
                         assignedTestEmailDTO.IsOrganizer = false;
                         assignedTestEmailDTO.IsCandidate = false;
-                        assignedTestEmailDTO.IsAdmin= false;
-                        
+                        assignedTestEmailDTO.IsAdmin = false;
                     }
+
                     assignedTestEmails.Add(assignedTestEmailDTO);
                 }
+
                 var EmailUpload = await _assignedTestEmailRepository.AddEmailsForTest(TestAssigner.AssignmentNo,assignedTestEmails);
                 if (EmailUpload == false)
                 {
@@ -162,8 +163,12 @@ namespace QuizzApp.Services
                 {
                     throw new UnableToAddException();
                 }
-
-                return TestAssigner;
+                var FinalList = new TestAssign
+                {
+                    AssignmentNo = TestAssigner.AssignmentNo,
+                    CandidateEmails = testAssignDTO.CandidateEmails
+                };
+                return FinalList;
                 
             }
             catch (Exception ex)

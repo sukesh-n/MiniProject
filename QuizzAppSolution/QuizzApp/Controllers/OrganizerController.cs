@@ -21,7 +21,7 @@ namespace QuizzApp.Controllers
         }
 
         [HttpPut("AssignTest")]
-        public async Task<IActionResult> AssignTestForUsers(AssignTestRequestDTO requestDTO)
+        public async Task<IActionResult> AssignTestForUsers([FromBody]  AssignTestRequestDTO requestDTO)
         {
             try
             {

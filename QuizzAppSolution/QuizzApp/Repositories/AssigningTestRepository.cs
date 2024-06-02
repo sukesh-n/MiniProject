@@ -3,27 +3,48 @@ using QuizzApp.Interfaces;
 using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO;
+using QuizzApp.Exceptions;
 
 namespace QuizzApp.Repositories
 {
     public class AssigningTestRepository : IAssignedTestRepository
     {
-        public Task<TestAssignDTO> AddAsync(TestAssignDTO entity)
+        private readonly QuizzAppContext _context;
+
+        public AssigningTestRepository(QuizzAppContext context)
+        {
+            _context = context;
+        }
+
+        public async  Task<AssignedTest> AddAsync(AssignedTest entity)
+        {
+            try
+            {
+                var result = await _context.assignedTests.AddAsync(entity);
+                await _context.SaveChangesAsync();
+                if (result == null)
+                {
+                    throw new Exception();
+                }
+                return result.Entity;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Unable to connect repository");
+            }
+        }
+
+        public Task<AssignedTest> DeleteAsync(int Key)
         {
             throw new NotImplementedException();
         }
 
-        public Task<TestAssignDTO> DeleteAsync(int Key)
+        public Task<IEnumerable<AssignedTest>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<TestAssignDTO>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<TestAssignDTO> GetAsync(int Key)
+        public Task<AssignedTest> GetAsync(int Key)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +54,7 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<TestAssignDTO> UpdateAsync(TestAssignDTO entity)
+        public Task<AssignedTest> UpdateAsync(AssignedTest entity)
         {
             throw new NotImplementedException();
         }

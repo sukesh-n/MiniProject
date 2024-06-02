@@ -3,6 +3,6 @@
     public class AssignTestRequestDTO
     {
         public QuestionSelectionDTO QuestionSelectionDTO { get; set; }
-        public TestAssignDTO TestAssignDTO { get; set; }
+        public TestAssign TestAssignDTO { get; set; }
     }
 }

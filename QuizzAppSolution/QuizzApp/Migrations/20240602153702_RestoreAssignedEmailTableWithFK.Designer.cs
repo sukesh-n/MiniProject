@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuizzApp.Context;
 
@@ -11,9 +12,10 @@ using QuizzApp.Context;
 namespace QuizzApp.Migrations
 {
     [DbContext(typeof(QuizzAppContext))]
-    partial class QuizzAppContextModelSnapshot : ModelSnapshot
+    [Migration("20240602153702_RestoreAssignedEmailTableWithFK")]
+    partial class RestoreAssignedEmailTableWithFK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,13 +26,11 @@ namespace QuizzApp.Migrations
 
             modelBuilder.Entity("QuizzApp.Models.AssignedQuestions", b =>
                 {
-                    b.Property<int>("AssignmentNumber")
-                        .HasColumnType("int");
-
                     b.Property<int>("QuestionId")
                         .HasColumnType("int");
 
-                    b.HasKey("AssignmentNumber");
+                    b.Property<int>("TestId")
+                        .HasColumnType("int");
 
                     b.HasIndex("QuestionId");
 
@@ -322,19 +322,11 @@ namespace QuizzApp.Migrations
 
             modelBuilder.Entity("QuizzApp.Models.AssignedQuestions", b =>
                 {
-                    b.HasOne("QuizzApp.Models.AssignedTest", "AssignedTest")
-                        .WithMany()
-                        .HasForeignKey("AssignmentNumber")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("QuizzApp.Models.Question", "Question")
                         .WithMany()
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("AssignedTest");
 
                     b.Navigation("Question");
                 });
