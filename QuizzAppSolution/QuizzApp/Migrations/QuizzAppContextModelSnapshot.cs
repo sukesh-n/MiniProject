@@ -27,14 +27,17 @@ namespace QuizzApp.Migrations
                     b.Property<int>("AssignmentNumber")
                         .HasColumnType("int");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<int>("QuestionId")
                         .HasColumnType("int");
 
-                    b.HasKey("AssignmentNumber");
+                    b.HasIndex("AssignmentNumber");
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("assignedQuestions");
+                    b.ToTable("assignedQuestions", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.AssignedTest", b =>
@@ -63,7 +66,7 @@ namespace QuizzApp.Migrations
 
                     b.HasKey("AssignmentNo");
 
-                    b.ToTable("assignedTests");
+                    b.ToTable("assignedTests", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.AssignedTestEmail", b =>
@@ -94,7 +97,7 @@ namespace QuizzApp.Migrations
 
                     b.HasIndex("AssignmentNumber");
 
-                    b.ToTable("assignedTestEmails");
+                    b.ToTable("assignedTestEmails", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.Category", b =>
@@ -115,7 +118,7 @@ namespace QuizzApp.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("categories");
+                    b.ToTable("categories", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.Option", b =>
@@ -143,7 +146,7 @@ namespace QuizzApp.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("options");
+                    b.ToTable("options", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.Question", b =>
@@ -170,7 +173,7 @@ namespace QuizzApp.Migrations
 
                     b.HasKey("QuestionId");
 
-                    b.ToTable("questions");
+                    b.ToTable("questions", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.Result", b =>
@@ -191,7 +194,7 @@ namespace QuizzApp.Migrations
 
                     b.HasIndex("TestId");
 
-                    b.ToTable("results");
+                    b.ToTable("results", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.Security", b =>
@@ -218,7 +221,7 @@ namespace QuizzApp.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("security");
+                    b.ToTable("security", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.Solution", b =>
@@ -251,7 +254,7 @@ namespace QuizzApp.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("solutions");
+                    b.ToTable("solutions", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.Test", b =>
@@ -289,7 +292,7 @@ namespace QuizzApp.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("tests");
+                    b.ToTable("tests", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.User", b =>
@@ -317,7 +320,7 @@ namespace QuizzApp.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("QuizzApp.Models.AssignedQuestions", b =>

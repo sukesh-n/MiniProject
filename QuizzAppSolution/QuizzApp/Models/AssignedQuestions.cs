@@ -6,8 +6,8 @@ namespace QuizzApp.Models
 {
     public class AssignedQuestions
     {
-
         [Key]
+        public int Id { get; set; }
         [ForeignKey("AssignedTest")]
         public int AssignmentNumber { get; set; }
         [ForeignKey("Question")]
