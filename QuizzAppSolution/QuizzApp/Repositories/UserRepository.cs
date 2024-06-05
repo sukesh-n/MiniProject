@@ -123,6 +123,20 @@ namespace QuizzApp.Repositories
             }
         }
 
+        public Task<List<User>> GetAllDetailsByUserEmailAsync(string email)
+        {
+            try
+            {
+                List<User> users=new List<User>();
+                users = _context.users
+                    .Where(u => u.UserEmail == email)
+                    .ToList();
+                return Task.FromResult(users);
+            }
+            catch (Exception ex) {
+                throw new ErrorInConnectingRepository();
+            }
+        }
 
         public async Task<User> GetAsync(int Key)
         {
