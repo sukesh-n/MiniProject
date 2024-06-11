@@ -9,6 +9,7 @@ namespace QuizzApp.Interfaces
         public Task<List<QuestionTypeCount>> GetTypesAndTheirCount(int DifficultyLevel);
         public Task<List<QuestionTypeCountBasedOnCategory>> GetTypesAndTheirCountByCategory(string MainCategory, string SubCategory);
         public Task<List<Question>> GetFilteredQuestions(QuestionSelectionDTO questionSelectionDTO,List<int> CategoryIds);
+        public Task<List<QuestionDTO>> GetQuestionById(List<int> QuestionIds);
     }
 
 

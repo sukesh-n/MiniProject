@@ -1,4 +1,5 @@
 ﻿using QuizzApp.Interfaces;
+using QuizzApp.Interfaces.ResultInterface;
 using QuizzApp.Interfaces.Solutions;
 using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
@@ -18,12 +19,12 @@ namespace QuizzApp.Services
         private readonly ICategoryRepository _categoryRepository;
         private readonly ISolutionRepository _solutionRepository;
         private readonly ITestRepository _testRepository;
-        private readonly IRepository<int,Result> _resultrepository;
+        private readonly IResultRepository _resultrepository;
         private readonly IRepository<int,Models.Option> _optionRepository;
         private readonly IRepository<int,Security> _securityRepository;
         private readonly IUserRepository _userRepository;
 
-        public AdminService(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, ISolutionRepository solutionRepository, ITestRepository testRepository, IRepository<int, Result> resultrepository, IRepository<int, Models.Option> optionRepository, IRepository<int, Security> securityRepository, IUserRepository userRepository)
+        public AdminService(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, ISolutionRepository solutionRepository, ITestRepository testRepository, IResultRepository resultrepository, IRepository<int, Models.Option> optionRepository, IRepository<int, Security> securityRepository, IUserRepository userRepository)
         {
             _questionRepository = questionRepository;
             _categoryRepository = categoryRepository;

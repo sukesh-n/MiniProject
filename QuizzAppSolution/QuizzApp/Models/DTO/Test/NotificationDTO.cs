@@ -2,7 +2,7 @@
 {
     public class NotificationDTO
     {
-        public int UserEmail { get; set; }
+        public string UserEmail { get; set; }
         public string TestAssignedBy { get; set; } = string.Empty;
         public bool IsUserAlready { get; set; } = false;
         public int AssignmentNumber { get; set; }

@@ -155,5 +155,45 @@ namespace QuizzApp.Services
             throw new NotImplementedException();
         }
 
+
+
+
+        public async Task<List<QuestionDTO>> GetQuestionById(List<int> QuestionIds)
+        {
+            try
+            {
+                var QuestionList = await _questionRepository.GetQuestionById(QuestionIds);
+                if (QuestionList == null)
+                {
+                    throw new EmptyRepositoryException("No questions found");
+                }
+                return QuestionList;
+            }
+            catch (EmptyRepositoryException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new UnableToFetchException("Unable to get questions", ex);
+            }
+        }
+
+        public Task<List<Solution>> GetSolutionForQUestions(List<int> QuestionIds)
+        {
+            try
+            {
+                var Solution = _solutionRepository.GetSolutionForQuestions(QuestionIds);
+                if (Solution == null)
+                {
+                    throw new EmptyRepositoryException("No solutions found");
+                }
+                return Solution;
+            }
+            catch (Exception ex)
+            {
+                throw new UnableToFetchException("Unable to get solutions", ex);
+            }
+        }
     }
 }

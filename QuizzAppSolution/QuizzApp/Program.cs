@@ -9,10 +9,11 @@ using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
 using QuizzApp.Repositories;
 using QuizzApp.Services;
+using QuizzApp.Services.AddOnServices;
 using QuizzApp.Token;
 using System.Security.Claims;
 using System.Text;
-
+using QuizzApp.Interfaces.ResultInterface;
 namespace QuizzApp
 {
     public class Program
@@ -78,12 +79,12 @@ namespace QuizzApp
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<ISolutionRepository, SolutionRepository>();
             builder.Services.AddScoped<ITestRepository, TestRepository>();
-            builder.Services.AddScoped<IRepository<int, Result>, ResultRepository>();
             builder.Services.AddScoped<IRepository<int, Option>, OptionsRepository>();
             builder.Services.AddScoped<IRepository<int, Security>, SecurityRepository>();
             builder.Services.AddScoped<IAssignedQuestionRepository, AssignedQuestionsRepository>();
             builder.Services.AddScoped<IAssignedTestRepository, AssigningTestRepository>();
             builder.Services.AddScoped<IAssignedTestEmailRepository, AssignedTestEmailRepository>();
+            builder.Services.AddScoped<IResultRepository, ResultRepository>();
             #endregion
 
             #region Service
@@ -95,6 +96,7 @@ namespace QuizzApp
             builder.Services.AddScoped<ISolutionService, SolutionService>();
             builder.Services.AddScoped<IOrganizerService, OrganizerService>();
             builder.Services.AddScoped<ITestService, TestService>();
+            builder.Services.AddScoped<INotificationService, NotificationService>();
             #endregion
 
 

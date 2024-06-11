@@ -4,6 +4,7 @@ using QuizzApp.Models;
 using Microsoft.EntityFrameworkCore;
 using QuizzApp.Exceptions;
 using QuizzApp.Models.DTO.Test;
+using QuizzApp.Models.DTO;
 namespace QuizzApp.Repositories
 {
     public class QuestionRepository : IQuestionRepository
@@ -85,6 +86,28 @@ namespace QuizzApp.Repositories
             }
         }
 
+        public Task<List<QuestionDTO>> GetQuestionById(List<int> QuestionIds)
+        {
+            try
+            {
+                var questions = _context.questions
+                    .Where(q => QuestionIds.Contains(q.QuestionId))
+                    .Select(q => new QuestionDTO
+                    {
+                        QuestionId = q.QuestionId,
+                        QuestionDescription = q.QuestionDescription,
+                        QuestionType = q.QuestionType,
+                        DifficultyLevel = q.DifficultyLevel,
+                        CategoryId = q.CategoryId
+                    })
+                    .ToListAsync();
+                return questions;
+            }
+            catch (Exception ex)
+            {
+                throw new UnableToFetchException("Unable to retrieve questions by Id", ex);
+            }
+        }
 
         public async Task<List<QuestionTypeCount>> GetTypesAndTheirCount()
         {

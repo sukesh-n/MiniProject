@@ -53,6 +53,27 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
+        public async Task<List<Solution>> GetSolutionForQuestions(List<int> QuestionIds)
+        {
+            List<Solution> solutions = new List<Solution>();
+            try
+            {
+                foreach (var questionId in QuestionIds)
+                {
+                    var solution = await _context.solutions.FirstOrDefaultAsync(s => s.QuestionId == questionId);
+                    if (solution != null)
+                    {
+                        solutions.Add(solution);
+                    }
+                }
+                return solutions;
+            }
+            catch
+            {
+                throw new ErrorInConnectingRepository("Unable to fetch Solutions");
+            }
+        }
+
         public async Task<List<Solution>> GetSolutions(List<int> questionIds)
         {
             try

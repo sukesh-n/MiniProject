@@ -2,7 +2,7 @@
 {
     public class QuestionDTO : Question
     {
-        public int? OptionId { get; set; }
+        public string? CorrectOptionAnswer { get; set; }
         public double? NumericalAnswer { get; set; }
         public bool? TrueFalseAnswer { get; set; }
     }

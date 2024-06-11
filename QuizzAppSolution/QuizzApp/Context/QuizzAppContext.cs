@@ -21,5 +21,6 @@ namespace QuizzApp.Context
         public DbSet<AssignedTestEmail> assignedTestEmails { get; set; }
 
 
+
     }
 }

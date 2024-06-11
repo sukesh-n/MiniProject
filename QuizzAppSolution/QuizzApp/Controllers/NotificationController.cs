@@ -7,9 +7,9 @@ namespace QuizzApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles ="admin")]
-    [Authorize(Roles = "organizer")]
-    [Authorize(Roles = "candidate")]
+    //[Authorize(Roles ="admin")]
+    //[Authorize(Roles = "organizer")]
+    //[Authorize(Roles = "candidate")]
     public class NotificationController : ControllerBase
     {
         private readonly INotificationService _notificationService;

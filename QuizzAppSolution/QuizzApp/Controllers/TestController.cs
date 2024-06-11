@@ -31,5 +31,33 @@ namespace QuizzApp.Controllers
             }
         }
 
+
+        [HttpGet("GetTestQuestions")]
+        public async Task<IActionResult> GetTestQuestions(int AssignmentNumber,string email)
+        {
+            try
+            {
+                var TestQuestions = await _testInterface.GetTestQuestions(AssignmentNumber,email);
+                return Ok(TestQuestions);
+            }
+            catch
+            {
+                throw new UnableToFetchException("Unable to get Questions");
+            }
+        }
+
+        [HttpPut("AttendTest")]
+        public async Task<IActionResult> AttendTest(List<QuestionDTO> questionDTO,int AssignmentNumber, string email)
+        {
+            try
+            {
+                var TestAssign = await _testInterface.AttendTest(questionDTO,AssignmentNumber,email);
+                return Ok(TestAssign);
+            }
+            catch
+            {
+                throw new UnableToFetchException("Unable to get Questions");
+            }
+        }
     }
 }

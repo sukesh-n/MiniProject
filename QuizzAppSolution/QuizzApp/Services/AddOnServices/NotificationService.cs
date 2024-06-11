@@ -2,6 +2,7 @@
 using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO.Test;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace QuizzApp.Services.AddOnServices
 {
@@ -9,11 +10,11 @@ namespace QuizzApp.Services.AddOnServices
     {
 
         private readonly IAssignedTestRepository _assignedTestRepository;
-        private readonly IRepository<int, Test> _testRepository;
+        private readonly ITestRepository _testRepository;
         private readonly IUserRepository _userRepository;
         private readonly IAssignedTestEmailRepository _assignedTestEmailRepository;
 
-        public NotificationService(IAssignedTestRepository assignedTestRepository, IRepository<int, Test> testRepository, IUserRepository userRepository, IAssignedTestEmailRepository assignedTestEmailRepository)
+        public NotificationService(IAssignedTestRepository assignedTestRepository, ITestRepository testRepository, IUserRepository userRepository, IAssignedTestEmailRepository assignedTestEmailRepository)
         {
             _assignedTestRepository = assignedTestRepository;
             _testRepository = testRepository;
@@ -21,39 +22,73 @@ namespace QuizzApp.Services.AddOnServices
             _assignedTestEmailRepository = assignedTestEmailRepository;
         }
 
-        public async Task<NotificationDTO> CheckNotification(string email, string role)
+        public async Task<List<NotificationDTO>> CheckNotification(string email, string role)
         {
             try
             {
-                var getEmail = await _assignedTestEmailRepository.GetByUserEmailAsync(email);
-                var CheckUser = await _assignedTestRepository.GetUserByEmailAsync(email);
+                var getAssignments = await _assignedTestEmailRepository.GetByUserEmailAsync(email);
 
-                var getUser = await _userRepository.GetUserByEmailAsync(email);
 
-                var 
-                if (getUser == null)
-                {
-                    throw new Exception("User Not Found");
-                }
-                var get
-                var getTest = await _testRepository.GetByUserIdAndAssignemntNoAsync(CheckUser.AssignmentNo)
 
-                if (getTest == null)
+
+                List<NotificationDTO> notificationDTOList = new List<NotificationDTO>();
+
+
+
+                var AllAssignments = new List<AssignedTest>();
+                var AllTests = new List<TestDTO>();
+                foreach (var assignment in getAssignments)
                 {
-                    throw new Exception("Test Not Found");
+                    AssignedTest getAllAssignments = await _assignedTestRepository.GetByAssignemntNo(assignment.AssignmentNumber);
+                    if (getAllAssignments == null)
+                    {
+                        throw new Exception("Assignement Not Found");
+                    }
+                    AllAssignments.Add(getAllAssignments);
+
+
+
+                    TestDTO getAllTest = await _testRepository.GetTestByAssignmentNoAsync(assignment.AssignmentNumber);
+                    if (getAllTest == null)
+                    {
+                        continue;
+                        //throw new Exception("Test Not Found");
+                    }
+                    AllTests.Add(getAllTest);
+
+                    NotificationDTO notificationDTO = new NotificationDTO();
+                    {
+                        notificationDTO.AssignmentNumber = assignment.AssignmentNumber;
+                        notificationDTO.UserEmail = assignment.Email;
+                        notificationDTO.TestName = getAllAssignments.TestName;
+                        notificationDTO.TestWindowOpen = getAllAssignments.StartTimeWindow;
+                        notificationDTO.TestWindowClose = getAllAssignments.EndTimeWindow;
+                        notificationDTO.TestDuration = getAllAssignments.TestDuration;
+                        notificationDTO.QuestionCount = getAllTest.QuestionsCount;
+                        notificationDTO.TestID = getAllTest.TestId;
+                        var getUser = await _userRepository.GetAsync(getAllAssignments.AssignedBy);
+                        notificationDTO.TestAssignedBy = getUser.UserName;
+
+                        notificationDTO.IsUserAlready = assignment.IsAdmin||assignment.IsOrganizer||assignment.IsCandidate;
+                    }
+                    notificationDTOList.Add(notificationDTO);
                 }
-                NotificationDTO notificationDTO = new NotificationDTO();
-                {
-                    notificationDTO.TestName = CheckUser.TestName;
-                    notificationDTO.AssignmentNumber=CheckUser.AssignmentNo;
-                   // notificationDTO.QuestionCount=CheckUs
-                    notificationDTO.TestWindowOpen=CheckUser.StartTimeWindow;
-                    notificationDTO.TestWindowClose=CheckUser.EndTimeWindow;
-                    notificationDTO.TestDuration=CheckUser.TestDuration;
-                    //notificationDTO.UserEmail=CheckUser.;
-                    //notificationDTO.Role=role;
-                }
-                return notificationDTO;
+
+                //foreach (var test in AllAssignments)
+                //{
+                //    TestDTO getAllTest = await _testRepository.GetTestByAssignmentNoAsync(test.AssignmentNo);
+                //    if (getAllTest == null)
+                //    {
+                //        throw new Exception("Test Not Found");
+                //    }
+                //    AllTests.Add(getAllTest);
+                //}
+                
+                
+                //var getUser = await _userRepository.GetUserByEmailAsync(email);
+
+
+                return notificationDTOList;
             }
             catch (Exception ex)
             {

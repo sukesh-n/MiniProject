@@ -6,7 +6,6 @@ namespace QuizzApp.Interfaces.Test
 {
     public interface IAssignedTestRepository : IRepository<int,AssignedTest>
     {
-        public Task<AssignedTest> GetUserByEmailAsync(string email);
-        
+        public Task<AssignedTest> GetByAssignemntNo(int AssignmentNo);
     }
 }

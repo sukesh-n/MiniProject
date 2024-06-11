@@ -4,6 +4,7 @@ using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO;
 using QuizzApp.Exceptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace QuizzApp.Repositories
 {
@@ -47,6 +48,19 @@ namespace QuizzApp.Repositories
         public Task<AssignedTest> GetAsync(int Key)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<AssignedTest> GetByAssignemntNo(int AssignmentNo)
+        {
+            try
+            {
+                var result = await _context.assignedTests.FirstOrDefaultAsync(e => e.AssignmentNo == AssignmentNo);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Unable to connect repository");
+            }
         }
 
         public Task<AssignedTest> GetUserByEmailAsync(string email)

@@ -3,6 +3,7 @@ using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
 using QuizzApp.Models.DTO.Test;
 using QuizzApp.Exceptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace QuizzApp.Repositories
 {
@@ -66,6 +67,20 @@ namespace QuizzApp.Repositories
         public Task<AssignedTestEmail> GetAsync(int Key)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<AssignedTestEmail>> GetByUserEmailAsync(string userEmail)
+        {
+            try
+            {
+                var result = await _context.assignedTestEmails.Where(e => e.Email == userEmail).ToListAsync();
+
+                return result;
+            }
+            catch
+            {
+                throw new ErrorInConnectingRepository();
+            }
         }
 
         public Task<AssignedTestEmail> UpdateAsync(AssignedTestEmail entity)

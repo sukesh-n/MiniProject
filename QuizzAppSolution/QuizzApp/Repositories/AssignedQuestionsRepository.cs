@@ -57,6 +57,20 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
+        public Task<List<int>> GetQuestionByAssignmentNumber(int AssignmentNumber)
+        {
+            try
+            {
+
+                var questionIds = _context.assignedQuestions.Where(q => q.AssignmentNumber == AssignmentNumber).Select(q => q.QuestionId).ToList();
+                return Task.FromResult(questionIds);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public Task<AssignedQuestions> UpdateAsync(AssignedQuestions entity)
         {
             throw new NotImplementedException();

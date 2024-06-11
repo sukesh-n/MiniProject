@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuizzApp.Context;
 
@@ -11,9 +12,10 @@ using QuizzApp.Context;
 namespace QuizzApp.Migrations
 {
     [DbContext(typeof(QuizzAppContext))]
-    partial class QuizzAppContextModelSnapshot : ModelSnapshot
+    [Migration("20240611115125_ResultScoreUpdatedWithScore")]
+    partial class ResultScoreUpdatedWithScore
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,29 +23,6 @@ namespace QuizzApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("QuizzApp.Models.AssignedQuestions", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("AssignmentNumber")
-                        .HasColumnType("int");
-
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AssignmentNumber");
-
-                    b.HasIndex("QuestionId");
-
-                    b.ToTable("assignedQuestions");
-                });
 
             modelBuilder.Entity("QuizzApp.Models.AssignedTest", b =>
                 {
@@ -326,25 +305,6 @@ namespace QuizzApp.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("users");
-                });
-
-            modelBuilder.Entity("QuizzApp.Models.AssignedQuestions", b =>
-                {
-                    b.HasOne("QuizzApp.Models.AssignedTest", "AssignedTest")
-                        .WithMany()
-                        .HasForeignKey("AssignmentNumber")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("QuizzApp.Models.Question", "Question")
-                        .WithMany()
-                        .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AssignedTest");
-
-                    b.Navigation("Question");
                 });
 
             modelBuilder.Entity("QuizzApp.Models.AssignedTestEmail", b =>

@@ -4,7 +4,7 @@ namespace QuizzApp.Interfaces.Test
 {
     public interface INotificationService
     {
-        Task<NotificationDTO> CheckNotification(string email, string role);
+        Task<List<NotificationDTO>> CheckNotification(string email, string role);
 
     }
 }

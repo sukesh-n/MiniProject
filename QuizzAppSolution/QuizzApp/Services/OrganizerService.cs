@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using QuizzApp.Exceptions;
 using QuizzApp.Interfaces;
+using QuizzApp.Interfaces.ResultInterface;
 using QuizzApp.Interfaces.Solutions;
 using QuizzApp.Interfaces.Test;
 using QuizzApp.Models;
@@ -15,7 +16,7 @@ namespace QuizzApp.Services
         private readonly ICategoryRepository _categoryRepository;
         private readonly ISolutionRepository _solutionRepository;
         private readonly ITestRepository _testRepository;
-        private readonly IRepository<int, Result> _resultrepository;
+        private readonly IResultRepository _resultrepository;
         private readonly IRepository<int, Models.Option> _optionRepository;
         private readonly IQuestionService _questionService;
         private readonly ISolutionService _solutionService;
@@ -29,7 +30,7 @@ namespace QuizzApp.Services
             ICategoryRepository categoryRepository,
             ISolutionRepository solutionRepository,
             ITestRepository testRepository,
-            IRepository<int, Result> resultrepository,
+            IResultRepository resultrepository,
             IRepository<int, Option> optionRepository,
             IQuestionService questionService,
             ISolutionService solutionService,

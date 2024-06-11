@@ -1,6 +1,6 @@
 ﻿namespace QuizzApp.Models.DTO.AnalyseServiceDTO
 {
-    public class ResultDTO
+    public class ResultDTO : Result
     {
 
     }
