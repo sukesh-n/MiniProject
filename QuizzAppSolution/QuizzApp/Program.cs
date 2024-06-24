@@ -99,6 +99,17 @@ namespace QuizzApp
             builder.Services.AddScoped<INotificationService, NotificationService>();
             #endregion
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowLocalhost3000",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://127.0.0.1:3000", "http://localhost:3000")
+                               .AllowAnyHeader()
+                               .AllowAnyMethod()
+                               .AllowCredentials();
+                    });
+            });
 
 
             var app = builder.Build();
@@ -109,6 +120,8 @@ namespace QuizzApp
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            // Configure CORS
+            app.UseCors("AllowLocalhost3000");
 
             app.UseAuthentication();
             app.UseAuthorization();

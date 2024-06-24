@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>User Login</title>
-        <link rel="stylesheet" href="./css/global.css">
-        <link rel="stylesheet" href="./css/user_login.css">
-        
-    </head>
-    <body>
-        <div class="login">        
-            <form class="login-form">
-                <img src="./assets/images/login.png" class="logo">
-                <input type="text" name="username" placeholder="Email" required="required" onfocus="moveCursorToCenter(this)"/>
-                <input type="password" name="password" placeholder="Password" required="required" onfocus="moveCursorToCenter(this)" />
-                <button type="button" onclick="Userlogin()">Sign in</button>
-                <div class="links">
-                    <a href="register.html">Register</a>
-                    <a href="forgot.html">Forgot Password</a>
-                </div>
-                
-            </form>
-        </div>
-        <script>
-        function moveCursorToCenter(input) {
-            var length = input.value.length;
-            var midPoint = Math.floor(length / 2);
-            input.setSelectionRange(midPoint, midPoint);
-            console.log(midPoint);
-        }
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/user_login.css">
+    <script defer src="./scripts/user_login.js"></script>
+    
+</head>
+<body>
+    <div class="login">        
+        <form class="login-form" name="login-form">
+            <img src="./assets/images/login.png" class="logo" alt="Login Logo">
+            <input type="text" id="username" name="username" placeholder="Email"  />            
+            <input type="password" id="password" name="password" placeholder="Password"/>
+            <button type="submit" onclick="UserLogin()">Sign in</button>
+            <div class="links">
+                <a href="register.html">Register</a>
+                <a href="forgot.html">Forgot Password</a>
+            </div>
+
+        </form>
+    </div>
+    
+</body>
 </html>

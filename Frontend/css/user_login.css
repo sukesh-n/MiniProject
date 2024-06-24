@@ -14,7 +14,7 @@ body{
     background: #fff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 5px 500px rgba(255, 255, 255, 0.756);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -27,21 +27,17 @@ body{
 }
 .login-form input{
     height: 35px;
-    border: 2px solid #ccc;
+    border: 2px solid #433d3d;
     border-radius: 20px;
     
 }
-.login-form input:focus::content{
-    outline:#157a01;
-    border-color: #15a010;
-    font-size: 16px;
+.input-error:focus{
+    border: none;
 }
-
 .login-form input::placeholder{
     color: #8e93c0;
     font-size: 16px;
-    position:absolute;
-    margin-left: 3%;
+    padding-left: 10px;
 }
 
 .login-form button{
@@ -74,4 +70,22 @@ body{
     box-shadow: 0 1px 1px #2c2424;
     border-radius: 10%;
     font-size: 16px;
+}
+.error-message {
+    color: #ff0000; 
+    font-size: 14px; 
+    margin-top: 5px;
+}
+.input-error:focus {
+    outline: none;
+    color: red;
+    border: 5px solid red;
+    border-color: red;
+    font-weight: bolder;
+}
+.input-success:focus{
+    outline: none;
+    color: green;
+    border: 5px solid green;
+    border-color: green;
 }
