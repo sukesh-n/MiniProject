@@ -12,16 +12,15 @@ namespace QuizzApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(Roles = "candidate")]
+    [Authorize(Roles = "candidate")]
     public class CandidateController : ControllerBase
     {
         private readonly ICandidateService _candidateService;
-        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public CandidateController(ICandidateService candidateService, IHttpContextAccessor httpContextAccessor)
+        public CandidateController(ICandidateService candidateService)
         {
             _candidateService = candidateService;
-            _httpContextAccessor = httpContextAccessor;
+           
         }
         
         [HttpGet("LoginForTest")]
@@ -57,5 +56,44 @@ namespace QuizzApp.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        [HttpPut("GetCustomQuizz")]
+        public async Task<IActionResult> GetRandomQuizz(QuestionSelectionDTO questionSelectionDTO,int UserId)
+        {
+            try
+            {
+                var GetRandomQuizz = await _candidateService.GetRandomQuizz(questionSelectionDTO,UserId);
+               
+                var questionDto = GetRandomQuizz.Item1;
+                var testId = GetRandomQuizz.Item2;
+                var assignmentNumber = GetRandomQuizz.Item3;
+
+                return Ok(new { questionDto, testId, assignmentNumber });
+               
+                
+            }
+            catch
+            {
+                throw new UnableToFetchException("Unable to fetch");
+            }
+        }
+
+        [HttpPut("TakeCustomQuizz")]
+        public async Task<IActionResult> TakeCustomTest(List<QuestionDTO> questionDTO,int TestId, int AssignmentNumber, string email)
+        {
+            try
+            {
+                var TakeCustomTest = await _candidateService.TakeCustomTest(questionDTO,TestId,AssignmentNumber,email);
+                
+                return Ok(TakeCustomTest.Item2);
+            }
+            catch
+            {
+                throw new UnableToFetchException("Unable to fetch");
+            }
+        }
+
+
+
     }
 }

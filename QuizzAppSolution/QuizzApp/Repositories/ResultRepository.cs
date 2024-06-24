@@ -3,6 +3,7 @@ using QuizzApp.Models;
 using QuizzApp.Exceptions;
 using QuizzApp.Context;
 using QuizzApp.Interfaces.ResultInterface;
+using Microsoft.EntityFrameworkCore;
 
 namespace QuizzApp.Repositories
 {
@@ -42,14 +43,44 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Result>> GetAllAsync()
+        public async Task<IEnumerable<Result>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var results = await _context.results.ToListAsync();
+                if (results != null)
+                {
+                    return results;
+                }
+                else
+                {
+                    throw new ErrorInConnectingRepository("Results not found");
+                }
+            }
+            catch
+            {
+                throw new ErrorInConnectingRepository();
+            }
         }
 
-        public Task<Result> GetAsync(int Key)
+        public async Task<Result> GetAsync(int ResultId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _context.results.FindAsync(ResultId);
+                if (result != null)
+                {
+                    return result;
+                }
+                else
+                {
+                    throw new ErrorInConnectingRepository("Result not found");
+                }
+            }
+            catch
+            {
+                throw new ErrorInConnectingRepository();
+            }
         }
 
         public Task<Result> UpdateAsync(Result entity)

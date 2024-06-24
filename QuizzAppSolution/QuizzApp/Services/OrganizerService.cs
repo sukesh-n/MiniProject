@@ -17,7 +17,7 @@ namespace QuizzApp.Services
         private readonly ISolutionRepository _solutionRepository;
         private readonly ITestRepository _testRepository;
         private readonly IResultRepository _resultrepository;
-        private readonly IRepository<int, Models.Option> _optionRepository;
+        private readonly IOptionsRepository _optionRepository;
         private readonly IQuestionService _questionService;
         private readonly ISolutionService _solutionService;
         private readonly ITestService _testService;
@@ -31,7 +31,7 @@ namespace QuizzApp.Services
             ISolutionRepository solutionRepository,
             ITestRepository testRepository,
             IResultRepository resultrepository,
-            IRepository<int, Option> optionRepository,
+            IOptionsRepository optionRepository,
             IQuestionService questionService,
             ISolutionService solutionService,
             IUserRepository userRepository,
@@ -66,27 +66,37 @@ namespace QuizzApp.Services
 
                 }
                 var GetSolutions = await _solutionService.GetSolutions(GetQuestions);
-                if(GetSolutions == null)
+                if(GetSolutions.Item1==null)
                 {
 
                 throw new EmptyRepositoryException(); 
                 }
                 var quizQuestions = new List<QuestionSolutionDTO>();
+
+                var GetAllCategories = await _categoryRepository.GetAllAsync();
                 foreach (var question in GetQuestions)
                 {
                     var questionDTO = new QuestionSolutionDTO
                     {
                         QuestionId = question.QuestionId,
                         QuestionDescription = question.QuestionDescription,
-                        QuestionType = question.QuestionType
+                        QuestionType = question.QuestionType,
+                        MainCategory = GetAllCategories.FirstOrDefault(c => c.CategoryId == question.CategoryId).MainCategory,
+                        SubCategory = GetAllCategories.FirstOrDefault(c => c.CategoryId == question.CategoryId).SubCategory
+
                     };
-                    var solution = GetSolutions.Find(s => s.QuestionId == question.QuestionId);
+                    var solution = GetSolutions.Item1.Find(s => s.QuestionId == question.QuestionId);
                     if (solution != null)
                     {
                         questionDTO.NumericalAnswer = solution.NumericalAnswer;
                         questionDTO.TrueFalseAnswer = solution.TrueFalseAnswer;
                         questionDTO.QuestionDifficultyLevel = question.DifficultyLevel;
-                       // questionDTO.Options = question.Options
+                        if(question.QuestionType == "MCQ")
+                        {
+                            var options = GetSolutions.Item2.FindAll(o => o.QuestionId == question.QuestionId);
+                            questionDTO.Options = options.Select(o => o.Value).ToList();
+                        }
+                        
                         questionDTO.CorrectOptionAnswer = solution.CorrectOptionAnswer;
                     }
 
@@ -167,7 +177,13 @@ namespace QuizzApp.Services
                 var FinalList = new TestAssign
                 {
                     AssignmentNo = TestAssigner.AssignmentNo,
-                    CandidateEmails = testAssignDTO.CandidateEmails
+                    CandidateEmails = testAssignDTO.CandidateEmails,
+                    TestName = TestAssigner.TestName,
+                    TestDuration = TestAssigner.TestDuration,
+                    StartTimeWindow = TestAssigner.StartTimeWindow,
+                    EndTimeWindow = TestAssigner.EndTimeWindow,
+                    AssignedBy = TestAssigner.AssignedBy
+
                 };
                 return FinalList;
                 

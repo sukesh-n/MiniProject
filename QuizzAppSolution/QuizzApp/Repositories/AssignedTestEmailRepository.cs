@@ -59,9 +59,21 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<AssignedTestEmail>> GetAllAsync()
+        public async Task<IEnumerable<AssignedTestEmail>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _context.assignedTestEmails.ToListAsync();
+                if (result == null)
+                {
+                    return null;
+                }
+                return result;
+            }
+            catch
+            {
+                throw new ErrorInConnectingRepository();
+            }
         }
 
         public Task<AssignedTestEmail> GetAsync(int Key)
@@ -87,5 +99,22 @@ namespace QuizzApp.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public async Task<bool> UpdateDb(List<AssignedTestEmail> assignedTestEmails)
+        {
+            try
+            {
+                _context.assignedTestEmails.UpdateRange(assignedTestEmails);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in UpdateDb: {ex.Message}");
+                return false;
+            }
+        }
+
     }
 }

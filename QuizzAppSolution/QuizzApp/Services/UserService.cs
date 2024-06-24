@@ -18,7 +18,7 @@ namespace QuizzApp.Services
         private readonly IRepository<int, Security> _securityRepository;
         private readonly ITokenService _tokenService;
 
-        public UserService(IUserRepository userRepository, IRepository<int, Security> securityRepository,ITokenService tokenService)
+        public UserService(IUserRepository userRepository, IRepository<int, Security> securityRepository, ITokenService tokenService)
         {
             _userRepository = userRepository;
             _securityRepository = securityRepository;
@@ -29,7 +29,24 @@ namespace QuizzApp.Services
         {
             try
             {
-                var getUser = await _userRepository.GetUserByEmailAsync(Email);
+                var getUsers = await _userRepository.GetUserByEmailAsync(Email);
+                var getUser = getUsers.FirstOrDefault();
+                int userfound = 0;
+                if (getUser != null)
+                {
+                    foreach (var user in getUsers)
+                    {
+                        if (user.Role.ToLower() == "admin")
+                        {
+
+                            getUser = user;
+                            userfound = 1;
+                            break;
+                        }
+                    }
+                    if (userfound == 0)                    
+                        getUser = null;
+                }
                 if (getUser != null)
                 {
                     var getSecurity = await _securityRepository.GetAsync(getUser.UserId);
@@ -38,12 +55,12 @@ namespace QuizzApp.Services
                         var IspasswordSame = ComparePassword(Password, getSecurity.Password, getSecurity.PasswordHashKey);
                         if (IspasswordSame)
                         {
-                            if(getUser.Role.ToLower()!="admin")
+                            if (getUser.Role.ToLower() != "admin")
                             {
                                 throw new UnauthorizedAccessException("Youre not admin");
                             }
                             LoginReturnDTO loginReturnDTO = LoginReturn(getUser);
-                            return loginReturnDTO;                           
+                            return loginReturnDTO;
 
                         }
 
@@ -71,7 +88,24 @@ namespace QuizzApp.Services
         {
             try
             {
-                var getUser = await _userRepository.GetUserByEmailAsync(Email);
+                var getUsers = await _userRepository.GetUserByEmailAsync(Email);
+                var getUser = getUsers.FirstOrDefault();
+                int userfound = 0;
+                if (getUser != null)
+                {
+                    foreach (var user in getUsers)
+                    {
+                        if (user.Role.ToLower() == "candidate")
+                        {
+                            getUser = user;
+                            userfound = 1;
+                            break;
+                        }
+                    }
+                    if (userfound == 0)
+                        getUser = null;
+                
+                }
                 if (getUser != null)
                 {
                     var getSecurity = await _securityRepository.GetAsync(getUser.UserId);
@@ -103,7 +137,23 @@ namespace QuizzApp.Services
         {
             try
             {
-                var getUser = await _userRepository.GetUserByEmailAsync(Email);
+                var getUsers = await _userRepository.GetUserByEmailAsync(Email);
+                var getUser = new User();
+                int userfound =0;
+                if (getUser != null)
+                {
+                    foreach (var user in getUsers)
+                    {
+                        if (user.Role.ToLower() == "organizer")
+                        {
+                            getUser = user;
+                            userfound = 1;
+                            break;
+                        }
+                    }
+                    if(userfound==0)
+                        getUser=null;
+                }
                 if (getUser != null)
                 {
                     var getSecurity = await _securityRepository.GetAsync(getUser.UserId);
@@ -158,8 +208,8 @@ namespace QuizzApp.Services
                 };
 
                 var result = await _securityRepository.AddAsync(AddingSecurity);
-                if (result==null)
-                {                    
+                if (result == null)
+                {
                     await _userRepository.DeleteAsync(UserAdd.UserId);
                     return null;
                 }
@@ -167,7 +217,7 @@ namespace QuizzApp.Services
             }
             catch
             {
-                
+
                 throw new UnableToAddUserException();
             }
         }
@@ -233,6 +283,61 @@ namespace QuizzApp.Services
             catch (Exception ex)
             {
                 throw new UnableToDeleteException();
+            }
+        }
+
+        public async Task<User> UpdateUser(UserDTO userDTO)
+        {
+            try
+            {
+                var getUsers = await _userRepository.GetUserByEmailAsync(userDTO.UserEmail);
+                var getUser = getUsers.FirstOrDefault();
+                int userfound = 0;
+                if (getUser != null)
+                {
+                    foreach (var user in getUsers)
+                    {
+                        if (user.Role.ToLower() == userDTO.Role.ToLower())
+                        {
+                            getUser = user;
+                            userfound = 1;
+                            break;
+                        }
+
+                    }
+                    if (userfound == 0)
+                    {
+                        getUser = null;
+                    }
+                }
+                if(getUser==null)
+                {
+                    throw new UnableToUpdateException("User does not exist");
+                }
+                var security = await _securityRepository.GetAsync(getUser.UserId);
+                if (security == null)
+                {
+                    throw new UnableToUpdateException("User does not exist");
+                }
+
+                // Update the password
+                var (passwordByte, passwordHashKey) = PasswordHashing(userDTO.Password);
+                security.Password = passwordByte;
+                security.PasswordHashKey = passwordHashKey;
+
+                // Save the updated security
+                var result = await _securityRepository.UpdateAsync(security);
+                if (result == null)
+                {
+                    throw new UnableToUpdateException("User does not exist");
+                }
+
+                // Return the updated user
+                return security.User;
+            }
+            catch
+            {
+                throw new UnableToUpdateException("User does not exist");
             }
         }
     }

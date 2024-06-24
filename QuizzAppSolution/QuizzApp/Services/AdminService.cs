@@ -20,11 +20,11 @@ namespace QuizzApp.Services
         private readonly ISolutionRepository _solutionRepository;
         private readonly ITestRepository _testRepository;
         private readonly IResultRepository _resultrepository;
-        private readonly IRepository<int,Models.Option> _optionRepository;
+        private readonly IOptionsRepository _optionRepository;
         private readonly IRepository<int,Security> _securityRepository;
         private readonly IUserRepository _userRepository;
 
-        public AdminService(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, ISolutionRepository solutionRepository, ITestRepository testRepository, IResultRepository resultrepository, IRepository<int, Models.Option> optionRepository, IRepository<int, Security> securityRepository, IUserRepository userRepository)
+        public AdminService(IQuestionRepository questionRepository, ICategoryRepository categoryRepository, ISolutionRepository solutionRepository, ITestRepository testRepository, IResultRepository resultrepository, IOptionsRepository optionRepository, IRepository<int, Security> securityRepository, IUserRepository userRepository)
         {
             _questionRepository = questionRepository;
             _categoryRepository = categoryRepository;

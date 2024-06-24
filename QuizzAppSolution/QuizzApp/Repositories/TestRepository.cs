@@ -28,10 +28,12 @@ namespace QuizzApp.Repositories
                 await _context.SaveChangesAsync();
                 return testDTOs;
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw new ErrorInConnectingRepository(ex.Message);
             }
         }
+
 
         public Task<TestDTO> DeleteAsync(int Key)
         {

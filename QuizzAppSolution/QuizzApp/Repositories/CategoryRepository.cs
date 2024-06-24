@@ -43,9 +43,23 @@ namespace QuizzApp.Repositories
             }
         }
 
-        public Task<Category> DeleteAsync(int Key)
+        public async Task<Category> DeleteAsync(int Key)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var DeleteCategory = await _context.categories.FirstOrDefaultAsync(c => c.CategoryId == Key);
+                if (DeleteCategory == null)
+                {
+                    throw new ErrorInConnectingRepository("Category not found.");
+                }
+                _context.categories.Remove(DeleteCategory);
+                _context.SaveChanges();
+                return DeleteCategory;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Error while deleting category.", ex);
+            }
         }
 
         public async Task<IEnumerable<Category>> GetAllAsync()
@@ -62,9 +76,21 @@ namespace QuizzApp.Repositories
         }
 
 
-        public Task<Category> GetAsync(int Key)
+        public async Task<Category> GetAsync(int Key)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var category =await  _context.categories.FirstOrDefaultAsync(c => c.CategoryId == Key);
+                if (category == null)
+                {
+                    throw new ErrorInConnectingRepository("Category not found.");
+                }
+                return category;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Error while retrieving category.", ex);
+            }
         }
 
         public async Task<List<int>> GetCategoryId(string mainCategory, string subCategory)
@@ -93,9 +119,27 @@ namespace QuizzApp.Repositories
             }
         }
 
-        public Task<Category> UpdateAsync(Category entity)
+        public async Task<Category> UpdateAsync(Category entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var existingEntity = await _context.categories.FindAsync(entity.CategoryId);
+                if (existingEntity == null)
+                {
+                    throw new ErrorInConnectingRepository("Category not found.");
+                }
+
+                _context.Entry(existingEntity).CurrentValues.SetValues(entity);
+
+                await _context.SaveChangesAsync();
+
+                return existingEntity;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Unable to update category.", ex);
+            }
         }
+
     }
 }

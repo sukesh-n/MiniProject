@@ -13,10 +13,10 @@ namespace QuizzApp.Services
     {
         private readonly IQuestionRepository _questionRepository;
         private readonly ISolutionRepository _solutionRepository;
-        private readonly IRepository<int, Option> _optionRepository;
+        private readonly IOptionsRepository _optionRepository;
         private readonly ICategoryRepository _categoryRepository;
 
-        public QuestionServices(IQuestionRepository questionRepository, ISolutionRepository solutionRepository, IRepository<int, Option> optionRepository, ICategoryRepository categoryRepository)
+        public QuestionServices(IQuestionRepository questionRepository, ISolutionRepository solutionRepository, IOptionsRepository optionRepository, ICategoryRepository categoryRepository)
         {
             _questionRepository = questionRepository;
             _solutionRepository = solutionRepository;
