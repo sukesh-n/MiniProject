@@ -9,8 +9,7 @@ namespace QuizzApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(Roles ="admin")]
-    //[Authorize(Roles = "organizer")]
+    [Authorize(Roles = "admin,organizer")]
     public class OrganizerController : ControllerBase
     {
         private readonly IOrganizerService _organizerService;
@@ -46,5 +45,7 @@ namespace QuizzApp.Controllers
                 throw new UnableToFetchException("Unable to fetch");
             }
         }
+
+
     }
 }

@@ -8,7 +8,7 @@ namespace QuizzApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-   // [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class AdminController : ControllerBase
     {
         private readonly IAdminService _adminInterface;
@@ -35,19 +35,19 @@ namespace QuizzApp.Controllers
             }
         }
 
-        [HttpPost("UpdateQuestionAndItsSolution")]
-        public async Task<IActionResult> UpdateQuestion(QuestionSolutionDTO questionSolutionDTO)
-        {
-            try
-            {
-                var UpdateResult = await _questionService.UpdateQuestionsWithSolution(questionSolutionDTO);
-                return Ok(UpdateResult);
-            }
-            catch
-            {
-                throw new UnableToUpdateException("Unable to update question");
-            }
-        }
+        //[HttpPost("UpdateQuestionAndItsSolution")]
+        //public async Task<IActionResult> UpdateQuestion(QuestionSolutionDTO questionSolutionDTO)
+        //{
+        //    try
+        //    {
+        //        var UpdateResult = await _questionService.UpdateQuestionsWithSolution(questionSolutionDTO);
+        //        return Ok(UpdateResult);
+        //    }
+        //    catch
+        //    {
+        //        throw new UnableToUpdateException("Unable to update question");
+        //    }
+        //}
 
         [HttpGet("GetCategories")]
         public async Task<IActionResult> GetQuestionBasedOnCategory()

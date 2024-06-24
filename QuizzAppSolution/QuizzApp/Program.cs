@@ -79,7 +79,7 @@ namespace QuizzApp
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<ISolutionRepository, SolutionRepository>();
             builder.Services.AddScoped<ITestRepository, TestRepository>();
-            builder.Services.AddScoped<IRepository<int, Option>, OptionsRepository>();
+            builder.Services.AddScoped<IOptionsRepository, OptionsRepository>();
             builder.Services.AddScoped<IRepository<int, Security>, SecurityRepository>();
             builder.Services.AddScoped<IAssignedQuestionRepository, AssignedQuestionsRepository>();
             builder.Services.AddScoped<IAssignedTestRepository, AssigningTestRepository>();
@@ -99,6 +99,7 @@ namespace QuizzApp
             builder.Services.AddScoped<INotificationService, NotificationService>();
             #endregion
 
+<<<<<<< HEAD
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowLocalhost3000",
@@ -110,6 +111,17 @@ namespace QuizzApp
                                .AllowCredentials();
                     });
             });
+=======
+            #region CORS
+            builder.Services.AddCors(opts =>
+            {
+                opts.AddPolicy("MyCors", options =>
+                {
+                    options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
+            });
+            #endregion
+>>>>>>> e66b76202390865c3f02afded0b3e47afff93bae
 
 
             var app = builder.Build();
@@ -120,9 +132,13 @@ namespace QuizzApp
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+<<<<<<< HEAD
             // Configure CORS
             app.UseCors("AllowLocalhost3000");
 
+=======
+            app.UseCors("MyCors");
+>>>>>>> e66b76202390865c3f02afded0b3e47afff93bae
             app.UseAuthentication();
             app.UseAuthorization();
 

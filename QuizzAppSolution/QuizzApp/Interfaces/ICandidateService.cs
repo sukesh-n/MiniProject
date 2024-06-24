@@ -8,7 +8,8 @@ namespace QuizzApp.Interfaces
     {
         public Task<QuestionDTO> AttendAssignedTest(QuestionDTO questionDTO);
         public Task<QuestionDTO> GetMyQuestion(int testId, object userId);
-        public Task<QuestionDTO> TakeCustomTest(QuestionSelectionDTO questionSelectionDTO);
+        public Task<(List<QuestionDTO>,ScoreDTO)> TakeCustomTest(List<QuestionDTO> questionDTO,int TestId, int AssignmentNumber, string email);
         public Task<ResultDTO> ViewRank(ResultDTO resultDTO);
+        public Task<(List<QuestionDTO>,int TestId,int AssignmentNumber)> GetRandomQuizz(QuestionSelectionDTO questionSelectionDTO,int UserId);
     }
 }

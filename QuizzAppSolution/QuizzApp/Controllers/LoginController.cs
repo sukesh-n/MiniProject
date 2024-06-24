@@ -40,7 +40,7 @@ namespace QuizzApp.Controllers
         {
             try
             {
-                var organizerLogin = await _loginInterface.AdminLogin(loginDTO.Email, loginDTO.Password);
+                var organizerLogin = await _loginInterface.OrganizerLogin(loginDTO.Email, loginDTO.Password);
                 //organizerLogin.Role = "organizer";
                 return Ok(organizerLogin);
             }
@@ -97,6 +97,20 @@ namespace QuizzApp.Controllers
             catch
             {
                     throw new UnableToDeleteException();
+            }
+        }
+
+        [HttpPut("UpdateUser")]
+        public async Task<IActionResult> UpdateUser(UserDTO userDTO)
+        {
+            try
+            {
+                var UpdateResult = await _loginInterface.UpdateUser(userDTO);
+                return Ok(UpdateResult);
+            }
+            catch
+            {
+                throw new UnableToUpdateException("Unable to update user");
             }
         }
     }

@@ -3,7 +3,7 @@
 namespace QuizzApp.Exceptions
 {
     [Serializable]
-    internal class UnableToFetchException : Exception
+    public class UnableToFetchException : Exception
     {
         public UnableToFetchException()
         {
