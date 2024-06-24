@@ -79,7 +79,7 @@ namespace QuizzApp
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<ISolutionRepository, SolutionRepository>();
             builder.Services.AddScoped<ITestRepository, TestRepository>();
-            builder.Services.AddScoped<IRepository<int, Option>, OptionsRepository>();
+            builder.Services.AddScoped<IOptionsRepository, OptionsRepository>();
             builder.Services.AddScoped<IRepository<int, Security>, SecurityRepository>();
             builder.Services.AddScoped<IAssignedQuestionRepository, AssignedQuestionsRepository>();
             builder.Services.AddScoped<IAssignedTestRepository, AssigningTestRepository>();
@@ -99,6 +99,15 @@ namespace QuizzApp
             builder.Services.AddScoped<INotificationService, NotificationService>();
             #endregion
 
+            #region CORS
+            builder.Services.AddCors(opts =>
+            {
+                opts.AddPolicy("MyCors", options =>
+                {
+                    options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
+            });
+            #endregion
 
 
             var app = builder.Build();
@@ -109,7 +118,7 @@ namespace QuizzApp
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseCors("MyCors");
             app.UseAuthentication();
             app.UseAuthorization();
 

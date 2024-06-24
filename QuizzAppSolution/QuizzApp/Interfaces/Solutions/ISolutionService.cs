@@ -4,6 +4,6 @@ namespace QuizzApp.Interfaces.Solutions
 {
     public interface ISolutionService
     {
-        public Task<List<Solution>> GetSolutions(List<Question> question);
+        public Task<(List<Solution>,List<Option>)> GetSolutions(List<Question> question);
     }
 }

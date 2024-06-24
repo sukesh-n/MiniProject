@@ -155,11 +155,14 @@ namespace QuizzApp.Repositories
                 throw new EmptyDatabaseException("No Entity in Users");
             }
         }
-        public async Task<User> GetUserByEmailAsync(string email)
+        public async Task<List<User>> GetUserByEmailAsync(string email)
         {
             try
             {
-                var result = await _context.users.FirstOrDefaultAsync(u => u.UserEmail == email);
+                List<User> users = new List<User>();
+                var result = await _context.users
+                    .Where(u => u.UserEmail == email)
+                    .ToListAsync();
                 if(result == null)
                 {
                     throw new EmptyDatabaseException("No email");

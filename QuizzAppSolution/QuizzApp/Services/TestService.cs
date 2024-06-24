@@ -32,7 +32,7 @@ namespace QuizzApp.Services
             throw new NotImplementedException();
         }
 
-        public async Task<List<QuestionDTO>> AttendTest(List<QuestionDTO> questionDTO, int AssignmentNumber, string email)
+        public async Task<(List<QuestionDTO>,ScoreDTO)> AttendTest(List<QuestionDTO> questionDTO, int AssignmentNumber, string email)
         {
             try
             {
@@ -87,6 +87,7 @@ namespace QuizzApp.Services
                 }
                 List<QuestionDTO> QuestionWithSolutions = new List<QuestionDTO>();
                 int score = 0;
+                int TotalWrongAnswers = 0;
                 foreach (var question in questionDTO)
                 {
                     foreach (var solution in GeSolution)
@@ -102,20 +103,24 @@ namespace QuizzApp.Services
                             QuestionWithSolution.TrueFalseAnswer = null;
                             QuestionWithSolution.NumericalAnswer = null;
                             QuestionWithSolution.CorrectOptionAnswer=null;
-                            if (question.QuestionType == "MCQ" && question.CorrectOptionAnswer==solution.CorrectOptionAnswer)
+                            if (question.QuestionType == "MCQ" && question.CorrectOptionAnswer == solution.CorrectOptionAnswer)
                             {
                                 QuestionWithSolution.CorrectOptionAnswer = solution.CorrectOptionAnswer;
                                 score++;
                             }
-                            else if(question.QuestionType == "True/False" && question.TrueFalseAnswer==solution.TrueFalseAnswer)
+                            else if (question.QuestionType == "True/False" && question.TrueFalseAnswer == solution.TrueFalseAnswer)
                             {
                                 QuestionWithSolution.TrueFalseAnswer = solution.TrueFalseAnswer;
                                 score++;
                             }
-                            else if(question.QuestionType == "Numerical" && question.NumericalAnswer==solution.NumericalAnswer)
+                            else if (question.QuestionType == "Numerical" && question.NumericalAnswer == solution.NumericalAnswer)
                             {
                                 QuestionWithSolution.NumericalAnswer = solution.NumericalAnswer;
                                 score++;
+                            }
+                            else
+                            {
+                                TotalWrongAnswers++;
                             }
 
                             QuestionWithSolutions.Add(QuestionWithSolution);
@@ -128,13 +133,23 @@ namespace QuizzApp.Services
                     TestId =  GetTestId.TestId,
                     score = score
                 };
+                ScoreDTO scoreDTO = new ScoreDTO();
+                {
+                    scoreDTO.TestId = GetTestId.TestId;
+                    scoreDTO.UserId = UserId;
+                    scoreDTO.AssignmentNumber = AssignmentNumber;
+                    scoreDTO.TotalQuestions = QuestionIds.Count;
+                    scoreDTO.TotalCorrectAnswers=QuestionIds.Count-TotalWrongAnswers;
+                    scoreDTO.TotalWrongAnswers=TotalWrongAnswers;
+                    scoreDTO.Score = score;
 
+                }
                 var UploadScore = await _resultRepository.AddAsync(scoreUpload);
                 if (UploadScore == null)
                 {
                     throw new Exception("Score Not Uploaded");
                 }
-                return QuestionWithSolutions;
+                return (QuestionWithSolutions,scoreDTO);
 
             }
             catch (Exception ex)

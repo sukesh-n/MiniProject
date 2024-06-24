@@ -70,7 +70,20 @@ namespace QuizzApp.Repositories
 
         public Task<Security> UpdateAsync(Security entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = _context.Update(entity);
+                _context.SaveChanges();
+                if(result == null)
+                {
+                    throw new ErrorInConnectingRepository("Unable to update security");
+                }
+                return Task.FromResult(result.Entity);
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Unable to update security", ex);
+            }
         }
     }
 }

@@ -3,7 +3,7 @@
 namespace QuizzApp.Exceptions
 {
     [Serializable]
-    internal class ErrorInConnectingRepository : Exception
+    public class ErrorInConnectingRepository : Exception
     {
         public ErrorInConnectingRepository()
         {

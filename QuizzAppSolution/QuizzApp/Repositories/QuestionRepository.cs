@@ -56,6 +56,7 @@ namespace QuizzApp.Repositories
             {
                 IQueryable<Question> query = _context.questions;
 
+                
                 if (questionSelectionDTO != null)
                 {
                     if (questionSelectionDTO.DifficultyLevel != 0)
@@ -73,16 +74,23 @@ namespace QuizzApp.Repositories
                     query = query.Where(q => categoryIds.Contains(q.CategoryId));
                 }
 
+                var filteredQuestions = await query.ToListAsync();
+
+                
+                var random = new Random();
+                var randomizedQuestions = filteredQuestions.OrderBy(q => random.Next()).ToList();
+
+                
                 if (questionSelectionDTO?.NoOfQuestions > 0)
                 {
-                    query = query.Take(questionSelectionDTO.NoOfQuestions);
+                    randomizedQuestions = randomizedQuestions.Take(questionSelectionDTO.NoOfQuestions).ToList();
                 }
 
-                return await query.ToListAsync();
+                return randomizedQuestions;
             }
             catch (Exception ex)
             {
-                throw new ErrorInConnectingRepository("Unable to retrieve filtered questions", ex);
+                throw new ErrorInConnectingRepository("Unable to retrieve random filtered questions", ex);
             }
         }
 

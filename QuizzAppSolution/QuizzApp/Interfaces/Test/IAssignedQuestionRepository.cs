@@ -7,5 +7,6 @@ namespace QuizzApp.Interfaces.Test
     {
         public Task<List<AssignedQuestions>> AddQuestionsForTest(int AssignmentNo,List<QuestionSolutionDTO> GetQuestionsWithSolution);
         public Task<List<int>> GetQuestionByAssignmentNumber(int AssignmentNumber);
+        
     }
 }

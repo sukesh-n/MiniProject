@@ -52,7 +52,9 @@ namespace QuizzApp.Controllers
             try
             {
                 var TestAssign = await _testInterface.AttendTest(questionDTO,AssignmentNumber,email);
-                return Ok(TestAssign);
+                var QuestionDTO = TestAssign.Item1;
+                var ScoreDTO = TestAssign.Item2;
+                return Ok(new {QuestionDTO,ScoreDTO});
             }
             catch
             {

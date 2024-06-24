@@ -3,7 +3,7 @@
 namespace QuizzApp.Exceptions
 {
     [Serializable]
-    internal class EmptyDatabaseException : Exception
+    public class EmptyDatabaseException : Exception
     {
         public EmptyDatabaseException()
         {
