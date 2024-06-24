@@ -1,0 +1,56 @@
+body{
+    background: rgb(170,3,3);
+    background: -moz-linear-gradient(164deg, rgba(170,3,3,1) 0%, rgba(0,9,255,1) 100%);
+    background: -webkit-linear-gradient(164deg, rgba(170,3,3,1) 0%, rgba(0,9,255,1) 100%);
+    background: linear-gradient(164deg, rgba(170,3,3,1) 0%, rgba(0,9,255,1) 100%);
+    
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    color: white;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+a{
+    text-decoration: none;
+    color: white;
+
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 180px;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 5px 195px white;
+    border-radius: 0 22px 22px;
+}
+.navbar_logo{
+    margin-left: 25px;
+    padding: 5px;
+    background-color: rgb(205, 64, 64);
+    box-shadow: 0 9px 5px rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.navbar_logo img{
+    
+    height: 70px;
+
+}
+.navbar .navbar_menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
+.navbar .navbar_menu ul li{
+    margin: 0 10px;
+}
