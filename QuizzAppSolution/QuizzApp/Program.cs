@@ -14,6 +14,7 @@ using QuizzApp.Token;
 using System.Security.Claims;
 using System.Text;
 using QuizzApp.Interfaces.ResultInterface;
+using QuizzApp.Interfaces.Live;
 namespace QuizzApp
 {
     public class Program
@@ -85,6 +86,7 @@ namespace QuizzApp
             builder.Services.AddScoped<IAssignedTestRepository, AssigningTestRepository>();
             builder.Services.AddScoped<IAssignedTestEmailRepository, AssignedTestEmailRepository>();
             builder.Services.AddScoped<IResultRepository, ResultRepository>();
+            builder.Services.AddScoped<IUpdateDb, UpdateDb>();
             #endregion
 
             #region Service
@@ -97,6 +99,7 @@ namespace QuizzApp
             builder.Services.AddScoped<IOrganizerService, OrganizerService>();
             builder.Services.AddScoped<ITestService, TestService>();
             builder.Services.AddScoped<INotificationService, NotificationService>();
+            
             #endregion
 
             #region CORS
@@ -112,7 +115,7 @@ namespace QuizzApp
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

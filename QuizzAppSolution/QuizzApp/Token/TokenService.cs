@@ -20,17 +20,25 @@ namespace QuizzApp.Token
 
         public string GenerateToken(User user)
         {
-            string token = string.Empty;
+            
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.UserEmail),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim("userid", user.UserId.ToString()),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Role, user.Role),
+                new Claim(ClaimTypes.Name, user.UserName)
+
             };
-            var credential = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256);
-            var myToken = new JwtSecurityToken(null, null, claims, expires: DateTime.Now.AddDays(1), signingCredentials: credential);
-            return new JwtSecurityTokenHandler().WriteToken(myToken).ToString();
+            var credentials = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256);
+            var token = new JwtSecurityToken(
+                issuer: null,
+                audience: null,
+                claims: claims,
+                expires: DateTime.Now.AddDays(1),
+                signingCredentials: credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
 
         }
     }

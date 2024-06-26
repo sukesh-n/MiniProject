@@ -9,11 +9,12 @@ namespace QuizzApp.Controllers
     public class CommonController : ControllerBase
     {
         IQuestionService _questionService;
-        IUpdateDb updateDb;
+        IUpdateDb _updateDb;
 
-        public CommonController(IQuestionService questionService)
+        public CommonController(IQuestionService questionService, IUpdateDb updateDb)
         {
             _questionService = questionService;
+            _updateDb = updateDb;
         }
 
         [HttpGet("GetAllCategories")]
@@ -34,7 +35,7 @@ namespace QuizzApp.Controllers
         {
             try
             {
-                var result = await updateDb.UpdateAssignedTestEmail();
+                var result = await _updateDb.UpdateAssignedTestEmail();
                 return Ok(result);
             }
             catch (Exception ex)

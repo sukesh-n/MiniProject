@@ -3,8 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>User Home</title>
+        <link rel="icon" href="../assets/images/logo.png">
         <link rel="stylesheet" href="../css/global.css">
-        <link rel="stylesheet" href="./css/user_home.css">
+        <link rel="stylesheet" href="../css/user_home.css">
+        <script src="../scripts/user_home.js"></script>
+        <script defer src="../scripts/logout.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -13,30 +16,54 @@
             </div>
             <div class="navbar_menu">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="../home.html">Home</a></li>
+                    <li><a href="./candidate_profile.html">Your Profile</a></li>
                     <li><a href="leaderboard.html">Leaderboard</a></li>
-                    <ul class="login_list">
-                        <li><a href="#">Admin Login</a></li>
-                        <li><a href="#">Organizer Login</a></li>
-                        <li><a href="#">Candidate Login</a></li>
-                    </ul> 
-                    <li><a href="register.html">Register</a></li>
+                    <ul class="login-info">
+                        
+                    </ul>
+                    <li><a onclick="user_logout()" style="cursor: pointer;">Logout</a></li>
                 </ul>
             </div>
         </div>
         <div class="user-home-container">
-            <div class="left-menu-drp-dwns">
-                <h3>Menu</h3>
-                <Ul>
-                    <ul>
-                        Notifications
-                        <li>Notifications</li>
-                        <li>Notifications</li>
-                        <li>Notifications</li>
-                    </ul>
-                </Ul>
+            <div class="menu-boxws">
+                <ul>
+                    <li><a href="quiz.html">Know all events and features</a></li>
+                    <li><a href="user_notifications.html">Your Notifications</a></li>
+                    <li><a href="../Users/custom_quizz.html">Custom Quizz</a></li>
+                    <!-- <li><a href="assigned_quizz.html">Assigned Quizzes</a></li> -->
+                    <li><a href="leaderboard.html">Your Previous Quizzes</a></li>
+                </ul>
             </div>
+        </div>
+        <div class="footer">
+            <footer>
+                <div class="footer-menu-left">
+                    <ul class="contact-menu">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <ul class="social-media">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">X</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-menu-right">
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-menu-bottom">
+
+                    <p>Quizzo &copy; 2021</p>
+                </div>
+                
+            </footer>
         </div>
     </body>
 </html>

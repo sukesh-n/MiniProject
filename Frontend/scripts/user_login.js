@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+        console.log('Token found');
+        window.location.href = 'users/user_home.html';
+    }
+    // } else {
+    //     // window.location.href = './user_login.html';
+    //     // console.log('Token not found');
+    // }
+});
+
+
 document.addEventListener('DOMContentLoaded', function(){
     const loginForm = document.querySelector('.login-form');
     const errorContainer = document.createElement('div');
@@ -8,11 +22,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
     const usernameInput = loginForm.elements.namedItem('username');
     const passwordInput = loginForm.elements.namedItem('password');
-
+    
     usernameInput.addEventListener('input', function() {
+        if(usernameInput.value.trim() === '' && passwordInput.value.trim() === '') {
+            errorContainer.textContent = 'Username and password cannot be empty';
+        }
         if (usernameInput.value.trim() === '') {
             usernameInput.classList.add('input-error');
-            usernameInput.classList.remove('input-success');
+            usernameInput.classList.remove('input-success');            
             errorContainer.textContent = 'Username cannot be empty';
         } else if (usernameInput.value.length < 3) {
             usernameInput.classList.add('input-error');
@@ -30,7 +47,13 @@ document.addEventListener('DOMContentLoaded', function(){
         if (passwordInput.value.trim() === '') {
             passwordInput.classList.add('input-error');
             passwordInput.classList.remove('input-success');
-            errorContainer.textContent = 'Password cannot be empty';
+            if(usernameInput.value.trim() === '') {
+                errorContainer.textContent = 'Username and password cannot be empty';
+            }
+            else{
+                errorContainer.textContent = 'Password cannot be empty';
+            }
+            // errorContainer.textContent = 'Password cannot be empty';
         } else if (passwordInput.value.length < 3) {
             passwordInput.classList.add('input-error');
             passwordInput.classList.remove('input-success');
@@ -40,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function(){
             passwordInput.classList.add('input-success');
             errorContainer.textContent = '';
         }
+
     });
 
     loginForm.addEventListener('submit', function(e) {
@@ -69,74 +93,55 @@ document.addEventListener('DOMContentLoaded', function(){
         } else {
             passwordInput.classList.remove('input-error');
         }
-    
+        if(userName === '' && password === ''){
+            errorMessage = 'Username and password cannot be empty';
+        }
         errorContainer.textContent = errorMessage;
     });
     
 })
-
 function UserLogin() {
+
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
+    if(username === '' || password === ''){
+        return;
+    }
     const login = document.getElementById("login");
-        const error = document.getElementById("error");
-        const success = document.getElementById("success");
-
-        fetch('http://localhost:5246/api/Login/AdminLogin', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email: username, password: password })
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('API Response:', data.token);
-                console.log('API Response:', data.role);
-                console.log('app',login);
-                if (login) login.style.display = "none";
-
-                if (data.success) {
-                    console.log('Login successful!');
-                    if (success) {
-                        success.style.display = "block";
-                        success.textContent = 'Login successful!';
-
-                        if (data.message) {
-                            success.textContent += ` Message: ${data.message}`;
-                        }
-                        if (data.token) {
-                            success.textContent += ` Token: ${data.token}`;
-                        }
-                    }
-                } else {
-                    console.log('Login failed!');
-                    if (error) {
-                        error.style.display = "block";
-                        error.textContent = 'Login failed.';
-                        console.log('API Response:sskks', data.message);
-                        if (data.message) {
-                            error.textContent += ` Message: ${data.message}`;
-                            console.log('API Response:', data.message);
-                        }
-                        if (data.errors) {
-                            error.textContent += ` Errors: ${data.errors.join(', ')}`;
-                            console.log('API Response:', data.errors);
-                        }
-                    }
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                if (login) login.style.display = "none";
-                if (error) {
-                    error.style.display = "block";
-                    error.textContent = `An error occurred: ${error.message}`;
-                }
-            });
+    const errorContainer = document.querySelector('.error-message');
+    
+    const token = fetch("http://localhost:5246/api/Login/CandidateLogin", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            email: username,
+            password: password,
+        }),
+    })
+    .then((res) => {
+        if (!res.ok) {
+            errorContainer.textContent = 'Login failed. Please try again with correct username and password.';
+        }
+        return res.json();
+    })
+    .then((data) => {
+        console.log(data);
+        if (data.token) {
+            localStorage.setItem("token", data.token);
+            window.location.href = "./Users/user_home.html";
+        } else {
+            console.log('Login failed.');
+            if (data.message) {
+                errorContainer.textContent = `Login failed: ${data.message}`;
+            } else {
+                errorContainer.textContent = 'Login failed. Please try again.';
+            }
+        }
+    });
 }
+// document.querySelector('.login-form').addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     UserLogin();
+// });

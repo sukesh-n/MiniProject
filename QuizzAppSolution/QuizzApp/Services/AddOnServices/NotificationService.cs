@@ -22,7 +22,7 @@ namespace QuizzApp.Services.AddOnServices
             _assignedTestEmailRepository = assignedTestEmailRepository;
         }
 
-        public async Task<List<NotificationDTO>> CheckNotification(string email, string role)
+        public async Task<List<NotificationDTO>> CheckNotification(string email, string role,string userId)
         {
             try
             {
