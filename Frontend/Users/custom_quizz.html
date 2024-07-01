@@ -5,7 +5,7 @@
     <title>Custom Quizz</title>
     <link rel="icon" href="../assets/images/logo.png">
     <link rel="stylesheet" href="../css/global.css">
-    <!-- <link rel="stylesheet" href="../css/custom_quizz.css">  -->
+    <link rel="stylesheet" href="../css/custom_quizz.css"> 
     <script src="../scripts/custom_quizz.js"></script>
     <script defer src="../scripts/categories.js"></script>
 </head>
@@ -47,25 +47,93 @@
                 <label for="difficultyLevel">Difficulty Level:</label>
                 <select id="difficultyLevel" name="difficultyLevel" required>
                     <option value="">Select Difficulty Level</option>
-                    <option value="1">Easy</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Hard</option>
+                    <option value="0">Any</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="type">Type:</label>
                 <select id="type" name="type" required>
                     <option value="">Select Type</option>
+                    <option value="">Any</option>
                     <option value="MCQ">MCQ</option>
                     <option value="True/False">True/False</option>
-                    <option value="Fill in the blanks">Fill in the blanks</option>
+                    <option value="Fill in the blanks">Numerical Answers</option>
                 </select>
             </div>
             <button type="submit">Generate Quizz</button>
         </form>
     </div>
     <div class="custom-quizz-live-container">
-        <!-- This section will be used to display the generated quiz -->
+        <div class="name-timer">
+            <div class="test-name">
+                <p>Quizz Name : <span>Sample Test</span></p>
+            </div>
+            <div class="timer">
+                <p class="time-board">Time Remaining:<span>00:00:00</span></p>
+            </div>            
+        </div>
+        <div class="question-and-properties">
+            <div class="question">                
+                <p class="question-number">Question : <span>0</span></p>
+                <p class="question-description">abcd</p>
+            </div>
+            <div class="properties">
+                <div class="difficulty-level">
+                    <p>Difficulty Level : <span>0</span></p>
+                </div>
+                <div class="type">
+                    <p>Type : <span>MCQ</span></p>
+                </div>
+            </div>
+                    
+        </div>
+        <div class="solution-navigation">
+        <div class="solution">
+
+            <div class="mcq">
+                <div class="option">
+                    <input type="radio" name="mcq" id="option1" value="option1">
+                    <label for="option1" class="option1"></label>
+                </div>
+            </div>
+            <div class="true-false">
+                <div class="option">
+                    <input type="radio" name="true-false" id="true" value="true">
+                    <label for="true" class="true">True</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="true-false" id="false" value="false">
+                    <label for="false" class="false">False</label>
+                </div>
+            </div>
+            <div class="numerical">
+                <input type="number" name="numerical" id="numerical" required>
+            </div>
+        </div>
+            <div class="navigation">
+                <button class="previous">Previous</button>
+                <button class="next">Next</button>
+                <button class="submit">Submit</button>
+            </div>
+        </div>
+        <div class="cluster">
+            <div class="question-cluster">
+                <p>Question Cluster</p>
+                <ul>
+                    <li>1</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>

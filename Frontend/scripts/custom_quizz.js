@@ -1,4 +1,7 @@
+
 document.addEventListener('DOMContentLoaded', function() {
+    var customQuizzGenerator = document.querySelector('.custom-quizz-generator');
+    var customQuizzLiveContainer = document.querySelector('.custom-quizz-live-container');
     const token = localStorage.getItem('token');
     if (!token) {
         window.location.href = '../user_login.html';
@@ -16,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const userEmail = tokenDecoded.sub;
     const userRole = tokenDecoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+
     const userId = tokenDecoded.userid;
 
     const errorMessage = document.querySelector('.error-message');
@@ -43,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         errorMessage.style.display = "none";
         timer.style.display = "none";
         GetChoiceFromUserForQuizz(userEmail,userRole,userId);
+        
     }
 });
 
@@ -66,7 +71,9 @@ var choiceDTO = {
 
 function GetChoiceFromUserForQuizz(userEmail,userRole,userId){
     var customQuizzGenerator = document.querySelector('.custom-quizz-generator');
+    var customQuizzLiveContainer = document.querySelector('.custom-quizz-live-container');
     customQuizzGenerator.style.display = "block";
+    customQuizzLiveContainer.style.display = "none";
 
     // Get the form elements for the custom quiz generator
     const quizzForm = document.querySelector('.quizz-form');
@@ -87,7 +94,7 @@ function GetChoiceFromUserForQuizz(userEmail,userRole,userId){
             "difficultyLevel": parseInt(difficultyLevelSelect.value),
             "type": typeSelect.value
         };
-
+        console.log('Choice DTO:', choiceDTO);
         fetch(`http://localhost:5246/api/Candidate/GetCustomQuizz/${userId}`,{
             method: "PUT",
             headers: {
@@ -96,27 +103,48 @@ function GetChoiceFromUserForQuizz(userEmail,userRole,userId){
             },
             body: JSON.stringify({
                 choiceDTO
-            }),
+            })
 
         })
         .then(response => {
+            console.log('Response:', response);
             if (response.ok) {
+                console.log('Response:', response);
                 return response.json();
             } else {
                 throw new Error('Failed to get custom quizz');
             }
         })
         .then(data => {
-            // Handle successful response
+            
             console.log('Custom Quizz assigned successfully:', data);
-            window.location.href = './quizz.html?userId=' + userId;
+            DisplayQuizz(data);
+            
         })
         .catch(error => {
-            // Handle errors
+            
             console.error('Error getting custom quizz:', error);
-            // Display an error message to the user
+            
         });
 
     });
+    
+
+}
+
+
+function DisplayQuizz(data){
+    var customQuizzGenerator = document.querySelector('.custom-quizz-generator');
+    var customQuizzLiveContainer = document.querySelector('.custom-quizz-live-container');
+
+    console.log("abc",customQuizzGenerator);
+    customQuizzGenerator.style.display = "none";
+    customQuizzLiveContainer.style.display = "block";
+    
+
+    // const AssignmentNumber = data.assignmentNumber;
+    // const TestId = data.testId;
+    // const QuestionDTO = data.QuestionDTO;
+
 
 }

@@ -2,3 +2,121 @@ body{
     display: flex;
     justify-content:space-between;
 }
+/* global.css */
+
+body {
+    font-family: Arial, sans-serif; /* Default font family */
+    line-height: 1.6; /* Line height for readability */
+    background-color: #f8f9fa; /* Light gray background color */
+    color: #333333; /* Text color */
+}
+
+.home_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
+    border-radius: 10px;
+}
+
+.home_content_left {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.home_content_left h1 {
+    font-size: 2.5rem; /* Large heading */
+    margin-bottom: 10px;
+    color: #007bff; /* Blue heading color */
+}
+
+.home_content_left p {
+    font-size: 1.1rem; /* Paragraph font size */
+    line-height: 1.8; /* Increased line height for readability */
+}
+
+.explore_button {
+    background-color: #007bff; /* Blue background color */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore_button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.home_content_right {
+    flex: 1;
+    text-align: center;
+}
+
+.home_content_right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for image */
+}
+
+.footer {
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer_menu ul,
+.footer_social ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer_menu ul li,
+.footer_social ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer_menu ul li a,
+.footer_social ul li a {
+    color: #ffffff; /* Footer link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer_menu ul li a:hover,
+.footer_social ul li a:hover {
+    color: #007bff; /* Hover color */
+}
+
+.footer_copy p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

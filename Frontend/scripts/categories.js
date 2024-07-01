@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(data => {
         console.log('Categories fetched successfully:', data);
-        mainCategory.innerHTML = '<option value="">Select Main Category</option>'; // Clear previous options
+        mainCategory.innerHTML = '<option value="">Select Main Category</option>'; 
         allCategories = data;
         data.forEach(category => {
             const option = document.createElement('option');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             mainCategory.appendChild(option); 
         });
 
-        subCategory.style.display = "block"; // Show subCategory select after populating options
+        subCategory.style.display = "block"; 
     })
     .catch(error => {
         console.error('Error fetching categories:', error);
@@ -44,7 +44,7 @@ function loadSubCategory(mainCategory){
     allCategories.forEach(sub => {
         const option = document.createElement('option');
         if(sub.mainCategory === mainCategory){
-            option.value = sub.subCategoryId; 
+            option.value = sub.subCategory; 
             option.textContent = sub.subCategory; 
             subCategory.appendChild(option); 
             subCategory.appendChild(option); 
