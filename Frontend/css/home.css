@@ -16,7 +16,8 @@ body {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 50px auto;
+    /* margin: 50px auto; */
+    margin: 0 150px;
     padding: 20px;
     background-color: #ffffff; /* White background */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
@@ -60,10 +61,12 @@ body {
 }
 
 .home_content_right img {
-    max-width: 100%;
+    max-width: 50%;
+    box-shadow: 10 4px 80px rgba(255, 0, 0, 0.1);
+    border: 1px solid #f1f1f1;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for image */
+    
 }
 
 .footer {

@@ -31,20 +31,7 @@
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,255,8,1) 49%, rgba(26,83,28,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#1a531c",GradientType=1);
 }
-.cluster{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-    background: rgb(201,226,201);
-    background: -moz-radial-gradient(circle, rgba(201,226,201,1) 0%, rgba(255,255,255,0.7764355742296919) 49%, rgba(238,244,238,1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(201,226,201,1) 0%, rgba(255,255,255,0.7764355742296919) 49%, rgba(238,244,238,1) 100%);
-    background: radial-gradient(circle, rgba(201,226,201,1) 0%, rgba(255,255,255,0.7764355742296919) 49%, rgba(238,244,238,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c9e2c9",endColorstr="#eef4ee",GradientType=1);
-    border-radius: 0 0 5px;
-    box-shadow: 4px 1px 2.5px rgb(178, 171, 171);
-    border: 1.5px solid black;
-}
+
 
 .custom-quizz-generator {
     max-width: 600px;
@@ -117,17 +104,7 @@ button:hover {
     border-radius: 5px;
     color: black;
 }
-.custom-quizz-live-container{
-    display: flex;
-    flex-direction: row;
-    float: left;
-    justify-content: space-evenly;
-    height: 100vh;
-    background-color: aliceblue;
-    border: 2.5px solid black;
-    border-radius: 5px;
-    color: black;
-}
+
 .name-timer{
     display: flex;
     flex-direction: row;
@@ -225,3 +202,34 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endCo
 }
 
 
+.cluster{
+    display: flex;
+    top:0;
+    background-color: #aab6c4;
+    height: 15vh;
+   
+}
+.question.active {
+    background: red;
+    color: white;
+  }
+  .custom-quizz-live-container {
+    position: relative; /* To create a positioning context */
+}
+
+.submit {
+    z-index: 11; /* Ensure higher z-index */
+}
+
+.custom-quizz-live-container.time-up {
+    filter: blur(5px); /* Apply blur effect */
+    pointer-events: none; 
+    z-index: 10;
+}
+
+/* In your CSS file */
+.custom-quizz-live-container.time-up .submit { /* More specific selector */
+    filter: none !important; /*  !important to override parent */
+    pointer-events: auto !important;
+    z-index: 11;
+}

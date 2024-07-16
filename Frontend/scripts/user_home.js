@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var tokenDecoded = jwt_decode(token);
     console.log(tokenDecoded);
     const userEmail = tokenDecoded.sub;
-    const userRole = tokenDecoded.role;
+    const userRole = tokenDecoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
 
     var loginInfo = document.querySelector('.login-info');
     loginInfo.textContent = `Logged in as ${userEmail} (${userRole})`;

@@ -1,10 +1,6 @@
 body{
-    background: rgb(170,3,3);
-    background: -moz-linear-gradient(164deg, rgba(170,3,3,1) 0%, rgba(0,9,255,1) 100%);
-    background: -webkit-linear-gradient(164deg, rgba(170,3,3,1) 0%, rgba(0,9,255,1) 100%);
-    background: linear-gradient(164deg, rgba(170,3,3,1) 0%, rgba(0,9,255,1) 100%);
-    
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    background: rgb(2,0,145);
+    background: linear-gradient(90deg, rgba(2,0,145,1) 20%, rgba(160,0,0,1) 80%);font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
     color: white;
     height: 100vh;
     margin: 0;
@@ -36,12 +32,17 @@ a{
 .navbar_logo{
     margin-left: 25px;
     padding: 5px;
-    background-color: rgb(171, 4, 4);
-    box-shadow: 0px 0px 10px white;
-    border: 5px solid rgb(251, 251, 251);
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 20px white;
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: rgb(251, 251, 251);
     border-radius: 10px;
     height: 100px;
-    width: 100px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .navbar_logo img{
     width: 100px;

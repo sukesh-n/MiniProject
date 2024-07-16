@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
     loginInfo.textContent = `Logged in as ${userEmail} (${userRole})`;
 
     if(localStorage.getItem('customQuizzTestId') != null){
+        customQuizzGenerator.style.display = "none";
+        customQuizzLiveContainer.style.display = "block";
         ResumeTest(userEmail);
     }
 

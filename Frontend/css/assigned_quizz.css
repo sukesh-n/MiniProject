@@ -1,0 +1,178 @@
+
+.navigation{
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: end;
+    
+}
+.navigation button{
+    height: 5vh;
+    width: 150px;
+    border-radius: 5px;
+    font-family: Arial;
+    font-weight: bolder;
+    cursor: pointer;
+    border: 1px solid rgb(120, 118, 118);
+}.previous{
+    color: white;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.previous:hover{
+    background: rgb(253,187,45);
+    background: linear-gradient(0deg, rgba(253,187,45,1) 0%, rgba(34,193,195,1) 100%);
+}
+.next{
+    color: white;
+    background: rgb(18,0,220);
+    background: linear-gradient(0deg, rgba(18,0,220,1) 0%, rgba(198,232,255,1) 100%);
+}
+.next:hover{
+    background: rgb(198,232,255);
+    background: linear-gradient(0deg, rgba(198,232,255,1) 0%, rgba(18,0,220,1) 100%);
+
+
+}
+.submit{
+    color: white;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(25,191,33,1) 100%);
+} 
+.submit:hover{
+    background: rgb(67,255,76);
+background: linear-gradient(0deg, rgba(67,255,76,1) 0%, rgba(0,93,5,1) 100%);
+}
+
+
+
+
+
+.custom-quizz-live-container{
+    float: left;
+    justify-content: space-evenly;
+    height: 100vh;
+    background-color: aliceblue;
+    border: 2.5px solid black;
+    border-radius: 5px;
+    color: black;
+}
+
+.name-timer{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    background: rgb(10,63,1);
+    background: linear-gradient(0deg, rgba(10,63,1,1) 0%, rgba(159,160,0,1) 100%);
+    color: white;
+
+    font-weight: bold;    
+    justify-content: space-between;
+}
+.test-name{
+    display: flex;
+    margin-left: 2vh;
+}
+.timer{
+    display: flex;
+    margin-right: 2vh;
+}
+.timer p{
+    color: rgb(255, 255, 255);
+    
+}
+.timer span{
+    color: rgb(238, 210, 210);
+}
+.question-and-properties{
+    display: flex;
+    float: left;
+    width: 50%;
+    flex-direction: column;
+    height: 75%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 0 5px;
+    border: 1.5px solid black;
+    
+}
+
+
+.question{
+    display:flex;
+    flex-direction: column;
+    height: 99%;
+    background: rgb(230,230,233);
+    background: linear-gradient(90deg, rgba(230,230,233,1) 12%, rgba(187,188,202,1) 88%);}
+.question-number{
+    display: flex;
+
+}
+.question-number span{
+    margin-left: 0.5vh;
+}
+.properties{
+    display: flex;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(164deg, rgba(255,255,255,1) 0%, rgba(186,212,241,1) 100%);
+    background: -webkit-linear-gradient(164deg, rgba(255,255,255,1) 0%, rgba(186,212,241,1) 100%);
+    background: linear-gradient(164deg, rgba(255,255,255,1) 0%, rgba(186,212,241,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#bad4f1",GradientType=1);
+    justify-content: space-between;    
+}
+
+.solution-navigation{
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    background-color: rgb(232, 229, 229);
+    border-radius:0 0 0 5px;
+    box-shadow: 4px 1px 2.5px rgb(178, 171, 171);
+    border: 1.5px solid black;
+    background: rgb(187,188,202);
+    background: linear-gradient(90deg, rgba(187,188,202,1) 12%, rgba(230,230,233,1) 88%);
+}
+
+.solution{
+    height: 95%;
+    margin-top: 1.5vh;
+    margin-left: 1vh;
+}
+.numerical input{
+    height: 3vh;
+    width: 20vh;
+    border: 1px solid black;
+}
+
+
+.cluster{
+    display: flex;
+    top:0;
+    background-color: #aab6c4;
+    height: 15vh;
+   
+}
+.question.active {
+    background: red;
+    color: white;
+  }
+  .custom-quizz-live-container {
+    position: relative; /* To create a positioning context */
+}
+
+.submit {
+    z-index: 11; /* Ensure higher z-index */
+}
+
+.custom-quizz-live-container.time-up {
+    filter: blur(5px); /* Apply blur effect */
+    pointer-events: none; 
+    z-index: 10;
+}
+
+/* In your CSS file */
+.custom-quizz-live-container.time-up .submit { /* More specific selector */
+    filter: none !important; /*  !important to override parent */
+    pointer-events: auto !important;
+    z-index: 11;
+} 
