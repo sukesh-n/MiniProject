@@ -4,11 +4,76 @@
     <meta charset="UTF-8">
     <title>Assigned Quizze</title>
     <link rel="icon" href="../assets/images/logo.png">
+    
     <link rel="stylesheet" href="../css/assigned_quizz.css">
-    <script src="../scripts/assigned_quizz.js"></script>
+    <link rel="stylesheet" href="../css/global.css">
+    <!-- <script src="../scripts/assigned_quizz.js"></script> -->
     
 </head>
 <body>
-    
+    <div class="navbar">
+        <div class="navbar_logo">
+            <img src="../assets/images/logo.png" alt="Quizzo Logo" class="logo">
+        </div>
+        <div class="navbar_menu">
+            <ul>
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="./candidate_profile.html">Your Profile</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <ul class="login-info"></ul>
+            </ul>
+        </div>
+    </div>
+    <div class="error-message"></div>
+    <div class="timer"></div>
+    <div class="custom-quizz-live-container">
+        <div class="name-timer">
+            <div class="test-name">
+                <p>Quizz Name : <span>Sample Test</span></p>
+            </div>
+            <div class="timer">
+                <p class="time-board">Time Remaining:<span>00:00:00</span></p>
+            </div>
+        </div>
+        <div class="question-and-properties">
+            <div class="question">
+                <p class="question-number">Question : <span>0</span></p>
+                <p class="question-description">abcd</p>
+            </div>
+            <div class="properties">
+                <div class="difficulty-level">
+                    <p>Difficulty Level : <span>0</span></p>
+                </div>
+                <div class="type">
+                    <p>Type : <span>MCQ</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="solution-navigation">
+            <div class="solution">
+                <div class="mcq">
+                    <div class="options">
+                    </div>
+                </div>
+                <div class="true-false">
+                    <div class="option">
+                    </div>
+                </div>
+                <div class="numerical">
+                    <input type="number" name="numerical" id="numerical" required>
+                </div>
+            </div>
+            <div class="navigation">
+                <button class="previous">Previous</button>
+                <button class="next">Next</button>
+                <button class="submit">Submit</button>
+            </div>
+        </div>
+        <div class="cluster">
+            <div class="question-cluster">
+                <p>Question Cluster</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

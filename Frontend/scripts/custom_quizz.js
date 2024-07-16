@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var customQuizzGenerator = document.querySelector('.custom-quizz-generator');
     var customQuizzLiveContainer = document.querySelector('.custom-quizz-live-container');
     const token = localStorage.getItem('token');
+
     if (!token) {
         window.location.href = '../user_login.html';
         return;
@@ -28,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loginInfo.textContent = `Logged in as ${userEmail} (${userRole})`;
 
+    if(localStorage.getItem('customQuizzTestId') != null){
+        ResumeTest(userEmail);
+    }
+
     if (userRole.toLowerCase().trim() !== 'candidate') {
         errorMessage.textContent = `You are not authorized to view this page. Your role is ${userRole}. Please login as a candidate to view this page Or Register as a candidate if you are not one.`;
         errorMessage.style.display = "block";
@@ -46,11 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         errorMessage.style.display = "none";
         timer.style.display = "none";
+        customQuizzGenerator.style.display = "none";
+        customQuizzLiveContainer.style.display = "block";
         GetChoiceFromUserForQuizz(userEmail,userRole,userId);
         
     }
 });
 
+function PreviousCategory(){
+
+}
 function jwt_decode(token) {
     let base64Url = token.split('.')[1];
     let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -95,6 +105,7 @@ function GetChoiceFromUserForQuizz(userEmail,userRole,userId){
             "type": typeSelect.value
         };
         console.log('Choice DTO:', choiceDTO);
+        console.log('User ID:', userId);
         fetch(`http://localhost:5246/api/Candidate/GetCustomQuizz/${userId}`,{
             method: "PUT",
             headers: {
@@ -121,15 +132,10 @@ function GetChoiceFromUserForQuizz(userEmail,userRole,userId){
             DisplayQuizz(data);
             
         })
-        .catch(error => {
-            
-            console.error('Error getting custom quizz:', error);
-            
+        .catch(error => {            
+            console.error('Error getting custom quizz:', error);            
         });
-
     });
-    
-
 }
 
 
@@ -137,14 +143,30 @@ function DisplayQuizz(data){
     var customQuizzGenerator = document.querySelector('.custom-quizz-generator');
     var customQuizzLiveContainer = document.querySelector('.custom-quizz-live-container');
 
-    console.log("abc",customQuizzGenerator);
+    console.log("abc",customQuizzLiveContainer);
     customQuizzGenerator.style.display = "none";
     customQuizzLiveContainer.style.display = "block";
     
+    // const timerContainer = document.querySelector('.timer-container');
+    // let countdown = 5;
 
-    // const AssignmentNumber = data.assignmentNumber;
-    // const TestId = data.testId;
-    // const QuestionDTO = data.QuestionDTO;
+    // function updateCountdown() {
+    //     timerContainer.textContent = `Redirecting to home in ${countdown} seconds...`;
+    //     if (countdown === 0) {
+    //         LiveQuizz(data);
+    //     } else {
+    //         countdown--;
+    //         setTimeout(updateCountdown, 1000); 
+    //     }
+    // }
+
+    // updateCountdown();
+
+    const AssignmentNumber = data.assignmentNumber;
+    const TestId = data.testId;
+    const QuestionDTO = data.questionDto;
+    localStorage.setItem('customQuizzTestId',TestId);
+    localStorage.setItem('customQuizzAssignmentNumber',AssignmentNumber);
 
 
 }

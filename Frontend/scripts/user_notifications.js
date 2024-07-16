@@ -37,7 +37,11 @@ const headers = [
   
     const userEmail = tokenDecoded.sub;
     const userRole = tokenDecoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-  
+    if (isTokenExpired()) {
+      handleTokenExpired();
+      return;
+  }
+
     fetchNotifications(userEmail, userRole);
   
     const headerRow = document.querySelector('.notification-header');
@@ -62,7 +66,9 @@ const headers = [
     });
   });
   
+
   function fetchNotifications(userEmail, userRole) {
+    console.log('Fetching notifications for:', userEmail, userRole);
     fetch(`http://localhost:5246/api/Notification/TestNotification?email=${encodeURIComponent(userEmail)}&role=${encodeURIComponent(userRole)}`, {
       method: "GET",
       headers: {
@@ -185,3 +191,28 @@ function sortTable(columnName) {
       tableBody.appendChild(row);
     });
   }
+
+
+  function isTokenExpired() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        return true;
+    }
+    try {
+        const tokenDecoded = jwt_decode(token);
+        // Token expiration time in seconds
+        const exp = tokenDecoded.exp;
+        // Current time in seconds
+        const now = Math.floor(Date.now() / 1000);
+        // Check if token is expired
+        return now >= exp;
+    } catch (error) {
+        console.error('Error decoding token:', error);
+        return true;
+    }
+}
+function handleTokenExpired() {
+  console.log('Token expired');
+  localStorage.removeItem('token');
+  window.location.href = '../user_login.html'; // Redirect to login page
+}
