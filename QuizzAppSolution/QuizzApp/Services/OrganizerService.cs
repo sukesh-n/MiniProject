@@ -194,5 +194,78 @@ namespace QuizzApp.Services
             }
         }
 
+        public Task<List<AssignedTestDTO>> GetAllTestsByOrganizer(int userId)
+        {
+            var GetAllAssignedTestByarticularOrganizer = _assignedTestRepository.GetAllTestsByOrganizer(userId);
+            return GetAllAssignedTestByarticularOrganizer;
+        }
+
+        public async Task<List<TestDetailsDTO>> GetTestDetails(int assignmentNumber,int currentUserId)
+        {
+            try
+            {
+                var GetTestEmails = await _assignedTestEmailRepository.GetEmailsAsync(assignmentNumber);
+
+
+                var GetTestStatusDetails = await _testRepository.GetTestDetails(assignmentNumber, currentUserId);
+
+                var GetUserInfo = await _userRepository.GetAllDetailsByEmailsAsync(GetTestEmails.Select(e => e.Email).ToList());
+
+                var GetQuestions = await _assignedQuestionRepository.GetQuestionByAssignmentNumber(assignmentNumber);
+
+
+                List<TestDetailsDTO> testDetailsDTO = new List<TestDetailsDTO>();
+
+                foreach (var test in GetTestEmails)
+                {
+                    TestDetailsDTO testDetailsDTO1 = new TestDetailsDTO();
+                    testDetailsDTO1.CandidateEmails = test.Email;
+                    
+                    
+                    if(GetUserInfo.FirstOrDefault(u => u.UserEmail == test.Email) == null)
+                    {
+                        test.IsOrganizer = false;
+                        test.IsCandidate = false;
+                        test.IsAdmin = false;
+                        testDetailsDTO1.StatusOfTest = "User Not Registered";
+                        testDetailsDTO1.TestStartTime = DateTime.MinValue;
+                        testDetailsDTO1.TestEndTime = DateTime.MinValue;
+                    }
+                    else
+                    {
+                        var testUserId = GetUserInfo.FirstOrDefault(u => u.UserEmail == test.Email).UserId;
+                        testDetailsDTO1.StatusOfTest = GetTestStatusDetails.FirstOrDefault(t => t.AssignmentNo == assignmentNumber && t.UserId == testUserId).StatusOfTest;
+                        test.Email = GetUserInfo.FirstOrDefault(u => u.UserEmail == test.Email).UserEmail;
+                        test.IsOrganizer = GetUserInfo.FirstOrDefault(u => u.UserEmail == test.Email).Role.ToLower() == "organizer";
+                        test.IsCandidate = GetUserInfo.FirstOrDefault(u => u.UserEmail == test.Email).Role.ToLower() == "candidate";
+                        test.IsAdmin = GetUserInfo.FirstOrDefault(u => u.UserEmail == test.Email).Role.ToLower() == "admin";
+                        testDetailsDTO1.IsOrganizer = test.IsOrganizer;
+                        testDetailsDTO1.IsCandidate = test.IsCandidate;
+                        testDetailsDTO1.IsAdmin = test.IsAdmin;
+                        if (testDetailsDTO1.StatusOfTest == "Not Attended")
+                        {
+                            testDetailsDTO1.TestStartTime = DateTime.MinValue;
+                            testDetailsDTO1.TestEndTime = DateTime.MinValue;
+                        }
+                        else
+                        {
+                            testDetailsDTO1.TestStartTime = GetTestStatusDetails.FirstOrDefault(t => t.AssignmentNo == assignmentNumber && t.UserId == testUserId).TestStartDate;
+                            testDetailsDTO1.TestEndTime = GetTestStatusDetails.FirstOrDefault(t => t.AssignmentNo == assignmentNumber && t.UserId == testUserId).TestEndDate;
+                        }
+                    }
+                    
+
+                    testDetailsDTO.Add(testDetailsDTO1);
+                }
+                return (testDetailsDTO);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

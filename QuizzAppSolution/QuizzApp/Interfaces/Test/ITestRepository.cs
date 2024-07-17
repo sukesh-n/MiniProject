@@ -8,6 +8,7 @@ namespace QuizzApp.Interfaces.Test
         public Task<List<TestDTO>> AddTestListAsync(List<TestDTO> testDTOs);
         public Task<TestDTO> GetTestByAssignmentNoAsync(int AssignmentNo);
         public Task<TestDTO> GetTestByUserIdAndAssignemtnNumber(int UserId,int AssignmentNumber);
+        public Task<List<TestDTO>> GetTestDetails(int assignmentNo, int currentUserId);
 
     }
 }

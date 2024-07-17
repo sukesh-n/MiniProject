@@ -158,7 +158,7 @@ namespace QuizzApp.Services
 
 
 
-        public async Task<List<QuestionDTO>> GetQuestionById(List<int> QuestionIds)
+        public async Task<(List<QuestionDTO>,List<Option>)> GetQuestionById(List<int> QuestionIds)
         {
             try
             {
@@ -167,7 +167,8 @@ namespace QuizzApp.Services
                 {
                     throw new EmptyRepositoryException("No questions found");
                 }
-                return QuestionList;
+                var OptionsList = await _optionRepository.GetAllByQuestionIdAsync(QuestionIds);
+                return (QuestionList,OptionsList);
             }
             catch (EmptyRepositoryException)
             {

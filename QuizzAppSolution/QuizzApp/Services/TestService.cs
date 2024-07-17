@@ -32,7 +32,7 @@ namespace QuizzApp.Services
             throw new NotImplementedException();
         }
 
-        public async Task<(List<QuestionDTO>,ScoreDTO)> AttendTest(List<QuestionDTO> questionDTO, int AssignmentNumber, string email)
+        public async Task<(List<QuestionDTO>,ScoreDTO,List<Solution>)> AttendTest(List<QuestionDTO> questionDTO, int AssignmentNumber, string email)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace QuizzApp.Services
                             QuestionWithSolution.CategoryId = question.CategoryId;
                             QuestionWithSolution.TrueFalseAnswer = null;
                             QuestionWithSolution.NumericalAnswer = null;
-                            QuestionWithSolution.CorrectOptionAnswer=null;
+                            QuestionWithSolution.CorrectOptionAnswer=question.CorrectOptionAnswer;
                             if (question.QuestionType == "MCQ" && question.CorrectOptionAnswer == solution.CorrectOptionAnswer)
                             {
                                 QuestionWithSolution.CorrectOptionAnswer = solution.CorrectOptionAnswer;
@@ -149,7 +149,7 @@ namespace QuizzApp.Services
                 {
                     throw new Exception("Score Not Uploaded");
                 }
-                return (QuestionWithSolutions,scoreDTO);
+                return (QuestionWithSolutions,scoreDTO,GeSolution);
 
             }
             catch (Exception ex)
@@ -163,7 +163,7 @@ namespace QuizzApp.Services
             throw new NotImplementedException();
         }
 
-        public async Task<List<QuestionDTO>> GetTestQuestions(int AssignmentNumber, string email)
+        public async Task<(List<QuestionDTO>, List<Option>)> GetTestQuestions(int AssignmentNumber, string email)
         {
             var getQuestionIds = await _assignedQuestionRepository.GetQuestionByAssignmentNumber(AssignmentNumber);
 
@@ -173,11 +173,11 @@ namespace QuizzApp.Services
             }
 
             var QuestionsList = await _questionService.GetQuestionById(getQuestionIds);
-            if (QuestionsList == null)
+            if (QuestionsList.Item1 == null)
             {
                 throw new Exception("No Questions Found");
             }
-            return QuestionsList;
+            return (QuestionsList.Item1,QuestionsList.Item2);
             
         }
 

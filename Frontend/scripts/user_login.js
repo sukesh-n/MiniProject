@@ -1,18 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
+
+
+
+document.addEventListener('DOMContentLoaded', function(){
     const token = localStorage.getItem('token');
 
     if (token) {
         console.log('Token found');
-        window.location.href = 'users/user_home.html';
+        tokenDecoded = jwt_decode(token);
+        const userRole = tokenDecoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+        if (userRole.toLowerCase().trim() === 'candidate') {
+            window.location.href = './users/user_home.html';
+        }        
     }
-    // } else {
-    //     // window.location.href = './user_login.html';
-    //     // console.log('Token not found');
-    // }
-});
-
-
-document.addEventListener('DOMContentLoaded', function(){
     const loginForm = document.querySelector('.login-form');
     const errorContainer = document.createElement('div');
     errorContainer.classList.add('error-message');
@@ -129,6 +128,7 @@ function UserLogin() {
     .then((data) => {
         console.log(data);
         if (data.token) {
+            localStorage.clear();
             localStorage.setItem("token", data.token);
             window.location.href = "./Users/user_home.html";
         } else {
@@ -145,3 +145,12 @@ function UserLogin() {
 //     e.preventDefault();
 //     UserLogin();
 // });
+function jwt_decode(token) {
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+}

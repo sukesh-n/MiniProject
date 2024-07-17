@@ -95,6 +95,23 @@ namespace QuizzApp.Repositories
             }
         }
 
+        public async Task<List<AssignedTestEmail>> GetEmailsAsync(int assignmentNo)
+        {
+            try
+            {
+                var result = await _context.assignedTestEmails.Where(e => e.AssignmentNumber == assignmentNo).ToListAsync();
+                if (result == null)
+                {
+                    throw new EmptyRepositoryException();
+                }
+                return result;
+            }
+            catch
+            {
+                throw new ErrorInConnectingRepository();
+            }
+        }
+
         public Task<AssignedTestEmail> UpdateAsync(AssignedTestEmail entity)
         {
             throw new NotImplementedException();

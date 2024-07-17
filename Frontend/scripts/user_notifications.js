@@ -142,8 +142,8 @@ function sortTable(columnName) {
       'attemptAllowed',
       'attemptCount',
       'lastAttemptDate',
-      'takeTest',
-      'testResults'
+      'GetAnswerkey',
+      'TakeTest'
     ];
     return fields[index] || null; 
   }
@@ -160,7 +160,7 @@ function sortTable(columnName) {
   
   function displayNotifications(data) {
     const tableBody = document.querySelector('.notification-table tbody');
-    tableBody.innerHTML = '';
+    tableBody.innerHTML = ''; // Clear existing content
   
     data.forEach((notification, index) => {
       const row = document.createElement('tr');
@@ -171,27 +171,44 @@ function sortTable(columnName) {
       const attemptAllowed = notification.attemptAllowed || "Unlimited";
       const lastAttemptDate = notification.lastAttemptDate ? new Date(notification.lastAttemptDate).toLocaleString() : "Not Attempted";
   
-      row.innerHTML = `
-              <td>${index + 1}</td>
-              <td>${notification.testAssignedBy}</td>
-              <td>${notification.assignmentNumber}</td>
-              <td>${notification.testID}</td>
-              <td>${notification.testName}</td>
-              <td>${notification.questionCount}</td>
-              <td>${notification.testDuration}</td>
-              <td>${startDateWindow}</td>
-              <td>${endDateWindow}</td>
-              <td>${testStatus}</td>
-              <td>${attemptAllowed}</td>
-              <td>${attemptCount}</td>
-              <td>${lastAttemptDate}</td>
-              <td><button class="take-test" data-test-id="${notification.testID}">Take Test</button></td>
-              <td><button class="test-results" data-test-id="${notification.testID}">Test Results and Key</button></td>
-          `;
+      // Create Take Test button cell
+      const takeTestCell = document.createElement('td');
+      const takeTestButton = document.createElement('button');
+      takeTestButton.textContent = 'Take Test';
+      takeTestButton.classList.add('take-test');
+      takeTestButton.dataset.testId = notification.testID;
+      takeTestButton.dataset.assignmentNumber = notification.assignmentNumber;
+  
+      takeTestButton.addEventListener('click', function() {
+          localStorage.setItem('customQuizzAssignmentNumber', this.dataset.assignmentNumber);
+          window.location.href = '../Users/assigned_quizz.html'; 
+      });
+  
+
+  
+      // Add other cells to the row 
+      row.innerHTML += `
+        <td>${index + 1}</td>
+        <td>${notification.testAssignedBy}</td>
+        <td>${notification.assignmentNumber}</td>
+        <td>${notification.testID}</td>
+        <td>${notification.testName}</td>
+        <td>${notification.questionCount}</td>
+        <td>${notification.testDuration}</td>
+        <td>${startDateWindow}</td>
+        <td>${endDateWindow}</td>
+        <td>${testStatus}</td>
+        <td>${attemptAllowed}</td>
+        <td>${attemptCount}</td>
+        <td>${lastAttemptDate}</td>        
+        <td><button class="test-results" data-test-id="${notification.testID}">Test Results and Key</button></td>
+      `; 
+
       tableBody.appendChild(row);
+      takeTestCell.appendChild(takeTestButton);
+      row.appendChild(takeTestCell);
     });
   }
-
 
   function isTokenExpired() {
     const token = localStorage.getItem('token');

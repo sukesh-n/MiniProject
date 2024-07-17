@@ -32,34 +32,50 @@ namespace QuizzApp.Controllers
         }
 
 
-        [HttpGet("GetTestQuestions")]
-        public async Task<IActionResult> GetTestQuestions(int AssignmentNumber,string email)
+        [HttpPost("GetTestQuestions")]
+        public async Task<IActionResult> GetTestQuestions([FromBody] GetTestQuestionsDTO request)
         {
             try
             {
-                var TestQuestions = await _testInterface.GetTestQuestions(AssignmentNumber,email);
-                return Ok(TestQuestions);
+                var TestQuestions = await _testInterface.GetTestQuestions(request.AssignmentNumber, request.Email);
+                return Ok(new { TestQuestions = TestQuestions.Item1, QuestionOptions = TestQuestions.Item2 });
+
             }
-            catch
+            catch (Exception ex)
             {
-                throw new UnableToFetchException("Unable to get Questions");
+                // Log the error or handle it appropriately
+                return BadRequest(ex.Message);
             }
         }
 
-        [HttpPut("AttendTest")]
-        public async Task<IActionResult> AttendTest(List<QuestionDTO> questionDTO,int AssignmentNumber, string email)
+        [HttpPost("AttendTest")] // No need for parameters in the route
+        public async Task<IActionResult> AttendTest([FromBody] AttendTestRequest request)
         {
             try
             {
-                var TestAssign = await _testInterface.AttendTest(questionDTO,AssignmentNumber,email);
+                var TestAssign = await _testInterface.AttendTest(
+                    request.QuestionDTO,
+                    request.AssignmentNumber,
+                    request.Email
+                );
                 var QuestionDTO = TestAssign.Item1;
                 var ScoreDTO = TestAssign.Item2;
-                return Ok(new {QuestionDTO,ScoreDTO});
+                var Solution = TestAssign.Item3;
+                return Ok(new { QuestionDTO, ScoreDTO,Solution });
             }
             catch
             {
-                throw new UnableToFetchException("Unable to get Questions");
+                throw new UnableToFetchException("Unable to process test submission");
             }
         }
+        public class AttendTestRequest
+        {
+            public List<QuestionDTO> QuestionDTO { get; set; }
+            public int AssignmentNumber { get; set; }
+            public string Email { get; set; }
+        }
+
+
+
     }
 }

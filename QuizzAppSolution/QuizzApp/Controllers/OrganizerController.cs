@@ -46,6 +46,31 @@ namespace QuizzApp.Controllers
             }
         }
 
-
+        [HttpGet("GetAllTestsByOrganizer/{userId}")]
+        public async Task<IActionResult> GetAllTestsByOrganizer(int userId)
+        {
+            try
+            {
+                var getTests = await _organizerService.GetAllTestsByOrganizer(userId);
+                return Ok(getTests);
+            }
+            catch
+            {
+                throw new UnableToFetchException("Unable to fetch");
+            }
+        }
+        [HttpGet("GetTestDetails/{currentUserId}/{assignmentNumber}")]
+        public async Task<IActionResult> GetTestDetails(int currentUserId, int assignmentNumber)
+        {
+            try
+            {
+                var getTestDetails = await _organizerService.GetTestDetails(assignmentNumber,currentUserId);
+                return Ok(getTestDetails);
+            }
+            catch
+            {
+                throw new UnableToFetchException("Unable to fetch");
+            }
+        }
     }
 }

@@ -5,6 +5,7 @@ using QuizzApp.Models;
 using QuizzApp.Models.DTO;
 using QuizzApp.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuizzApp.Repositories
 {
@@ -45,6 +46,32 @@ namespace QuizzApp.Repositories
             throw new NotImplementedException();
         }
 
+        public async Task<List<AssignedTestDTO>> GetAllTestsByOrganizer(int userId)
+        {
+            try
+            {
+                var results = await _context.assignedTests
+                    .Where(e => e.AssignedBy == userId)
+                    .Select(e => new AssignedTestDTO
+                    {
+                        AssignmentNo = e.AssignmentNo,
+                        AssignedBy = e.AssignedBy,
+                        TestName = e.TestName,
+                        StartTimeWindow = e.StartTimeWindow,
+                        EndTimeWindow = e.EndTimeWindow,
+                        TestDuration = e.TestDuration
+                    })
+                    .ToListAsync();
+
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Unable to connect repository", ex);
+            }
+        }
+
+
         public Task<AssignedTest> GetAsync(int Key)
         {
             throw new NotImplementedException();
@@ -56,6 +83,20 @@ namespace QuizzApp.Repositories
             {
                 var result = await _context.assignedTests.FirstOrDefaultAsync(e => e.AssignmentNo == AssignmentNo);
                 return result;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository("Unable to connect repository");
+            }
+        }
+
+        public Task<List<AssignedTest>> GetTestDetails(int assignmentNo)
+        {
+            try
+            {
+                var result = _context.assignedTests.Where(e => e.AssignmentNo == assignmentNo).ToList();
+                return Task.FromResult(result);
+
             }
             catch (Exception ex)
             {

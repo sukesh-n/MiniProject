@@ -8,6 +8,10 @@ namespace QuizzApp.Interfaces
     {
         public Task<TestAssign> AssignTest(TestAssign testAssignDTO, QuestionSelectionDTO questionSelectionDTO);
         public Task<List<QuestionSolutionDTO>> GenerateQuizzApiWithSolution(QuestionSelectionDTO questionSelectionDTO);
+
+        public Task<List<AssignedTestDTO>> GetAllTestsByOrganizer(int userId);
+
+        public Task<List<TestDetailsDTO>> GetTestDetails(int assignmentNo,int currentUserId);
         
     }
 }

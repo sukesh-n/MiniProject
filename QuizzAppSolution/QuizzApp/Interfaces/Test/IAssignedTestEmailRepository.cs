@@ -9,5 +9,6 @@ namespace QuizzApp.Interfaces.Test
         
         public Task<bool> AddEmailsForTest(int AssignmentNo, List<AssignedTestEmailDTO> assignedTestEmailDTO);
         public Task<bool> UpdateDb(List<AssignedTestEmail> assignedTestEmails);
+        public Task<List<AssignedTestEmail>> GetEmailsAsync(int assignmentNo);
     }
 }

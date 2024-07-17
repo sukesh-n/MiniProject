@@ -133,8 +133,9 @@ namespace QuizzApp.Tests.Services
             var mockUserRepository = new Mock<IUserRepository>();
             var mockResultRepository = new Mock<IResultRepository>();
             var mockTestService = new Mock<ITestService>();
-            mockTestService.Setup(ts => ts.AttendTest(questionDTOs, assignmentNumber, email))
-                .ReturnsAsync((questionDTOs, new ScoreDTO { Score = 50 })); // Mock a score
+           // var mockTestService = new Mock<ITestService>();
+            mockTestService.Setup(ts => ts.AttendTest(It.IsAny<List<QuestionDTO>>(), It.IsAny<int>(), It.IsAny<string>()))
+                .ReturnsAsync((questionDTOs, new ScoreDTO { Score = 50 }, new List<Solution>())); // Adjust with appropriate mock data
 
             _candidateService = new CandidateService(
                 Mock.Of<IQuestionService>(),

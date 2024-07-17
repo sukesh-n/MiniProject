@@ -1,0 +1,46 @@
+/* results.css or inside <style> tag in results.html */
+
+.results-container {
+    /* Add padding or margin if needed for better spacing */
+    padding: 20px;
+}
+
+.results-container h2 {
+    margin-bottom: 10px; /* Add some spacing below the heading */
+}
+
+.results-container p { /* Style for score summary paragraphs */
+    margin: 5px 0; /* Adjust margin for spacing between paragraphs */
+}
+
+.results-container table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Set the desired table background color */
+}
+
+.results-container th, 
+.results-container td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left; 
+    color: black; /* Set the desired text color */
+}
+
+.results-container th {
+    background-color: #f2f2f2; /* Slightly darker shade for header */
+    font-weight: bold;
+}
+
+/* Remove alternating row colors: */
+.results-container tr:nth-child(even) {
+    background-color: transparent; /* Set background to transparent */
+}
+
+/* Optional: Add a hover effect to the entire row */
+.results-container tr:hover {
+    background-color: #f5f5f5;
+}

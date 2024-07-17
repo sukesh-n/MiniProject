@@ -11,7 +11,7 @@ namespace QuizzApp.Interfaces
 
         public Task<List<Question>> GetQuestionWithCategory(QuestionSelectionDTO questionSelectionDTO);
         public Task<List<Category>> GetAllCategoriesAsync();
-        public Task<List<QuestionDTO>> GetQuestionById(List<int> QuestionIds);
+        public Task<(List<QuestionDTO>, List<Option>)> GetQuestionById(List<int> QuestionIds);
         public Task<List<Solution>> GetSolutionForQUestions(List<int> QuestionIds);
     }
 }

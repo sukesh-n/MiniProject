@@ -131,7 +131,7 @@ function GetChoiceFromUserForQuizz(userEmail,userRole,userId){
         .then(data => {
             
             console.log('Custom Quizz assigned successfully:', data);
-            DisplayQuizz(data);
+            DisplayQuizz(data,userEmail);
             
         })
         .catch(error => {            
@@ -141,14 +141,14 @@ function GetChoiceFromUserForQuizz(userEmail,userRole,userId){
 }
 
 
-function DisplayQuizz(data){
+function DisplayQuizz(data,userEmail){
     var customQuizzGenerator = document.querySelector('.custom-quizz-generator');
     var customQuizzLiveContainer = document.querySelector('.custom-quizz-live-container');
 
     console.log("abc",customQuizzLiveContainer);
     customQuizzGenerator.style.display = "none";
     customQuizzLiveContainer.style.display = "block";
-    
+
     // const timerContainer = document.querySelector('.timer-container');
     // let countdown = 5;
 
@@ -169,6 +169,6 @@ function DisplayQuizz(data){
     const QuestionDTO = data.questionDto;
     localStorage.setItem('customQuizzTestId',TestId);
     localStorage.setItem('customQuizzAssignmentNumber',AssignmentNumber);
-
+    ResumeTest(userEmail);
 
 }

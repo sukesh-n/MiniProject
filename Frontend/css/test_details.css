@@ -1,0 +1,59 @@
+/* Basic table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: sans-serif; 
+  }
+  
+  /* Header styling */
+  th {
+    background-color: #f2f2f2; /* Same light gray for all headers */
+    color: #333;                 
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; 
+    cursor: pointer;           /* Add cursor pointer to indicate sortable columns */
+  }
+  td{
+    color: brown;
+  }
+  /* Row styling */
+  tr:nth-child(even) {
+    background-color: #f9f9f9; 
+  }
+  
+  tr:hover {
+    background-color: #e9e9e9;
+  }
+  
+  /* Cell styling */
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd; 
+    background-color: white;   /* Same white background for all cells */
+  }
+  @media screen and (min-width: 600px) { /* Adjust breakpoint as needed */
+    table {
+      display: table; /* Switch to standard table layout */
+    }
+  
+    th {
+      display: table-cell; /* Ensure headers are displayed as cells */
+    }
+  
+    td {
+      display: table-cell; /* Ensure data cells are displayed as cells */
+    }
+  
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px; 
+    }
+  
+    th:first-child,
+    td:first-child { 
+      padding-left: 16px; 
+    }
+  }

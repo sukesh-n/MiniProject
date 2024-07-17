@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/organizer_home.css">
     <script src="../scripts/common.js"></script>
     <script src="../scripts/organizer_home.js"></script>
+    <script src="../scripts/logout.js"></script>
 </head>
 <body>
     <div class="navbar">
@@ -19,10 +20,25 @@
                 <li><a href="../home.html">Home</a></li>
                 <li><a href="./organizer_profile.html">Your Profile</a></li>
                 <li><a href="leaderboard.html">Leaderboard</a></li>
-                <ul class="login-info"></ul>
+                <li class="login-info"></li>
+                <li class="logout"><a onclick="user_logout()" style="cursor: pointer;">Logout</a></li>
             </ul>
         </div>
     </div>
-    
+    <div class="organizer-operations">
+        <div class="operation--list-conatiner">
+            <ul class="operation--list">
+                <li><a href="./organizer_assign_quizz.html">Create and Assign Quiz</a></li>
+                <li><a href="./manage_quizz.html">Manage Quiz</a></li>
+                <li><a href="./organizer_manage_participants.html">Manage Participants</a></li>
+                <li><a href="./manage_results.html">Manage Results</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Quizz Street</p>
+    </div>
+</body>
+
 
 </html>

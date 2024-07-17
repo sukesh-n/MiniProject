@@ -57,7 +57,7 @@ namespace QuizzApp.Controllers
             }
         }
 
-        [HttpPut("GetCustomQuizz")]
+        [HttpPut("GetCustomQuizz/{UserId}")]
         public async Task<IActionResult> GetRandomQuizz(QuestionSelectionDTO questionSelectionDTO,int UserId)
         {
             try

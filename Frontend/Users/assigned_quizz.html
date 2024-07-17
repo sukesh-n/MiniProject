@@ -6,8 +6,10 @@
     <link rel="icon" href="../assets/images/logo.png">
     
     <link rel="stylesheet" href="../css/assigned_quizz.css">
-    <link rel="stylesheet" href="../css/global.css">
-    <!-- <script src="../scripts/assigned_quizz.js"></script> -->
+    <link rel="stylesheet" href="../css/global.css">    
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/assigned_quizz.js"></script>
+    <script src="../scripts/live_test.js"></script>
     
 </head>
 <body>
@@ -23,6 +25,8 @@
                 <ul class="login-info"></ul>
             </ul>
         </div>
+        <button class="loadTestButton" type="submit" onclick="callMethod()">Load Test</button>
+
     </div>
     <div class="error-message"></div>
     <div class="timer"></div>

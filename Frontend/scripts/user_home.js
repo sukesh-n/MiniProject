@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(tokenDecoded);
     const userEmail = tokenDecoded.sub;
     const userRole = tokenDecoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-
+    if (userRole.toLowerCase().trim() !== 'candidate') {
+        window.location.href = '../user_login.html';
+    }
     var loginInfo = document.querySelector('.login-info');
     loginInfo.textContent = `Logged in as ${userEmail} (${userRole})`;
 });

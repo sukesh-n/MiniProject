@@ -52,9 +52,24 @@ a{
 .navbar .navbar_menu ul{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     list-style: none;
 }
 .navbar .navbar_menu ul li{
     margin: 0 10px;
+}
+.login-info{
+    background-color: aquamarine;
+    color: black;
+}
+.logout{
+    padding: 5px;
+    background-color: rgb(251, 255, 0);
+}
+.logout a{
+    color: black;
+}
+.logout a:hover{
+    background-color: azure;
+    color: rgb(0, 0, 0);
 }

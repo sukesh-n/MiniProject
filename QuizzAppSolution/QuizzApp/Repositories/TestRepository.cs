@@ -108,6 +108,39 @@ namespace QuizzApp.Repositories
             }
         }
 
+        public async Task<List<TestDTO>> GetTestDetails(int assignmentNo, int currentUserId)
+        {
+            try
+            {
+                var result = await _context.tests.Where(e => e.AssignmentNo == assignmentNo && e.UserId != currentUserId).ToListAsync();
+                if (result == null)
+                {
+                    throw new EmptyRepositoryException();
+                }
+                var testDTOs = new List<TestDTO>();
+                foreach (var test in result)
+                {
+                    var testDto = new TestDTO();
+                    {
+                        testDto.AssignmentNo = test.AssignmentNo;
+                        testDto.TestId = test.TestId;
+                        testDto.UserId = test.UserId;
+                        testDto.QuestionsCount = test.QuestionsCount;
+                        testDto.StatusOfTest = test.StatusOfTest;
+                        testDto.TestStartDate = test.TestStartDate;
+                        testDto.TestEndDate = test.TestEndDate;
+                        testDto.TestType = test.TestType;
+                    }
+                    testDTOs.Add(testDto);
+                }
+                return testDTOs;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepository(ex.Message);
+            }
+        }
+
         public Task<TestDTO> UpdateAsync(TestDTO entity)
         {
             throw new NotImplementedException();
